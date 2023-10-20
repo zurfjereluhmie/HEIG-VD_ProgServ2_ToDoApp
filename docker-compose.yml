@@ -1,10 +1,10 @@
-version: "2"
-
+version: "3.9"
+name: dock-php-apache-1
 services:
-  nginx-php-fpm:
-    image: richarvey/nginx-php-fpm:latest
-    restart: always
-    environment:
-      GIT_USE_SSH: 0
-      GIT_REPO: "https://github.com/zurfjereluhmie/HEIG_ProgServ2_ToDoApp.git"
-      GIT_BRANCH: "Docker-Config"
+  php_apache:
+    container_name: php_apache
+    image: php:8.0-apache
+    volumes:
+      - ./app/public:/var/www/html/
+    ports:
+      - 80:80
