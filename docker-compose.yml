@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  nginx-php-fpm:
+    image: richarvey/nginx-php-fpm:latest
+    restart: always
+    environment:
+      GIT_USE_SSH: 0
+      GIT_REPO: "https://github.com/zurfjereluhmie/HEIG_ProgServ2_ToDoApp.git"
+      GIT_EMAIL: "zurfluh.jeremie@gmail.com"
+      GIT_NAME: "zurfjereluhmie"
