@@ -1,5 +1,5 @@
 version: "3.9"
-name: dock-php-apache-1
+name: progserv2-todoapp
 services:
   php_apache:
     container_name: php_apache
