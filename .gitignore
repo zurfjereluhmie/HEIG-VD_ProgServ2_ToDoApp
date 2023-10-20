@@ -1,0 +1,11 @@
+### Vendor
+**/vendor
+
+### OSX template
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### Env
+.env
+

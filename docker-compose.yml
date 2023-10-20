@@ -3,8 +3,18 @@ name: progserv2-todoapp
 services:
   php_apache:
     container_name: php_apache
-    image: php:8.0-apache
+    image: php:8.1-apache
     volumes:
-      - ./app/public:/var/www/html/
+      - ./app/public:/var/www/html # public
+      - ./app/database:/var/www/database # database
+      - ./app/vendor:/var/www/vendor # vendor
     ports:
       - 80:80
+    depends_on:
+      - mailHog
+  mailHog:
+    container_name: mailHog
+    image: mailhog/mailhog
+    ports:
+      - 8025:8025
+      - 1025:1025
