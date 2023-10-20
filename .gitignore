@@ -1,0 +1,35 @@
+#Ignore Apple .DS_Store files
+.DS_Store
+
+# Ignore vendor directory
+/vendor
+
+# Ignore composer lock file
+composer.lock
+
+# Ignore .env file
+.env
+
+# Ignore logs
+/log/*.log
+
+# Ignore cache
+/var/cache/*
+
+# Ignore sessions
+/var/sessions/*
+
+# Ignore compiled files
+*.phpc
+
+# Ignore PHPStorm files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Ignore Docker files
+docker-compose.yml
+docker-compose.override.yml
+docker-compose.ci.yml
+.dockerignore
