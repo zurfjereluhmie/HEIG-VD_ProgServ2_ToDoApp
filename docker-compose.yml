@@ -5,9 +5,9 @@ services:
     container_name: php_apache
     image: php:8.1-apache
     volumes:
-      - ./app/public:/var/www/html # public
-      - ./app/database:/var/www/database # database
-      - ./app/vendor:/var/www/vendor # vendor
+      - ./public:/var/www/html # public
+      - ./database:/var/www/database # database
+      - ./vendor:/var/www/vendor # vendor
     ports:
       - 80:80
     depends_on:
