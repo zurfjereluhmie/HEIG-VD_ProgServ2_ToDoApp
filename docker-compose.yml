@@ -5,9 +5,12 @@ services:
     container_name: php_apache
     image: php:8.1-apache
     volumes:
+      - ./config:/var/config # config
       - ./public:/var/www/html # public
       - ./database:/var/www/database # database
       - ./vendor:/var/www/vendor # vendor
+    environment:
+      - PHP_INI_SCAN_DIR=/var/config
     ports:
       - 80:80
     depends_on:
