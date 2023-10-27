@@ -7,8 +7,9 @@
 - **Membres du groupe :**
   - Jérémie Zurflüh
   - Antoine Uldry
-s
-### Technologies
+
+#### Technologies
+- Docker
 - Apache
 - PHP
 - SQLite
@@ -20,7 +21,7 @@ s
 Le projet vise à créer une `application web de gestion de tâches (Todo App)` avec des fonctionnalités d'authentification pour les utilisateurs.
 
 #### Portée
-L'application permettra aux utilisateurs de réaliser des opérations de type `CRUD` (Create, Read, Update, Delete) sur des tâches. Elle intègrera également un `système d'authentification` pour garantir la sécurité des données.
+L'application permettra aux utilisateurs de réaliser des opérations de type `CRUD` (Create, Read, Update, Delete) sur des tâches. Elle intègrera également un `système d'authentification` pour garantir la sécurité des données. Les tâches seront catégorisée dans des dossier pour une meilleure organisation
 
 ### 3. Arborescence et contenu du site
 
@@ -32,10 +33,16 @@ L'application permettra aux utilisateurs de réaliser des opérations de type `C
    - Description : Page d'inscription pour les nouveaux utilisateurs.
    
 3. **Tableau de bord de l'utilisateur**
-   - Description : Page affichant les tâches de l'utilisateur.
+   - Description : Page affichant les tâches de l'utilisateur, ainsi que ses dossiers.
    
 4. **Ajout de tâches**
    - Description : Page permettant d'ajouter de nouvelles tâches.
    
 5. **Modification de tâches**
    - Description : Page pour la modification des tâches existantes.
+
+6. **Ajout de dossiers**
+   - Description : Page permettant d'ajouter de nouveaux dossier.
+   
+7. **Modification de dossiers**
+   - Description : Page pour la modification des dossiers existants.
