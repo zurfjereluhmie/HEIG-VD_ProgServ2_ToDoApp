@@ -3,27 +3,27 @@ Search.appendIndex(
                 {
             "fqsen": "\\ch\\comem\\todoapp\\Task",
             "name": "Task",
-            "summary": "",
+            "summary": "Represents\u0020a\u0020task\u0020in\u0020the\u0020Todo\u0020app.",
             "url": "classes/ch-comem-todoapp-Task.html"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\Task\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Task\u0020constructor.",
             "url": "classes/ch-comem-todoapp-Task.html#method___construct"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\Task\u003A\u003AgetId\u0028\u0029",
             "name": "getId",
-            "summary": "",
+            "summary": "Get\u0020the\u0020ID\u0020of\u0020the\u0020task.",
             "url": "classes/ch-comem-todoapp-Task.html#method_getId"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\Task\u003A\u003AgetTitle\u0028\u0029",
             "name": "getTitle",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020title\u0020of\u0020the\u0020task.",
             "url": "classes/ch-comem-todoapp-Task.html#method_getTitle"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\Task\u003A\u003AgetDescription\u0028\u0029",
             "name": "getDescription",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020description\u0020of\u0020the\u0020task.",
             "url": "classes/ch-comem-todoapp-Task.html#method_getDescription"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\Task\u003A\u003A\u0024isDone",
@@ -53,37 +53,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\TaskManager",
             "name": "TaskManager",
-            "summary": "",
+            "summary": "This\u0020class\u0020manages\u0020tasks\u0020for\u0020the\u0020Todo\u0020app.",
             "url": "classes/ch-comem-todoapp-TaskManager.html"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\TaskManager\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020for\u0020the\u0020TaskManager\u0020class.",
             "url": "classes/ch-comem-todoapp-TaskManager.html#method___construct"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\TaskManager\u003A\u003AgetInstance\u0028\u0029",
             "name": "getInstance",
-            "summary": "",
+            "summary": "Returns\u0020an\u0020instance\u0020of\u0020the\u0020TaskManager\u0020class.",
             "url": "classes/ch-comem-todoapp-TaskManager.html#method_getInstance"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\TaskManager\u003A\u003Aadd\u0028\u0029",
             "name": "add",
-            "summary": "",
+            "summary": "Adds\u0020a\u0020task\u0020to\u0020the\u0020task\u0020manager.",
             "url": "classes/ch-comem-todoapp-TaskManager.html#method_add"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\TaskManager\u003A\u003AdisplayTasks\u0028\u0029",
             "name": "displayTasks",
-            "summary": "",
+            "summary": "Displays\u0020the\u0020tasks.",
             "url": "classes/ch-comem-todoapp-TaskManager.html#method_displayTasks"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\TaskManager\u003A\u003AinitTasks\u0028\u0029",
             "name": "initTasks",
-            "summary": "",
+            "summary": "Initializes\u0020the\u0020tasks.",
             "url": "classes/ch-comem-todoapp-TaskManager.html#method_initTasks"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\TaskManager\u003A\u003A\u0024instance",
             "name": "instance",
-            "summary": "",
+            "summary": "This\u0020is\u0020a\u0020static\u0020private\u0020variable\u0020that\u0020holds\u0020an\u0020instance\u0020of\u0020the\u0020TaskManager\u0020class.",
             "url": "classes/ch-comem-todoapp-TaskManager.html#property_instance"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\TaskManager\u003A\u003A\u0024tasks",

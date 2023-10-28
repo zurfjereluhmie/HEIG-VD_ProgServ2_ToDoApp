@@ -119,11 +119,14 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/TaskManager.php"><a href="files/app-ch-comem-todoapp-taskmanager.html"><abbr title="app/ch/comem/todoapp/TaskManager.php">TaskManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">7</span>
+    <span class="phpdocumentor-element-found-in__line">11</span>
 
     </aside>
 
-        
+            <p class="phpdocumentor-summary">This class manages tasks for the Todo app.</p>
+
+    <section class="phpdocumentor-description"><p>It is a singleton class, meaning that only one instance of this class can exist.</p>
+</section>
 
 
 
@@ -152,13 +155,14 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ch-comem-todoapp-TaskManager.html#property_instance">$instance</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: <a href="classes/ch-comem-todoapp-TaskManager.html"><abbr title="\ch\comem\todoapp\TaskManager">TaskManager</abbr></a>            </span>
 </dt>
+<dd>This is a static private variable that holds an instance of the TaskManager class.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ch-comem-todoapp-TaskManager.html#property_tasks">$tasks</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: array&lt;string|int, <a href="classes/ch-comem-todoapp-Task.html"><abbr title="\ch\comem\todoapp\Task">Task</abbr></a>&gt;            </span>
 </dt>
 
     </dl>
@@ -174,30 +178,35 @@
     <span>
                                 &nbsp;: void    </span>
 </dt>
+<dd>Adds a task to the task manager.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-TaskManager.html#method_displayTasks">displayTasks()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
+<dd>Displays the tasks.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-TaskManager.html#method_getInstance">getInstance()</a>
     <span>
                                 &nbsp;: <a href="classes/ch-comem-todoapp-TaskManager.html"><abbr title="\ch\comem\todoapp\TaskManager">TaskManager</abbr></a>    </span>
 </dt>
+<dd>Returns an instance of the TaskManager class.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/ch-comem-todoapp-TaskManager.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
+<dd>Constructor for the TaskManager class.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/ch-comem-todoapp-TaskManager.html#method_initTasks">initTasks()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
+<dd>Initializes the tasks.</dd>
 
     </dl>
 
@@ -230,14 +239,15 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/TaskManager.php"><a href="files/app-ch-comem-todoapp-taskmanager.html"><abbr title="app/ch/comem/todoapp/TaskManager.php">TaskManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">This is a static private variable that holds an instance of the TaskManager class.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type"><a href="classes/ch-comem-todoapp-TaskManager.html"><abbr title="\ch\comem\todoapp\TaskManager">TaskManager</abbr></a></span>
     <span class="phpdocumentor-signature__name">$instance</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
@@ -263,19 +273,21 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/TaskManager.php"><a href="files/app-ch-comem-todoapp-taskmanager.html"><abbr title="app/ch/comem/todoapp/TaskManager.php">TaskManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, <a href="classes/ch-comem-todoapp-Task.html"><abbr title="\ch\comem\todoapp\Task">Task</abbr></a>&gt;</span>
     <span class="phpdocumentor-signature__name">$tasks</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
-    
+        <section class="phpdocumentor-description"><p>An array of tasks managed by the TaskManager</p>
+</section>
+
     
 
 </article>
@@ -301,11 +313,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/TaskManager.php"><a href="files/app-ch-comem-todoapp-taskmanager.html"><abbr title="app/ch/comem/todoapp/TaskManager.php">TaskManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Adds a task to the task manager.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">add</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ch-comem-todoapp-Task.html"><abbr title="\ch\comem\todoapp\Task">Task</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$task</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -320,7 +333,9 @@
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ch-comem-todoapp-Task.html"><abbr title="\ch\comem\todoapp\Task">Task</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The task to add.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -342,11 +357,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/TaskManager.php"><a href="files/app-ch-comem-todoapp-taskmanager.html"><abbr title="app/ch/comem/todoapp/TaskManager.php">TaskManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Displays the tasks.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">displayTasks</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -373,11 +389,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/TaskManager.php"><a href="files/app-ch-comem-todoapp-taskmanager.html"><abbr title="app/ch/comem/todoapp/TaskManager.php">TaskManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns an instance of the TaskManager class.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getInstance</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-TaskManager.html"><abbr title="\ch\comem\todoapp\TaskManager">TaskManager</abbr></a></span></code>
@@ -408,20 +425,39 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/TaskManager.php"><a href="files/app-ch-comem-todoapp-taskmanager.html"><abbr title="app/ch/comem/todoapp/TaskManager.php">TaskManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Constructor for the TaskManager class.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
+        <section class="phpdocumentor-description"><p>This method is private to ensure that only one instance of the TaskManager can be created.</p>
+</section>
+
     
     
-    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/ch-comem-todoapp-TaskManager.html#method___construct#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">access</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>private</p>
+</section>
+
+                                    </dd>
+                                            </dl>
 
     
 </article>
@@ -439,11 +475,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/TaskManager.php"><a href="files/app-ch-comem-todoapp-taskmanager.html"><abbr title="app/ch/comem/todoapp/TaskManager.php">TaskManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">76</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Initializes the tasks.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">initTasks</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
