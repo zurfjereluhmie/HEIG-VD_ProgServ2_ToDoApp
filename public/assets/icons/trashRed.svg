@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26.4" height="29" viewBox="0 0 26.4 29">
+  <defs>
+    <style>
+      .z {
+        fill: none;
+        stroke: #dc3545;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g transform="translate(1.5 1.5)">
+    <path class="z" d="M4.5,9H27.9" transform="translate(-4.5 -3.8)"/>
+    <path class="z" d="M25.7,8.2V26.4A2.6,2.6,0,0,1,23.1,29h-13a2.6,2.6,0,0,1-2.6-2.6V8.2m3.9,0V5.6A2.6,2.6,0,0,1,14,3h5.2a2.6,2.6,0,0,1,2.6,2.6V8.2" transform="translate(-4.9 -3)"/>
+  </g>
+</svg>

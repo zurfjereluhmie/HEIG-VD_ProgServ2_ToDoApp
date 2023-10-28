@@ -1,0 +1,91 @@
+/*List*/
+.myListsItem {
+    width: 346px;
+    height: 234px;
+    border-radius: 12px;
+    background: #fff;
+    margin-right: 22px;
+    margin-bottom: 22px;
+    cursor: pointer;
+}
+
+.myListsTitle {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+    color: #707070;
+    margin-left: 15px;
+}
+
+.myListsDate {
+    width: 166px;
+    height: 18px;
+    font-weight: normal;
+    font-size: 15px;
+    text-align: left;
+    color: #bebebe;
+}
+
+.myListsDescritpion {
+    width: 293px;
+    height: 125px;
+    font-weight: normal;
+    font-size: 15px;
+    text-align: left;
+    color: #707070;
+    padding-top: 10px;
+}
+
+.myListsDisplay {
+    margin-bottom: 50px;
+}
+
+.addListsItem {
+    width: 346px;
+    height: 234px;
+    border-radius: 12px;
+    background: #fff;
+    margin-right: 22px;
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.addListsItem:hover {
+    cursor: pointer;
+}
+
+.addListsImg {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+}
+
+@media (max-width: 991px) {
+    .myListsItem {
+        margin-right: 0;
+    }
+
+    .addListsItem {
+        margin-right: 0;
+    }
+
+    .myListsDisplay {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+}
+
+/*End lists*/
+
+
+/*Add List btn animation*/
+.addListsImg:hover {
+    animation: spin .5s ease-in-out;
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}

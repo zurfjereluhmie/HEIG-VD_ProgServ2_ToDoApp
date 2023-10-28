@@ -1,0 +1,73 @@
+body {
+    font-size: .875rem;
+}
+
+.mainFullHeight {
+    min-height: calc(100vh - 60px);
+    margin-left: auto!important;
+}
+
+/*Title page logo*/
+#dashboardTitle::before {
+    content: url("../assets/icons/dashboardBig.svg");
+    margin-right: 10px;
+}
+
+#listsTitle::before {
+    content: url("../assets/icons/listsBig.svg");
+    margin-right: 10px;
+}
+
+#favouritesTitle::before {
+    content: url("../assets/icons/favouriteBig.svg");
+    margin-right: 10px;
+}
+
+#calendarTitle::before {
+    content: url("../assets/icons/calendarBig.svg");
+    margin-right: 10px;
+}
+
+.modifyPenList {
+    margin-right: 10px;
+    color: #BEBEBE;
+    cursor: pointer;
+}
+
+.modifyPenList:hover {
+    color: #707070;
+}
+
+
+
+/*Div color tag*/
+.colorTag {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.BlueTag {
+    background: #497efe;
+}
+
+.RedTag {
+    background: #dc3545;
+}
+
+.GreenTag {
+    background: #28a745;
+}
+
+.YellowTag {
+    background: #ffc107;
+}
+
+/*Filtre*/
+.filtre input:not(:first-of-type) {
+    margin-left: 15px;
+}
+
+.filtre label {
+    color: #7E7E7E;
+}

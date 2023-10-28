@@ -1,0 +1,110 @@
+.containerCheckBox {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    margin-top: 7px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.containerCheckBox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 29px;
+    width: 29px;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.containerCheckBox input:checked~.checkmark:after {
+    display: block;
+}
+
+.containerCheckBox .checkmark:after {
+    left: 33%;
+    top: 15%;
+    width: 10px;
+    height: 15px;
+    border: solid white;
+    border-width: 0 4.5px 4.5px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/*Créé en php en fct de la DB plus tard*/
+/*Blue Style*/
+.BlueCheckBoxSpan {
+    background-color: #497efe3b;
+    border-radius: 6px;
+    border: 1px solid #497efe;
+}
+
+.containerCheckBox:hover .BlueCheckBox~.checkmark {
+    background-color: #497efea8;
+}
+
+.containerCheckBox .BlueCheckBox:checked~.checkmark {
+    background-color: #497efe;
+}
+
+/*Red Style*/
+.RedCheckBoxSpan {
+    background-color: #dc35453b;
+    border-radius: 6px;
+    border: 1px solid #dc3545;
+}
+
+.containerCheckBox:hover .RedCheckBox~.checkmark {
+    background-color: #dc3545a8;
+}
+
+.containerCheckBox .RedCheckBox:checked~.checkmark {
+    background-color: #dc3545;
+}
+
+/*Green Style*/
+.GreenCheckBoxSpan {
+    background-color: #28a7453b;
+    border-radius: 6px;
+    border: 1px solid #28a745;
+}
+
+.containerCheckBox:hover .GreenCheckBox~.checkmark {
+    background-color: #28a745a8;
+}
+
+.containerCheckBox .GreenCheckBox:checked~.checkmark {
+    background-color: #28a745;
+}
+
+/*Yellow Style*/
+.YellowCheckBoxSpan {
+    background-color: #ffc1073b;
+    border-radius: 6px;
+    border: 1px solid #ffc107;
+}
+
+.containerCheckBox:hover .YellowCheckBox~.checkmark {
+    background-color: #ffc107a8;
+}
+
+.containerCheckBox .YellowCheckBox:checked~.checkmark {
+    background-color: #ffc107;
+}

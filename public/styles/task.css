@@ -1,0 +1,112 @@
+.todoElt {
+    width: 568px;
+    height: auto;
+    min-height: 350px;
+    border-radius: 12px;
+    background: #fff;
+    margin-right: 22px;
+    margin-bottom: 22px;
+}
+
+.toDoTitle {
+    font-weight: bold;
+    font-size: 15px;
+    text-align: left;
+    color: #707070;
+}
+
+.task {
+    width: auto;
+    height: 57px;
+    border-radius: 15px;
+    background: #fbfcff;
+    border: 1px solid #aeaeac;
+    margin-top: 10px;
+}
+
+.task:hover {
+    cursor: pointer;
+}
+
+.taskCheckBox {
+    width: 29px;
+    height: 29px;
+    border-radius: 6px;
+    background: #fbfcff;
+    /* border: 1px solid #aeaeac; */
+    margin-left: 15px;
+}
+
+.taskTitle {
+    font-weight: 600;
+    font-size: 15px;
+    text-align: left;
+    color: #707070;
+    margin-left: 1.5vw;
+    margin-top: 12px;
+}
+
+.taskDelai {
+    font-weight: normal;
+    font-size: 15px;
+    text-align: left;
+    color: #707070;
+    margin-right: 3vw;
+    margin-top: 2px;
+}
+
+.taskStar {
+    margin-right: 15px;
+}
+
+.flexEnd {
+    margin-top: 12px;
+    margin-left: auto;
+    padding-right: 15px;
+}
+
+.taskContainer {
+    margin-top: 10px;
+}
+
+.doneTaskContainer {
+    border: 1px solid #28A745;
+    display: none;
+}
+
+.lateTaskContainer {
+    border: 1px solid #DC3545;
+    display: none;
+}
+
+@media (max-width: 1420px) {
+    .todoElt {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .taskStar,
+    .taskTrash {
+        display: none;
+    }
+
+    .taskDelai {
+        margin-left: auto;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .flexEnd,
+    .taskDelai {
+        display: none !important;
+    }
+
+    .taskTitle {
+        margin-left: auto;
+        padding-right: 15px;
+    }
+}

@@ -1,0 +1,14 @@
+.dasboardMyListsDisplay {
+    margin-bottom: 50px;
+}
+
+@media (max-width: 991px) {
+    .myListsItem {
+        margin-right: 0;
+    }
+
+    .dasboardMyListsDisplay {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+}
