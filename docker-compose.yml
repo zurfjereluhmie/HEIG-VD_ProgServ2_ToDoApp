@@ -7,6 +7,7 @@ services:
     volumes:
       - ./config:/var/config # config
       - ./public:/var/www/html # public
+      - ./app:/var/www/app # app
       - ./database:/var/www/database # database
       - ./vendor:/var/www/vendor # vendor
     environment:
