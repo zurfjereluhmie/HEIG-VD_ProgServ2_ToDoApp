@@ -9,3 +9,5 @@
 ### Env
 .env
 
+### PHPDoc
+.phpdoc
