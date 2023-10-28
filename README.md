@@ -7,6 +7,8 @@ The application will allow users to perform CRUD (Create, Read, Update, Delete) 
 ## Table of Contents
 
 - [Technologies](#Technologies)
+- [Scripts](#Scripts)
+  - [Generate the documentation](#Generate-the-documentation)
 
 ## Technologies
 
@@ -16,3 +18,13 @@ The application will allow users to perform CRUD (Create, Read, Update, Delete) 
 - [PHP](https://www.php.net/)
 - [SQLite](https://www.sqlite.org/index.html)
 - [MailHog](https://github.com/mailhog/MailHog)
+
+## Scripts
+
+### Generate the documentation
+
+You can generate/update the documentation who will be stored in the folder `docs` simply by running the following command in the root of the project:
+
+```bash
+sh generate_doc.sh
+```
