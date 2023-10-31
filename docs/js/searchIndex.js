@@ -41,6 +41,16 @@ Search.appendIndex(
             "summary": "Sets\u0020the\u0020ID\u0020of\u0020the\u0020user.\u0020Should\u0020only\u0020be\u0020used\u0020when\u0020retrieving\u0020the\u0020user\u0020from\u0020the\u0020database.",
             "url": "classes/ch-comem-todoapp-auth-User.html#method_setId"
         },                {
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AsetPassword\u0028\u0029",
+            "name": "setPassword",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-auth-User.html#method_setPassword"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AresetPassword\u0028\u0029",
+            "name": "resetPassword",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-auth-User.html#method_resetPassword"
+        },                {
             "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
@@ -136,6 +146,11 @@ Search.appendIndex(
             "summary": "Reads\u0020a\u0020user\u0020from\u0020the\u0020database\u0020using\u0020their\u0020email\u0020address.",
             "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-User.html#method_readUsingEmail"
         },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_User\u003A\u003AreadUsingPWToken\u0028\u0029",
+            "name": "readUsingPWToken",
+            "summary": "Reads\u0020a\u0020user\u0020from\u0020the\u0020database\u0020using\u0020a\u0020password\u0020reset\u0020token.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-User.html#method_readUsingPWToken"
+        },                {
             "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_User\u003A\u003Aupdate\u0028\u0029",
             "name": "update",
             "summary": "Updates\u0020an\u0020record\u0020in\u0020the\u0020database\u0020based\u0020on\u0020its\u0020database\u0020ID.",
@@ -145,6 +160,11 @@ Search.appendIndex(
             "name": "delete",
             "summary": "Deletes\u0020a\u0020record\u0020from\u0020the\u0020database\u0020based\u0020on\u0020its\u0020ID.",
             "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-User.html#method_delete"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_User\u003A\u003AcreateUser\u0028\u0029",
+            "name": "createUser",
+            "summary": "Creates\u0020a\u0020new\u0020user\u0020from\u0020the\u0020given\u0020associative\u0020array.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-User.html#method_createUser"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_User\u003A\u003A\u0024instance",
             "name": "instance",
@@ -175,6 +195,56 @@ Search.appendIndex(
             "name": "delete",
             "summary": "Deletes\u0020a\u0020record\u0020from\u0020the\u0020database\u0020based\u0020on\u0020its\u0020ID.",
             "url": "classes/ch-comem-todoapp-dbCRUD-I-APICRUD.html#method_delete"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\flash\\Flash",
+            "name": "Flash",
+            "summary": "This\u0020class\u0020represents\u0020a\u0020flash\u0020message.\u0020It\u0020can\u0020be\u0020used\u0020to\u0020display\u0020a\u0020message\u0020to\u0020the\u0020user\u0020on\u0020the\u0020next\u0020page\u0020load.",
+            "url": "classes/ch-comem-todoapp-flash-Flash.html"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\flash\\Flash\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Flash\u0020constructor.",
+            "url": "classes/ch-comem-todoapp-flash-Flash.html#method___construct"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\flash\\Flash\u003A\u003AsetToSession\u0028\u0029",
+            "name": "setToSession",
+            "summary": "Sets\u0020the\u0020flash\u0020message\u0020to\u0020the\u0020session.\u0020If\u0020a\u0020flash\u0020message\u0020with\u0020the\u0020same\u0020name\u0020already\u0020exists,\u0020it\u0020is\u0020overwritten.",
+            "url": "classes/ch-comem-todoapp-flash-Flash.html#method_setToSession"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\flash\\Flash\u003A\u003AformatMessage\u0028\u0029",
+            "name": "formatMessage",
+            "summary": "Formats\u0020the\u0020message\u0020of\u0020a\u0020flash\u0020message.\u0020It\u0020is\u0020formatted\u0020as\u0020a\u0020bootstrap\u0020alert.",
+            "url": "classes/ch-comem-todoapp-flash-Flash.html#method_formatMessage"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\flash\\Flash\u003A\u003AdisplayFlashMessage\u0028\u0029",
+            "name": "displayFlashMessage",
+            "summary": "Displays\u0020a\u0020flash\u0020message\u0020with\u0020the\u0020given\u0020name.",
+            "url": "classes/ch-comem-todoapp-flash-Flash.html#method_displayFlashMessage"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\flash\\Flash\u003A\u003AdisplayAllFlashMessages\u0028\u0029",
+            "name": "displayAllFlashMessages",
+            "summary": "Displays\u0020all\u0020flash\u0020messages\u0020stored\u0020in\u0020the\u0020session.",
+            "url": "classes/ch-comem-todoapp-flash-Flash.html#method_displayAllFlashMessages"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\flash\\Flash\u003A\u003A\u0024TYPES",
+            "name": "TYPES",
+            "summary": "An\u0020array\u0020of\u0020strings\u0020representing\u0020the\u0020types\u0020of\u0020flash\u0020messages\u0020that\u0020can\u0020be\u0020displayed.",
+            "url": "classes/ch-comem-todoapp-flash-Flash.html#property_TYPES"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\flash\\Flash\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-flash-Flash.html#property_name"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\flash\\Flash\u003A\u003A\u0024message",
+            "name": "message",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-flash-Flash.html#property_message"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\flash\\Flash\u003A\u003A\u0024type",
+            "name": "type",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-flash-Flash.html#property_type"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\tasks\\Task",
             "name": "Task",
@@ -295,6 +365,11 @@ Search.appendIndex(
             "name": "dbCRUD",
             "summary": "",
             "url": "namespaces/ch-comem-todoapp-dbcrud.html"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\flash",
+            "name": "flash",
+            "summary": "",
+            "url": "namespaces/ch-comem-todoapp-flash.html"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\tasks",
             "name": "tasks",
