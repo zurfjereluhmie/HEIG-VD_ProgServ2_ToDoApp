@@ -71,24 +71,48 @@ if (isset($_POST['submit'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" data-lt-installed="true">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset Password</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ToDoApp - Login</title>
+
+    <!-- CSS Lib -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- CSS Custom -->
+    <link href="styles/password-reset.css" rel="stylesheet">
+
+    <!-- icon -->
+    <link rel="icon" href="assets/icons/logo.svg">
+
+
 </head>
 
-<body>
-    <?= Flash::displayFlashMessage('reset-password') ?>
-    <form action="<?= $_SERVER["PHP_SELF"] ?>" method="post">
-        <label for="password">Nouveau mot de passe</label>
-        <input type="password" name="password" id="password">
-        <label for="password2">Confirmer le nouveau mot de passe</label>
-        <input type="password" name="password2" id="password2">
-        <input type="hidden" name="token" value="<?= $token ?>">
-        <input type="submit" value="Envoyer" name="submit">
+<body class="d-flex justify-content-center align-items-center">
+
+    <form class="form-PW-reset" method="post" action="<?= $_SERVER["PHP_SELF"] ?>">
+        <?= Flash::displayFlashMessage('reset-password') ?>
+        <div class="d-flex flex-column justify-content-center align-items-center PW-reset-card">
+
+            <img class="" src="assets/icons/logo.svg" alt="" width="72" height="auto">
+
+            <label for="password">New password</label>
+            <input type="password" name="password" class="formInput" id="password" autofocus required>
+
+            <label for="password2">Confirm</label>
+            <input type="password" name="password2" class="formInput" id="password2" required>
+
+            <input type="hidden" name="token" value="<?= $token ?>">
+
+            <button class="btn-lgb btn-block" type="submit" name="submit">Submit</button>
+        </div>
     </form>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
