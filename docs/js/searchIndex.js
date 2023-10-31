@@ -43,12 +43,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AsetPassword\u0028\u0029",
             "name": "setPassword",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020password\u0020for\u0020the\u0020user.",
             "url": "classes/ch-comem-todoapp-auth-User.html#method_setPassword"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AresetPassword\u0028\u0029",
             "name": "resetPassword",
-            "summary": "",
+            "summary": "Create\u0020a\u0020token\u0020to\u0020reset\u0020the\u0020user\u0027s\u0020password\u0020and\u0020send\u0020it\u0020to\u0020them\u0020by\u0020email.",
             "url": "classes/ch-comem-todoapp-auth-User.html#method_resetPassword"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003A\u0024id",

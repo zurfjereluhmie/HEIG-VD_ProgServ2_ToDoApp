@@ -249,6 +249,7 @@
     <span>
                                 &nbsp;: bool    </span>
 </dt>
+<dd>Create a token to reset the user&#039;s password and send it to them by email.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-auth-User.html#method_setId">setId()</a>
@@ -262,6 +263,7 @@
     <span>
                                 &nbsp;: void    </span>
 </dt>
+<dd>Sets the password for the user.</dd>
 
     </dl>
 
@@ -754,11 +756,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/auth/User.php"><a href="files/app-ch-comem-todoapp-auth-user.html"><abbr title="app/ch/comem/todoapp/auth/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">134</span>
+    <span class="phpdocumentor-element-found-in__line">145</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Create a token to reset the user&#039;s password and send it to them by email.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">resetPassword</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
@@ -772,6 +775,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>True if the token and email were sent successfully, false otherwise.</p>
+</section>
+
             </section>
 
 </article>
@@ -833,11 +840,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/auth/User.php"><a href="files/app-ch-comem-todoapp-auth-user.html"><abbr title="app/ch/comem/todoapp/auth/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">126</span>
+    <span class="phpdocumentor-element-found-in__line">132</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Sets the password for the user.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setPassword</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$password</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -852,7 +860,9 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The password to set.</p>
+</section>
+
             </dd>
             </dl>
 
