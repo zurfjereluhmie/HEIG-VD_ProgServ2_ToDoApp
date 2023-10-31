@@ -123,6 +123,12 @@ class User
         $this->id = $id;
     }
 
+    /**
+     * Sets the password for the user.
+     *
+     * @param string $password The password to set.
+     * @return void
+     */
     public function setPassword(string $password): void
     {
         if (!$password || !is_string($password)) throw new Exception('Password must be defined and of type string');
@@ -131,6 +137,11 @@ class User
         $this->password = $password;
     }
 
+    /**
+     * Create a token to reset the user's password and send it to them by email.
+     *
+     * @return bool True if the token and email were sent successfully, false otherwise.
+     */
     public function resetPassword(): bool
     {
         if ($this->getId() === null) throw new Exception('User must be saved in the database before resetting password');
@@ -143,13 +154,14 @@ class User
 
         $sql = "UPDATE User SET password_token = :password_token, password_token_expire = :password_token_expire WHERE id = :id";
         $stmt = DbManagerCRUD_User::getInstance()->getDb()->prepare($sql);
-        $stmt->execute([
+        $result = $stmt->execute([
             ':password_token' => $resertPasswordToken,
             ':password_token_expire' => $timestamp,
             ':id' => $this->getId()
         ]);
 
-        // @TODO: Send email to user with link to reset password
+        if (!$result) return false;
+
         $result = false;
         $transport = Transport::fromDsn('smtp://host.docker.internal:1025');
         $mailer = new Mailer($transport);
@@ -158,7 +170,7 @@ class User
             ->to($this->getEmail())
             ->subject('Reset password procedure')
             ->text('Please click on the following link to reset your password: http://localhost/reset-password.php?token=' . $resertPasswordToken)
-            ->html('<h1>Reset password procedure</h1><p>Please click on the following link to reset your password: <a href="http://localhost/reset-password.php?token=' . $resertPasswordToken . '">Reset password</a></p>');
+            ->html('<h1>Reset password procedure</h1><p>Please click on the following link to reset your password: <a href="http://localhost/reset-password.php?token=' . $resertPasswordToken . '">Reset password</a></p><br><p>Note: this link will expire in 1 hour.</p>');
         try {
             $mailer->send($email);
             $result = true;
