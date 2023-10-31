@@ -52,7 +52,7 @@ class DbManagerCRUD_User extends DbManagerCRUD
         $user = $stmt->fetch();
         if (!$user) return null;
 
-        return new User($user['email'], $user['password'], $user['firstname'], $user['lastname'], $user['id']);
+        return $this->createUser($user);
     }
 
     /**
@@ -70,7 +70,7 @@ class DbManagerCRUD_User extends DbManagerCRUD
         $user = $stmt->fetch();
         if (!$user) return null;
 
-        return new User($user['email'], $user['password'], $user['firstname'], $user['lastname'], $user['id']);
+        return $this->createUser($user);
     }
 
     public function update(int $id, object $user): bool
@@ -83,5 +83,16 @@ class DbManagerCRUD_User extends DbManagerCRUD
         $sql = "DELETE FROM user WHERE id = :id;";
         $stmt = $this->getDb()->prepare($sql);
         return $stmt->execute([':id' => $id]);
+    }
+
+    /**
+     * Creates a new user from the given associative array.
+     *
+     * @param array $user An associative array containing the user's information.
+     * @return User The newly created user object.
+     */
+    private function createUser($user): User
+    {
+        return new User($user['email'], $user['password'], $user['firstname'], $user['lastname'], $user['id']);
     }
 }
