@@ -1,100 +1,280 @@
 Search.appendIndex(
     [
                 {
-            "fqsen": "\\ch\\comem\\todoapp\\Task",
-            "name": "Task",
-            "summary": "Represents\u0020a\u0020task\u0020in\u0020the\u0020Todo\u0020app.",
-            "url": "classes/ch-comem-todoapp-Task.html"
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User",
+            "name": "User",
+            "summary": "Represents\u0020a\u0020user\u0020in\u0020the\u0020Todo\u0020app.",
+            "url": "classes/ch-comem-todoapp-auth-User.html"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\Task\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Task\u0020constructor.",
-            "url": "classes/ch-comem-todoapp-Task.html#method___construct"
+            "summary": "User\u0020constructor.",
+            "url": "classes/ch-comem-todoapp-auth-User.html#method___construct"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\Task\u003A\u003AgetId\u0028\u0029",
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AgetId\u0028\u0029",
             "name": "getId",
-            "summary": "Get\u0020the\u0020ID\u0020of\u0020the\u0020task.",
-            "url": "classes/ch-comem-todoapp-Task.html#method_getId"
+            "summary": "Get\u0020the\u0020id\u0020of\u0020the\u0020user.\u0020If\u0020the\u0020user\u0020has\u0020not\u0020been\u0020saved\u0020in\u0020the\u0020database\u0020yet,\u0020the\u0020id\u0020will\u0020be\u0020null.",
+            "url": "classes/ch-comem-todoapp-auth-User.html#method_getId"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\Task\u003A\u003AgetTitle\u0028\u0029",
-            "name": "getTitle",
-            "summary": "Returns\u0020the\u0020title\u0020of\u0020the\u0020task.",
-            "url": "classes/ch-comem-todoapp-Task.html#method_getTitle"
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AgetEmail\u0028\u0029",
+            "name": "getEmail",
+            "summary": "Get\u0020the\u0020email\u0020of\u0020the\u0020user.",
+            "url": "classes/ch-comem-todoapp-auth-User.html#method_getEmail"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\Task\u003A\u003AgetDescription\u0028\u0029",
-            "name": "getDescription",
-            "summary": "Returns\u0020the\u0020description\u0020of\u0020the\u0020task.",
-            "url": "classes/ch-comem-todoapp-Task.html#method_getDescription"
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AgetPassword\u0028\u0029",
+            "name": "getPassword",
+            "summary": "Get\u0020the\u0020password\u0020of\u0020the\u0020user.",
+            "url": "classes/ch-comem-todoapp-auth-User.html#method_getPassword"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\Task\u003A\u003A\u0024isDone",
-            "name": "isDone",
-            "summary": "",
-            "url": "classes/ch-comem-todoapp-Task.html#property_isDone"
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AgetFirstName\u0028\u0029",
+            "name": "getFirstName",
+            "summary": "Get\u0020the\u0020first\u0020name\u0020of\u0020the\u0020user.",
+            "url": "classes/ch-comem-todoapp-auth-User.html#method_getFirstName"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\Task\u003A\u003A\u0024counter",
-            "name": "counter",
-            "summary": "",
-            "url": "classes/ch-comem-todoapp-Task.html#property_counter"
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AgetLastName\u0028\u0029",
+            "name": "getLastName",
+            "summary": "Get\u0020the\u0020last\u0020name\u0020of\u0020the\u0020user.",
+            "url": "classes/ch-comem-todoapp-auth-User.html#method_getLastName"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\Task\u003A\u003A\u0024id",
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AsetId\u0028\u0029",
+            "name": "setId",
+            "summary": "Sets\u0020the\u0020ID\u0020of\u0020the\u0020user.\u0020Should\u0020only\u0020be\u0020used\u0020when\u0020retrieving\u0020the\u0020user\u0020from\u0020the\u0020database.",
+            "url": "classes/ch-comem-todoapp-auth-User.html#method_setId"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
-            "url": "classes/ch-comem-todoapp-Task.html#property_id"
+            "url": "classes/ch-comem-todoapp-auth-User.html#property_id"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\Task\u003A\u003A\u0024title",
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003A\u0024email",
+            "name": "email",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-auth-User.html#property_email"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003A\u0024password",
+            "name": "password",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-auth-User.html#property_password"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003A\u0024firstName",
+            "name": "firstName",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-auth-User.html#property_firstName"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003A\u0024lastName",
+            "name": "lastName",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-auth-User.html#property_lastName"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD",
+            "name": "DbManagerCRUD",
+            "summary": "This\u0020abstract\u0020class\u0020represents\u0020a\u0020CRUD\u0020manager\u0020for\u0020a\u0020database.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD.html"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD.html#method___construct"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD\u003A\u003AgetDb\u0028\u0029",
+            "name": "getDb",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD.html#method_getDb"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Creates\u0020a\u0020new\u0020record\u0020in\u0020the\u0020database.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD.html#method_create"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD\u003A\u003Aread\u0028\u0029",
+            "name": "read",
+            "summary": "Reads\u0020a\u0020single\u0020record\u0020from\u0020the\u0020database\u0020based\u0020on\u0020its\u0020ID.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD.html#method_read"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "Updates\u0020an\u0020record\u0020in\u0020the\u0020database\u0020based\u0020on\u0020its\u0020database\u0020ID.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD.html#method_update"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Deletes\u0020a\u0020record\u0020from\u0020the\u0020database\u0020based\u0020on\u0020its\u0020ID.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD.html#method_delete"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD\u003A\u003A\u0024db",
+            "name": "db",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD.html#property_db"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_User",
+            "name": "DbManagerCRUD_User",
+            "summary": "This\u0020class\u0020extends\u0020the\u0020DbManagerCRUD\u0020class\u0020and\u0020is\u0020used\u0020for\u0020CRUD\u0020operations\u0020on\u0020the\u0020User\u0020table\u0020in\u0020the\u0020database.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-User.html"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_User\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-User.html#method___construct"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_User\u003A\u003AgetInstance\u0028\u0029",
+            "name": "getInstance",
+            "summary": "Returns\u0020an\u0020instance\u0020of\u0020the\u0020DbManagerCRUD_User\u0020class.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-User.html#method_getInstance"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_User\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Creates\u0020a\u0020new\u0020record\u0020in\u0020the\u0020database.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-User.html#method_create"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_User\u003A\u003Aread\u0028\u0029",
+            "name": "read",
+            "summary": "Reads\u0020a\u0020single\u0020record\u0020from\u0020the\u0020database\u0020based\u0020on\u0020its\u0020ID.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-User.html#method_read"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_User\u003A\u003AreadUsingEmail\u0028\u0029",
+            "name": "readUsingEmail",
+            "summary": "Reads\u0020a\u0020user\u0020from\u0020the\u0020database\u0020using\u0020their\u0020email\u0020address.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-User.html#method_readUsingEmail"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_User\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "Updates\u0020an\u0020record\u0020in\u0020the\u0020database\u0020based\u0020on\u0020its\u0020database\u0020ID.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-User.html#method_update"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_User\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Deletes\u0020a\u0020record\u0020from\u0020the\u0020database\u0020based\u0020on\u0020its\u0020ID.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-User.html#method_delete"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_User\u003A\u003A\u0024instance",
+            "name": "instance",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-User.html#property_instance"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\I_APICRUD",
+            "name": "I_APICRUD",
+            "summary": "Interface\u0020for\u0020API\u0020CRUD\u0020operations.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-I-APICRUD.html"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\I_APICRUD\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Creates\u0020a\u0020new\u0020record\u0020in\u0020the\u0020database.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-I-APICRUD.html#method_create"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\I_APICRUD\u003A\u003Aread\u0028\u0029",
+            "name": "read",
+            "summary": "Reads\u0020a\u0020single\u0020record\u0020from\u0020the\u0020database\u0020based\u0020on\u0020its\u0020ID.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-I-APICRUD.html#method_read"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\I_APICRUD\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "Updates\u0020an\u0020record\u0020in\u0020the\u0020database\u0020based\u0020on\u0020its\u0020database\u0020ID.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-I-APICRUD.html#method_update"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\I_APICRUD\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Deletes\u0020a\u0020record\u0020from\u0020the\u0020database\u0020based\u0020on\u0020its\u0020ID.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-I-APICRUD.html#method_delete"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\Task",
+            "name": "Task",
+            "summary": "Represents\u0020a\u0020task\u0020in\u0020the\u0020Todo\u0020app.",
+            "url": "classes/ch-comem-todoapp-tasks-Task.html"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\Task\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Task\u0020constructor.",
+            "url": "classes/ch-comem-todoapp-tasks-Task.html#method___construct"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\Task\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "Get\u0020the\u0020ID\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-tasks-Task.html#method_getId"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\Task\u003A\u003AgetTitle\u0028\u0029",
+            "name": "getTitle",
+            "summary": "Returns\u0020the\u0020title\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-tasks-Task.html#method_getTitle"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\Task\u003A\u003AgetDescription\u0028\u0029",
+            "name": "getDescription",
+            "summary": "Returns\u0020the\u0020description\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-tasks-Task.html#method_getDescription"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\Task\u003A\u003A\u0024isDone",
+            "name": "isDone",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-tasks-Task.html#property_isDone"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\Task\u003A\u003A\u0024counter",
+            "name": "counter",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-tasks-Task.html#property_counter"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\Task\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-tasks-Task.html#property_id"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\Task\u003A\u003A\u0024title",
             "name": "title",
             "summary": "",
-            "url": "classes/ch-comem-todoapp-Task.html#property_title"
+            "url": "classes/ch-comem-todoapp-tasks-Task.html#property_title"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\Task\u003A\u003A\u0024description",
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\Task\u003A\u003A\u0024description",
             "name": "description",
             "summary": "",
-            "url": "classes/ch-comem-todoapp-Task.html#property_description"
+            "url": "classes/ch-comem-todoapp-tasks-Task.html#property_description"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\TaskManager",
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\TaskManager",
             "name": "TaskManager",
             "summary": "This\u0020class\u0020manages\u0020tasks\u0020for\u0020the\u0020Todo\u0020app.",
-            "url": "classes/ch-comem-todoapp-TaskManager.html"
+            "url": "classes/ch-comem-todoapp-tasks-TaskManager.html"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\TaskManager\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\TaskManager\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "Constructor\u0020for\u0020the\u0020TaskManager\u0020class.",
-            "url": "classes/ch-comem-todoapp-TaskManager.html#method___construct"
+            "url": "classes/ch-comem-todoapp-tasks-TaskManager.html#method___construct"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\TaskManager\u003A\u003AgetInstance\u0028\u0029",
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\TaskManager\u003A\u003AgetInstance\u0028\u0029",
             "name": "getInstance",
             "summary": "Returns\u0020an\u0020instance\u0020of\u0020the\u0020TaskManager\u0020class.",
-            "url": "classes/ch-comem-todoapp-TaskManager.html#method_getInstance"
+            "url": "classes/ch-comem-todoapp-tasks-TaskManager.html#method_getInstance"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\TaskManager\u003A\u003Aadd\u0028\u0029",
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\TaskManager\u003A\u003Aadd\u0028\u0029",
             "name": "add",
             "summary": "Adds\u0020a\u0020task\u0020to\u0020the\u0020task\u0020manager.",
-            "url": "classes/ch-comem-todoapp-TaskManager.html#method_add"
+            "url": "classes/ch-comem-todoapp-tasks-TaskManager.html#method_add"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\TaskManager\u003A\u003AdisplayTasks\u0028\u0029",
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\TaskManager\u003A\u003AdisplayTasks\u0028\u0029",
             "name": "displayTasks",
             "summary": "Displays\u0020the\u0020tasks.",
-            "url": "classes/ch-comem-todoapp-TaskManager.html#method_displayTasks"
+            "url": "classes/ch-comem-todoapp-tasks-TaskManager.html#method_displayTasks"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\TaskManager\u003A\u003AinitTasks\u0028\u0029",
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\TaskManager\u003A\u003AinitTasks\u0028\u0029",
             "name": "initTasks",
             "summary": "Initializes\u0020the\u0020tasks.",
-            "url": "classes/ch-comem-todoapp-TaskManager.html#method_initTasks"
+            "url": "classes/ch-comem-todoapp-tasks-TaskManager.html#method_initTasks"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\TaskManager\u003A\u003A\u0024instance",
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\TaskManager\u003A\u003A\u0024instance",
             "name": "instance",
             "summary": "This\u0020is\u0020a\u0020static\u0020private\u0020variable\u0020that\u0020holds\u0020an\u0020instance\u0020of\u0020the\u0020TaskManager\u0020class.",
-            "url": "classes/ch-comem-todoapp-TaskManager.html#property_instance"
+            "url": "classes/ch-comem-todoapp-tasks-TaskManager.html#property_instance"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\TaskManager\u003A\u003A\u0024tasks",
+            "fqsen": "\\ch\\comem\\todoapp\\tasks\\TaskManager\u003A\u003A\u0024tasks",
             "name": "tasks",
             "summary": "",
-            "url": "classes/ch-comem-todoapp-TaskManager.html#property_tasks"
+            "url": "classes/ch-comem-todoapp-tasks-TaskManager.html#property_tasks"
         },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
             "url": "namespaces/default.html"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\auth",
+            "name": "auth",
+            "summary": "",
+            "url": "namespaces/ch-comem-todoapp-auth.html"
         },                {
             "fqsen": "\\ch\\comem\\todoapp",
             "name": "todoapp",
@@ -110,5 +290,15 @@ Search.appendIndex(
             "name": "ch",
             "summary": "",
             "url": "namespaces/ch.html"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD",
+            "name": "dbCRUD",
+            "summary": "",
+            "url": "namespaces/ch-comem-todoapp-dbcrud.html"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\tasks",
+            "name": "tasks",
+            "summary": "",
+            "url": "namespaces/ch-comem-todoapp-tasks.html"
         }            ]
 );
