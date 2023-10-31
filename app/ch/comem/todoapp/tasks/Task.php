@@ -9,7 +9,7 @@ use Exception;
  * 
  * @package ch\comem\todoapp\tasks
  */
-final class Task
+class Task
 {
     /**
      * @var int $counter A static counter used to keep track of the number of tasks created.

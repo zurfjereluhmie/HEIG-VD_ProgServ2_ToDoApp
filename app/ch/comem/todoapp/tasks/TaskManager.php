@@ -10,7 +10,7 @@ use Exception;
  * 
  * @package ch\comem\todoapp\tasks
  */
-final class TaskManager
+class TaskManager
 {
     /**
      * This is a static private variable that holds an instance of the TaskManager class.

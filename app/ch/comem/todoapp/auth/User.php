@@ -16,7 +16,7 @@ use Exception;
  * 
  * @package ch\comem\todoapp\auth
  */
-final class User
+class User
 {
     /**
      * @var int $id The user's unique identifier.
