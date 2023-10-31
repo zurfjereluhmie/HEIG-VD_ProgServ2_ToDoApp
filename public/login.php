@@ -1,4 +1,9 @@
 <?php
+session_start();
+
+if (isset($_SESSION["user"])) {
+    header("Location: dashboard.php");
+}
 
 use ch\comem\todoapp\dbCRUD\DbManagerCRUD_User;
 
@@ -26,7 +31,7 @@ if (isset($_POST["login"])) {
     }
 
 
-    session_start();
+
     $_SESSION["user"] = [
         "id" => $user->getId(),
         "email" => $user->getEmail(),
