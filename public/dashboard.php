@@ -1,11 +1,13 @@
 <?php
-session_start();
-require_once("../app/autoload.php");
 
+use ch\comem\todoapp\flash\Flash;
 use ch\comem\todoapp\tasks\Task;
 use ch\comem\todoapp\tasks\TaskManager;
 use ch\comem\todoapp\auth\User;
 use ch\comem\todoapp\dbCRUD\DbManagerCRUD_User;
+
+session_start();
+require_once("../app/autoload.php");
 
 $database = DbManagerCRUD_User::getInstance();
 
@@ -19,6 +21,19 @@ echo "</pre>";
 
 
 
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
+$flash = new Flash("test", "test", "success");
+new Flash("test1", "test1", "danger");
+
+Flash::displayFlashMessage("test");
+
+
+echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "<pre>";
