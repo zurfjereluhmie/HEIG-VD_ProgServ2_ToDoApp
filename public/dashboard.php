@@ -23,6 +23,7 @@ echo "</pre>";
 
 echo "<br>";
 echo "<br>";
+echo "<a href='logout.php'>Logout</a>";
 echo "<br>";
 echo "<br>";
 echo "<br>";
@@ -30,7 +31,7 @@ echo "<br>";
 $flash = new Flash("test", "test", "success");
 new Flash("test1", "test1", "danger");
 
-Flash::displayFlashMessage("test");
+Flash::displayAllFlashMessages();
 
 
 echo "<br>";
