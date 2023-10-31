@@ -5,5 +5,8 @@
  */
 spl_autoload_register(function ($class) {
     $class = str_replace("\\", "/", $class);
-    require_once(__DIR__ . "/../app/" . $class . ".php");
+    $path = __DIR__ . "/../app/" . $class . ".php";
+    if (file_exists($path)) {
+        require_once($path);
+    }
 });
