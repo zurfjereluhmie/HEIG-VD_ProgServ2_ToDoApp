@@ -3,6 +3,7 @@
 require_once '../app/autoload.php';
 
 use ch\comem\todoapp\dbCRUD\DbManagerCRUD_User;
+use ch\comem\todoapp\flash\Flash;
 
 session_start();
 
@@ -10,37 +11,35 @@ $token = htmlspecialchars($_GET['token'] ?? '');
 
 if (isset($_POST['submit'])) {
 
-    echo "<pre>";
-    print_r($_SESSION);
-    echo "</pre>";
-
     $tokenTroughPOST = htmlspecialchars($_POST['token'] ?? '');
     $password = htmlspecialchars($_POST['password'] ?? '');
     $password2 = htmlspecialchars($_POST['password2'] ?? '');
 
     if (!$tokenTroughPOST) {
-        echo "Token invalide";
-        exit();
+        new Flash('reset-password', 'No token provided', 'danger');
+        header('Location: ' . $_SERVER['PHP_SELF'] . '?token=' . $token);
+        die();
     }
 
     if (!$password || !$password2) {
-        echo "Veuillez remplir tous les champs";
-        exit();
+        new Flash('reset-password', 'Fill all the forms fields', 'danger');
+        header('Location: ' . $_SERVER['PHP_SELF'] . '?token=' . $tokenTroughPOST);
+        die();
     }
 
     if ($password !== $password2) {
-        echo "Les mots de passe ne correspondent pas";
-        exit();
+        new Flash('reset-password', 'Passwords do not match', 'danger');
+        header('Location: ' . $_SERVER['PHP_SELF'] . '?token=' . $tokenTroughPOST);
+        die();
     }
 
-    require_once '../vendor/autoload.php';
     $dbManagerUser = DbManagerCRUD_User::getInstance();
 
     $user = $dbManagerUser->readUsingPWToken($tokenTroughPOST);
 
     if (!$user) {
-        echo "Token invalide";
-        exit();
+        new Flash('reset-password', 'Token invalid', 'danger');
+        header('Location: ' . $_SERVER['PHP_SELF'] . '?token=' . $tokenTroughPOST);
     }
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -52,8 +51,9 @@ if (isset($_POST['submit'])) {
     $newUser = $dbManagerUser->update($user->getId(), $user);
 
     if (!$newUser) {
-        echo "Erreur lors de la mise à jour du mot de passe";
-        exit();
+        new Flash('reset-password', 'Error while updating the password', 'danger');
+        header('Location: ' . $_SERVER['PHP_SELF'] . '?token=' . $tokenTroughPOST);
+        die();
     }
 
     $_SESSION['user'] = [
@@ -63,13 +63,9 @@ if (isset($_POST['submit'])) {
         'lastname' => $newUser->getLastname()
     ];
 
-    echo "<pre>";
-    print_r($_SESSION);
-    echo "</pre>";
-
-    //header('Location: index.php');
-} else {
-    echo "Erreur lors de la soumission du formulaire";
+    new Flash('reset-password', 'Password updated', 'success');
+    header('Location: dashboard.php');
+    die();
 }
 
 ?>
@@ -84,6 +80,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
+    <?= Flash::displayFlashMessage('reset-password') ?>
     <form action="<?= $_SERVER["PHP_SELF"] ?>" method="post">
         <label for="password">Nouveau mot de passe</label>
         <input type="password" name="password" id="password">
