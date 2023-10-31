@@ -73,9 +73,39 @@ class DbManagerCRUD_User extends DbManagerCRUD
         return $this->createUser($user);
     }
 
-    public function update(int $id, object $user): bool
+    /**
+     * Reads a user from the database using a password reset token.
+     *
+     * @param string $token The password reset token to search for.
+     * @return User|null The user object if found, null otherwise.
+     */
+    public function readUsingPWToken(string $token): ?User
     {
-        return true;
+        if (!$token) throw new Exception('Invalid token');
+        $sql = "SELECT * FROM user WHERE password_token = :password_token LIMIT 1;";
+        $stmt = $this->getDb()->prepare($sql);
+        $stmt->execute([':password_token' => $token]);
+        $user = $stmt->fetch();
+        if (!$user) return null;
+
+        return $this->createUser($user);
+    }
+
+    public function update(int $id, object $user): ?object
+    {
+        if (!$id) throw new Exception('Invalid id');
+        if (!$user instanceof User) throw new Exception('Invalid object type');
+
+        $sql = "UPDATE user SET email = :email, password = :password, firstname = :firstname, lastname = :lastname WHERE id = :id;";
+        $stmt = $this->getDb()->prepare($sql);
+        $stmt->execute([
+            ':email' => $user->getEmail(),
+            ':password' => $user->getPassword(),
+            ':firstname' => $user->getFirstname(),
+            ':lastname' => $user->getLastname(),
+            ':id' => $id
+        ]);
+        return ($stmt->execute()) ? $this->read($id) : null;
     }
     public function delete(int $id): bool
     {

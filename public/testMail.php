@@ -1,12 +1,17 @@
 <?php
 
+require_once __DIR__ . '/../app/autoload.php';
 require_once __DIR__ . '/../vendor/autoload.php';
+
+use ch\comem\todoapp\auth\User;
 
 use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mime\Email;
 
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+
+$user = new User("test", "test", "test", "test");
 
 $transport = Transport::fromDsn('smtp://host.docker.internal:1025');
 $mailer = new Mailer($transport);

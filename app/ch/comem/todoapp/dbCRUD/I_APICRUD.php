@@ -30,9 +30,9 @@ interface I_APICRUD
      *
      * @param int $id The ID of the record to update.
      * @param object $object The record to update.
-     * @return bool True if the update was successful, false otherwise.
+     * @return ?object The updated record if the update was successful, null otherwise.
      */
-    public function update(int $id, object $object): bool;
+    public function update(int $id, object $object): ?object;
 
     /**
      * Deletes a record from the database based on its ID.

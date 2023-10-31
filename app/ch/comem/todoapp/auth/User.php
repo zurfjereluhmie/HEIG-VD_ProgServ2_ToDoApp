@@ -2,7 +2,13 @@
 
 namespace ch\comem\todoapp\auth;
 
+require_once(__DIR__ . "/../../../../../vendor/autoload.php");
+
 use ch\comem\todoapp\dbCRUD\DbManagerCRUD_User;
+use Symfony\Component\Mailer\Transport;
+use Symfony\Component\Mailer\Mailer;
+use Symfony\Component\Mime\Email;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Exception;
 
 /**
@@ -117,7 +123,15 @@ final class User
         $this->id = $id;
     }
 
-    public function resetPassword(): void
+    public function setPassword(string $password): void
+    {
+        if (!$password || !is_string($password)) throw new Exception('Password must be defined and of type string');
+        if (password_get_info($password)['algo'] === 0) throw new Exception('Password must be hashed');
+
+        $this->password = $password;
+    }
+
+    public function resetPassword(): bool
     {
         if ($this->getId() === null) throw new Exception('User must be saved in the database before resetting password');
 
@@ -136,18 +150,21 @@ final class User
         ]);
 
         // @TODO: Send email to user with link to reset password
-
-        // @REMOVE -> For debugging purposes
-        $sql = "SELECT * FROM User WHERE id = :id";
-        $stmt = DbManagerCRUD_User::getInstance()->getDb()->prepare($sql);
-        $stmt->execute([
-            ':id' => $this->getId()
-        ]);
-        $user = $stmt->fetch();
-        if (!$user) throw new Exception('User not found');
-
-        echo "<pre>";
-        print_r($user);
-        echo "</pre>";
+        $result = false;
+        $transport = Transport::fromDsn('smtp://host.docker.internal:1025');
+        $mailer = new Mailer($transport);
+        $email = (new Email())
+            ->from('no-reply@todoapp.ch')
+            ->to($this->getEmail())
+            ->subject('Reset password procedure')
+            ->text('Please click on the following link to reset your password: http://localhost/reset-password.php?token=' . $resertPasswordToken)
+            ->html('<h1>Reset password procedure</h1><p>Please click on the following link to reset your password: <a href="http://localhost/reset-password.php?token=' . $resertPasswordToken . '">Reset password</a></p>');
+        try {
+            $mailer->send($email);
+            $result = true;
+        } catch (TransportExceptionInterface $e) {
+            echo $e->getMessage();
+        }
+        return $result;
     }
 }

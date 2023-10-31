@@ -11,7 +11,7 @@ $database = DbManagerCRUD_User::getInstance();
 
 $user = $database->readUsingEmail("test1@gmail.com");
 
-$user->resetPassword();
+//$user->resetPassword();
 
 echo "<pre>";
 print_r($user);

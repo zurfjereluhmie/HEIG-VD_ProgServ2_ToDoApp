@@ -31,6 +31,6 @@ abstract class DbManagerCRUD implements I_APICRUD
 
     abstract public function create(object $object): int;
     abstract public function read(int $id): ?object;
-    abstract public function update(int $id, object $object): bool;
+    abstract public function update(int $id, object $object): ?object;
     abstract public function delete(int $id): bool;
 }
