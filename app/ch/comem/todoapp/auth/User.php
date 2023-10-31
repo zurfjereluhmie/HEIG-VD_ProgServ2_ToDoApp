@@ -2,6 +2,7 @@
 
 namespace ch\comem\todoapp\auth;
 
+use ch\comem\todoapp\dbCRUD\DbManagerCRUD_User;
 use Exception;
 
 /**
@@ -114,5 +115,39 @@ final class User
     {
         if (!$id) throw new Exception('Id must be defined and of type int');
         $this->id = $id;
+    }
+
+    public function resetPassword(): void
+    {
+        if ($this->getId() === null) throw new Exception('User must be saved in the database before resetting password');
+
+        $tokenLength = 32;
+        $tokenExpire = time() + 3600; // 1 hour
+
+        $resertPasswordToken = bin2hex(random_bytes($tokenLength));
+        $timestamp = date('Y-m-d H:i:s', $tokenExpire);
+
+        $sql = "UPDATE User SET password_token = :password_token, password_token_expire = :password_token_expire WHERE id = :id";
+        $stmt = DbManagerCRUD_User::getInstance()->getDb()->prepare($sql);
+        $stmt->execute([
+            ':password_token' => $resertPasswordToken,
+            ':password_token_expire' => $timestamp,
+            ':id' => $this->getId()
+        ]);
+
+        // @TODO: Send email to user with link to reset password
+
+        // @REMOVE -> For debugging purposes
+        $sql = "SELECT * FROM User WHERE id = :id";
+        $stmt = DbManagerCRUD_User::getInstance()->getDb()->prepare($sql);
+        $stmt->execute([
+            ':id' => $this->getId()
+        ]);
+        $user = $stmt->fetch();
+        if (!$user) throw new Exception('User not found');
+
+        echo "<pre>";
+        print_r($user);
+        echo "</pre>";
     }
 }
