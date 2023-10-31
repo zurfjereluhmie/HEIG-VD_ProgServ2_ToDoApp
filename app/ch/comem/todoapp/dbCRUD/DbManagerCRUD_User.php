@@ -82,7 +82,7 @@ class DbManagerCRUD_User extends DbManagerCRUD
     public function readUsingPWToken(string $token): ?User
     {
         if (!$token) throw new Exception('Invalid token');
-        $sql = "SELECT * FROM user WHERE password_token = :password_token LIMIT 1;";
+        $sql = "SELECT * FROM user WHERE password_token = :password_token AND password_token_expire >= datetime() LIMIT 1;";
         $stmt = $this->getDb()->prepare($sql);
         $stmt->execute([':password_token' => $token]);
         $user = $stmt->fetch();
