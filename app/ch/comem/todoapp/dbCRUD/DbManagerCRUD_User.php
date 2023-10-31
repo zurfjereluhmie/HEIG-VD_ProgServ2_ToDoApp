@@ -59,9 +59,9 @@ class DbManagerCRUD_User extends DbManagerCRUD
      * Reads a user from the database using their email address.
      *
      * @param string $email The email address of the user to read.
-     * @return object|null The user object if found, null otherwise.
+     * @return User|null The user object if found, null otherwise.
      */
-    public function readUsingEmail(string $email): ?object
+    public function readUsingEmail(string $email): ?User
     {
         if (!$email) throw new Exception('Invalid email');
         $sql = "SELECT * FROM user WHERE email = :email LIMIT 1;";
