@@ -1,14 +1,16 @@
 <?php
 
-namespace ch\comem\todoapp;
+namespace ch\comem\todoapp\tasks;
 
 use Exception;
 
 /**
  * This class manages tasks for the Todo app.
  * It is a singleton class, meaning that only one instance of this class can exist.
+ * 
+ * @package ch\comem\todoapp\tasks
  */
-class TaskManager
+final class TaskManager
 {
     /**
      * This is a static private variable that holds an instance of the TaskManager class.

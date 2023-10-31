@@ -1,13 +1,15 @@
 <?php
 
-namespace ch\comem\todoapp;
+namespace ch\comem\todoapp\tasks;
 
 use Exception;
 
 /**
  * Represents a task in the Todo app.
+ * 
+ * @package ch\comem\todoapp\tasks
  */
-class Task
+final class Task
 {
     /**
      * @var int $counter A static counter used to keep track of the number of tasks created.
