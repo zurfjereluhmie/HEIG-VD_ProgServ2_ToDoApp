@@ -60,15 +60,8 @@ if (isset($_POST['submit-PW'])) {
         die();
     }
 
-    $_SESSION['user'] = [
-        'id' => $newUser->getId(),
-        'email' => $newUser->getEmail(),
-        'firstname' => $newUser->getFirstname(),
-        'lastname' => $newUser->getLastname()
-    ];
-
-    new Flash(constant("FLASH_NAME"), 'Password updated', 'success');
-    header('Location: dashboard.php');
+    new Flash("global", 'Password updated', 'success');
+    header('Location: login.php');
     die();
 }
 
@@ -98,7 +91,8 @@ if (isset($_POST['submit-email'])) {
         die();
     }
 
-    new Flash(constant("FLASH_NAME"), 'Email sent, check your inbox', 'success');
+    new Flash("global", 'Email sent, check your inbox', 'success');
+    header('Location: login.php');
 }
 
 ?>

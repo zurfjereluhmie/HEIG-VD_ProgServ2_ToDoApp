@@ -75,6 +75,7 @@ if (isset($_POST["submit"])) {
 
     <form class="form-signin" method="post" action="<?= $_SERVER["PHP_SELF"] ?>" autocomplete="off">
 
+        <?= Flash::displayFlashMessage("global") ?>
         <?= Flash::displayFlashMessage(constant("FLASH_NAME")) ?>
         <div class="d-flex flex-column justify-content-center align-items-center loginCard">
 
