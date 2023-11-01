@@ -158,7 +158,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryBuilder",
             "name": "CategoryBuilder",
-            "summary": "",
+            "summary": "Class\u0020CategoryBuilder",
             "url": "classes/ch-comem-todoapp-category-CategoryBuilder.html"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryBuilder\u003A\u003A__construct\u0028\u0029",

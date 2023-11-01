@@ -5,6 +5,11 @@ namespace ch\comem\todoapp\category;
 use Exception;
 
 
+/**
+ * Class CategoryBuilder
+ * 
+ * This class is responsible for building Category objects.
+ */
 class CategoryBuilder
 {
     private ?int $id;
