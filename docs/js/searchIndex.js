@@ -333,7 +333,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Category",
             "name": "DbManagerCRUD_Category",
-            "summary": "This\u0020abstract\u0020class\u0020represents\u0020a\u0020CRUD\u0020manager\u0020for\u0020a\u0020database.",
+            "summary": "This\u0020class\u0020extends\u0020the\u0020DbManagerCRUD\u0020class\u0020and\u0020is\u0020responsible\u0020for\u0020CRUD\u0020operations\u0020on\u0020the\u0020Category\u0020table\u0020in\u0020the\u0020database.",
             "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Category.html"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Category\u003A\u003A__construct\u0028\u0029",

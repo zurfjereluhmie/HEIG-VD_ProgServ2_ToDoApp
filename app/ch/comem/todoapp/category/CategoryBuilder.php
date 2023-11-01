@@ -9,6 +9,8 @@ use Exception;
  * Class CategoryBuilder
  * 
  * This class is responsible for building Category objects.
+ * 
+ * @package ch\comem\todoapp\category
  */
 class CategoryBuilder
 {

@@ -9,7 +9,7 @@ use Exception;
  * This class manages categories for the Todo app.
  * It is a singleton class, meaning that only one instance of this class can exist.
  * 
- * @package ch\comem\todoapp\task
+ * @package ch\comem\todoapp\category
  */
 class CategoryManager
 {

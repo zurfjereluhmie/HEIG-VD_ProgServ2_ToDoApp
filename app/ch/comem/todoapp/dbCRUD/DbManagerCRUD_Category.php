@@ -6,6 +6,11 @@ use ch\comem\todoapp\category\Category;
 use ch\comem\todoapp\category\CategoryBuilder;
 use Exception;
 
+/**
+ * This class extends the DbManagerCRUD class and is responsible for CRUD operations on the Category table in the database.
+ * 
+ * @package ch\comem\todoapp\dbCRUD
+ */
 class DbManagerCRUD_Category extends DbManagerCRUD
 {
     private static ?DbManagerCRUD_Category $instance = null;
