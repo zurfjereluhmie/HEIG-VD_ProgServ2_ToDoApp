@@ -1,8 +1,9 @@
 <?php
 
+use ch\comem\todoapp\category\CategoryBuilder;
 use ch\comem\todoapp\flash\Flash;
-use ch\comem\todoapp\tasks\Task;
-use ch\comem\todoapp\tasks\TaskManager;
+use ch\comem\todoapp\task\Task;
+use ch\comem\todoapp\category\CategoryManager;
 use ch\comem\todoapp\auth\User;
 use ch\comem\todoapp\dbCRUD\DbManagerCRUD_User;
 
@@ -28,9 +29,6 @@ echo "<br>";
 echo "<br>";
 echo "<br>";
 
-$flash = new Flash("test", "test", "success");
-new Flash("test1", "test1", "danger");
-
 Flash::displayAllFlashMessages();
 
 
@@ -39,26 +37,39 @@ echo "<br>";
 echo "<br>";
 echo "<pre>";
 print_r($_SESSION);
-echo "</pre>";
+
 echo "<br>";
 echo "<br>";
 
 try {
-    $user = new User("test@gmail.com", "test", "test", "test");
-    print_r($user);
+
+    $categoryBuilder = new CategoryBuilder("test", "#000000");
+    $category = $categoryBuilder
+        ->build();
+
+    $categoryManager = CategoryManager::getInstance();
+
+    print_r($categoryManager->getCategories());
+    print_r($category);
+
     echo "<br>";
+    echo "<br>";
+    $categoryManager->addCategory($category);
 
-    $task = new Task("Test", "Test", false);
+    echo "<br>";
+    echo "<br>";
+    echo "62";
+    print_r($category);
 
-    echo $task->getTitle() . "<br>";
-    echo $task->getDescription() . "<br>";
-    echo $task->isDone() . "<br>";
+    $category->setTitle("test2");
 
-    $taskManager = TaskManager::getInstance();
+    $categoryManager->updateCategory($category);
 
-    $taskManager->add($task);
-    $taskManager->displayTasks();
-    $taskManager->add($task);
+    echo "<br>";
+    echo "<br>";
+    print_r($categoryManager->getCategories());
 } catch (Throwable $th) {
     echo "Erreur : " . $th->getMessage();
+    echo "<br>";
+    echo "On file : " . $th->getFile() . " à la ligne " . $th->getLine();
 }
