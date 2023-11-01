@@ -224,6 +224,7 @@
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
+<dd>Reads all categories from the database where the user_id is the same as the user_id of the logged in user.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Category.html#method_update">update()</a>
@@ -243,6 +244,7 @@
     <span>
                                 &nbsp;: int|null    </span>
 </dt>
+<dd>Returns the user ID of the current user.</dd>
 
     </dl>
 
@@ -398,7 +400,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Category.php"><a href="files/app-ch-comem-todoapp-dbcrud-dbmanagercrud-category.html"><abbr title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Category.php">DbManagerCRUD_Category.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">95</span>
+    <span class="phpdocumentor-element-found-in__line">100</span>
 
     </aside>
 
@@ -572,11 +574,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Category.php"><a href="files/app-ch-comem-todoapp-dbcrud-dbmanagercrud-category.html"><abbr title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Category.php">DbManagerCRUD_Category.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Reads all categories from the database where the user_id is the same as the user_id of the logged in user.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">readAll</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
@@ -590,6 +593,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>An array of Category objects.</p>
+</section>
+
             </section>
 
 </article>
@@ -607,7 +614,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Category.php"><a href="files/app-ch-comem-todoapp-dbcrud-dbmanagercrud-category.html"><abbr title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Category.php">DbManagerCRUD_Category.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 
     </aside>
 
@@ -699,11 +706,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Category.php"><a href="files/app-ch-comem-todoapp-dbcrud-dbmanagercrud-category.html"><abbr title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Category.php">DbManagerCRUD_Category.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">108</span>
+    <span class="phpdocumentor-element-found-in__line">118</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns the user ID of the current user.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">getUserId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|null</span></code>
@@ -717,6 +725,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">int|null</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The user ID of the current user, or null if not logged in.</p>
+</section>
+
             </section>
 
 </article>

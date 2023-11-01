@@ -56,6 +56,11 @@ class DbManagerCRUD_Category extends DbManagerCRUD
             ->setDescription($category["description"])
             ->build();
     }
+    /**
+     * Reads all categories from the database where the user_id is the same as the user_id of the logged in user.
+     *
+     * @return array An array of Category objects.
+     */
     public function readAll(): array
     {
         $userId = $this->getUserId();
@@ -105,6 +110,11 @@ class DbManagerCRUD_Category extends DbManagerCRUD
         return true;
     }
 
+    /**
+     * Returns the user ID of the current user.
+     *
+     * @return int|null The user ID of the current user, or null if not logged in.
+     */
     private function getUserId(): ?int
     {
         if (!isset($_SESSION)) session_start();

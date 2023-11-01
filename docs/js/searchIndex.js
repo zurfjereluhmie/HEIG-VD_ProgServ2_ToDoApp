@@ -88,47 +88,47 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003AgetId\u0028\u0029",
             "name": "getId",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020ID\u0020of\u0020the\u0020category.",
             "url": "classes/ch-comem-todoapp-category-Category.html#method_getId"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003AgetTitle\u0028\u0029",
             "name": "getTitle",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020title\u0020of\u0020the\u0020category.",
             "url": "classes/ch-comem-todoapp-category-Category.html#method_getTitle"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003AgetDescription\u0028\u0029",
             "name": "getDescription",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020description\u0020of\u0020the\u0020category.",
             "url": "classes/ch-comem-todoapp-category-Category.html#method_getDescription"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003AgetColor\u0028\u0029",
             "name": "getColor",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020color\u0020of\u0020the\u0020category.",
             "url": "classes/ch-comem-todoapp-category-Category.html#method_getColor"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003AgetTasks\u0028\u0029",
             "name": "getTasks",
-            "summary": "",
+            "summary": "Returns\u0020an\u0020array\u0020of\u0020tasks\u0020associated\u0020with\u0020this\u0020category.",
             "url": "classes/ch-comem-todoapp-category-Category.html#method_getTasks"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003AsetId\u0028\u0029",
             "name": "setId",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020ID\u0020of\u0020the\u0020category.",
             "url": "classes/ch-comem-todoapp-category-Category.html#method_setId"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003AsetTitle\u0028\u0029",
             "name": "setTitle",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020title\u0020of\u0020the\u0020category.",
             "url": "classes/ch-comem-todoapp-category-Category.html#method_setTitle"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003AsetDescription\u0028\u0029",
             "name": "setDescription",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020description\u0020of\u0020the\u0020category.",
             "url": "classes/ch-comem-todoapp-category-Category.html#method_setDescription"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003AsetColor\u0028\u0029",
             "name": "setColor",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020color\u0020of\u0020the\u0020category.\u0020The\u0020color\u0020must\u0020be\u0020a\u0020valid\u0020hex\u0020color.",
             "url": "classes/ch-comem-todoapp-category-Category.html#method_setColor"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003A\u0024id",
@@ -243,7 +243,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryManager",
             "name": "CategoryManager",
-            "summary": "",
+            "summary": "This\u0020class\u0020manages\u0020categories\u0020for\u0020the\u0020Todo\u0020app.",
             "url": "classes/ch-comem-todoapp-category-CategoryManager.html"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryManager\u003A\u003A__construct\u0028\u0029",
@@ -258,27 +258,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryManager\u003A\u003AloadCategories\u0028\u0029",
             "name": "loadCategories",
-            "summary": "",
+            "summary": "Loads\u0020the\u0020categories\u0020from\u0020the\u0020database.",
             "url": "classes/ch-comem-todoapp-category-CategoryManager.html#method_loadCategories"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryManager\u003A\u003AgetCategories\u0028\u0029",
             "name": "getCategories",
-            "summary": "",
+            "summary": "Returns\u0020an\u0020array\u0020of\u0020all\u0020categories.",
             "url": "classes/ch-comem-todoapp-category-CategoryManager.html#method_getCategories"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryManager\u003A\u003AgetCategory\u0028\u0029",
             "name": "getCategory",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020category\u0020with\u0020the\u0020specified\u0020ID,\u0020or\u0020null\u0020if\u0020it\u0020does\u0020not\u0020exist.",
             "url": "classes/ch-comem-todoapp-category-CategoryManager.html#method_getCategory"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryManager\u003A\u003AaddCategory\u0028\u0029",
             "name": "addCategory",
-            "summary": "",
+            "summary": "Adds\u0020a\u0020category\u0020to\u0020the\u0020CategoryManager\u0020and\u0020inside\u0020the\u0020DB.",
             "url": "classes/ch-comem-todoapp-category-CategoryManager.html#method_addCategory"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryManager\u003A\u003AupdateCategory\u0028\u0029",
             "name": "updateCategory",
-            "summary": "",
+            "summary": "Updates\u0020a\u0020category\u0020inside\u0020the\u0020CategoryManager\u0020and\u0020inside\u0020the\u0020DB.",
             "url": "classes/ch-comem-todoapp-category-CategoryManager.html#method_updateCategory"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryManager\u003A\u003A\u0024instance",
@@ -358,7 +358,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Category\u003A\u003AreadAll\u0028\u0029",
             "name": "readAll",
-            "summary": "",
+            "summary": "Reads\u0020all\u0020categories\u0020from\u0020the\u0020database\u0020where\u0020the\u0020user_id\u0020is\u0020the\u0020same\u0020as\u0020the\u0020user_id\u0020of\u0020the\u0020logged\u0020in\u0020user.",
             "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Category.html#method_readAll"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Category\u003A\u003Aupdate\u0028\u0029",
@@ -373,7 +373,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Category\u003A\u003AgetUserId\u0028\u0029",
             "name": "getUserId",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020user\u0020ID\u0020of\u0020the\u0020current\u0020user.",
             "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Category.html#method_getUserId"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Category\u003A\u003A\u0024instance",

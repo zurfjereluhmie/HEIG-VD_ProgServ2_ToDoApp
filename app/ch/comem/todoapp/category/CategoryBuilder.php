@@ -10,7 +10,7 @@ class CategoryBuilder
     private ?int $id;
     private string $title;
     private ?string $description;
-    private ?string $color;
+    private string $color;
     private array $tasks;
 
     public function __construct(string $title, string $hexColor)
@@ -65,7 +65,7 @@ class CategoryBuilder
         return $this->description;
     }
 
-    public function getColor(): ?string
+    public function getColor(): string
     {
         return $this->color;
     }
