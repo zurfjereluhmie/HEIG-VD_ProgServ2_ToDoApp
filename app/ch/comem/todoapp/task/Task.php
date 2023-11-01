@@ -1,13 +1,13 @@
 <?php
 
-namespace ch\comem\todoapp\tasks;
+namespace ch\comem\todoapp\task;
 
 use Exception;
 
 /**
  * Represents a task in the Todo app.
  * 
- * @package ch\comem\todoapp\tasks
+ * @package ch\comem\todoapp\task
  */
 class Task
 {
