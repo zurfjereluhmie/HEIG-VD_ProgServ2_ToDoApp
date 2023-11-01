@@ -41,7 +41,8 @@ class DbManagerCRUD_User extends DbManagerCRUD
             ':firstname' => $user->getFirstname(),
             ':lastname' => $user->getLastname()
         ]);
-        return ($stmt->execute()) ? $this->getDb()->lastInsertId() : 0;
+        if (!$stmt->execute()) throw new Exception('Error while creating user');
+        return $this->getDb()->lastInsertId();
     }
     public function read(int $id): ?User
     {
