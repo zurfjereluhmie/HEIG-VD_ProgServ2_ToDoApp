@@ -39,7 +39,7 @@ loadHead("Categories", ["dashboard", "task", "list", "taskCheckboxColor"]);
                 </div>
 
                 <!-- Liste ToDo -->
-                <div class="d-flex flex-row justify-content-center align-items-start flex-wrap dasboardMyCategories">
+                <div class="d-flex flex-row justify-content-center align-items-start flex-wrap dasboardMyCategories" id="myCategories">
                     <?php if (!empty($categories)) : ?>
                         <?php foreach ($categories as $category) : ?>
                             <div class="p-3 myCategoriesItem" data-id="<?= $category->getId() ?>">
@@ -252,7 +252,7 @@ loadHead("Categories", ["dashboard", "task", "list", "taskCheckboxColor"]);
 
     <?php
     include_once './components/script.php';
-    loadScript();
+    loadScript(["categories"]);
     ?>
 </body>
 
