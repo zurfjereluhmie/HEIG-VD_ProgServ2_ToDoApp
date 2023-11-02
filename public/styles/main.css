@@ -13,7 +13,7 @@ body {
     margin-right: 10px;
 }
 
-#listsTitle::before {
+#categoriesTitle::before {
     content: url("../assets/icons/listsBig.svg");
     margin-right: 10px;
 }

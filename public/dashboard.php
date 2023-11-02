@@ -35,32 +35,32 @@ loadHead("Categories", ["dashboard", "task", "list", "taskCheckboxColor"]);
                 </div>
 
                 <!-- Liste ToDo -->
-                <div class="d-flex flex-row justify-content-center align-items-start flex-wrap dasboardMyListsDisplay">
-                    <div class="p-3 myListsItem">
+                <div class="d-flex flex-row justify-content-center align-items-start flex-wrap dasboardmyCategories">
+                    <div class="p-3 myCategoriesItem">
                         <div class="d-flex">
                             <div class="colorTag BlueTag"></div>
-                            <h3 class="myListsTitle">Course</h3>
+                            <h3 class="myCategoriesTitle">Course</h3>
                         </div>
-                        <p class="myListsDate">Created on 19.08.2020</p>
-                        <p class="myListsDescritpion">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <p class="myCategoriesDate">Created on 19.08.2020</p>
+                        <p class="myCategoriesDescritpion">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                     </div>
-                    <div class="p-3 myListsItem">
+                    <div class="p-3 myCategoriesItem">
                         <div class="d-flex">
                             <div class="colorTag RedTag"></div>
-                            <h3 class="myListsTitle">Devoirs</h3>
+                            <h3 class="myCategoriesTitle">Devoirs</h3>
                         </div>
-                        <p class="myListsDate">Created on 19.08.2020</p>
-                        <p class="myListsDescritpion">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <p class="myCategoriesDate">Created on 19.08.2020</p>
+                        <p class="myCategoriesDescritpion">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                     </div>
-                    <div class="p-3 myListsItem">
+                    <div class="p-3 myCategoriesItem">
                         <div class="d-flex">
                             <div class="colorTag GreenTag"></div>
-                            <h3 class="myListsTitle">Vacances</h3>
+                            <h3 class="myCategoriesTitle">Vacances</h3>
                         </div>
-                        <p class="myListsDate">Created on 19.08.2020</p>
-                        <p class="myListsDescritpion">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <p class="myCategoriesDate">Created on 19.08.2020</p>
+                        <p class="myCategoriesDescritpion">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                     </div>
-                    <a href="/lists.html" class="seeAllLists">See All &#62;</a>
+                    <a href="/categories.php" class="seeAllCategories">See All &#62;</a>
                 </div>
 
                 <!-- ToDo due to today and Tomorow -->

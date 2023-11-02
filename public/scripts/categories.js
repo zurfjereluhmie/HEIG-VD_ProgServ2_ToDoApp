@@ -1,11 +1,11 @@
 "use strict";
 
-const myListsDisplay = document.querySelector(".myListsDisplay");
+const myCategories = document.querySelector(".myCategories");
 
-myListsDisplay.addEventListener("click", (e) => {
-    if (e.target.closest(".myListsItem")) {
-        const listId = e.target.closest(".myListsItem").dataset.id;
-        window.location.href = `/category.php?id=${listId}`;
+myCategories.addEventListener("click", (e) => {
+    if (e.target.closest(".myCategoriesItem")) {
+        const catId = e.target.closest(".myCategoriesItem").dataset.id;
+        window.location.href = `/category.php?id=${catId}`;
     }
 
 });

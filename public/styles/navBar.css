@@ -40,7 +40,7 @@
 }
 
 /*Scrollable MyLists*/
-.navToDoList {
+.navToDoCategory {
     overflow: auto;
     height: 160px;
     display: block;
@@ -260,12 +260,12 @@ input[type="search"]::-webkit-search-results-decoration {
     margin-left: 15px;
 }
 
-.navToDoList {
+.navToDoCategory {
     padding-top: 20px;
     margin-left: 15px;
 }
 
-.navToDoListTitle {
+.navToDoCategoryTitle {
     margin-left: 16px;
 }
 

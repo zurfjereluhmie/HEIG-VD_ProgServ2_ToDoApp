@@ -1,13 +1,13 @@
-.dasboardMyListsDisplay {
+.dasboardmyCategories {
     margin-bottom: 50px;
 }
 
 @media (max-width: 991px) {
-    .myListsItem {
+    .myCategoriesItem {
         margin-right: 0;
     }
 
-    .dasboardMyListsDisplay {
+    .dasboardmyCategories {
         flex-direction: column !important;
         align-items: center !important;
     }

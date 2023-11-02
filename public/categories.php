@@ -34,24 +34,24 @@ loadHead("Categories", ["dashboard", "task", "list", "taskCheckboxColor"]);
 
             <main class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 bg-light mainFullHeight">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
-                    <h1 class="h2" id="listsTitle">My ToDo Categories</h1>
+                    <h1 class="h2" id="categoriesTitle">My ToDo Categories</h1>
                 </div>
 
                 <!-- Liste ToDo -->
-                <div class="d-flex flex-row justify-content-center align-items-start flex-wrap myListsDisplay">
+                <div class="d-flex flex-row justify-content-center align-items-start flex-wrap myCategories">
                     <?php foreach ($categories as $category) : ?>
-                        <div class="p-3 myListsItem" data-id="<?= $category->getId() ?>">
+                        <div class="p-3 myCategoriesItem" data-id="<?= $category->getId() ?>">
                             <div class="d-flex">
                                 <div class="colorTag" style="background: <?= $category->getColor() ?>;"></div>
-                                <h3 class="myListsTitle"><?= $category->getTitle() ?></h3>
+                                <h3 class="myCategoriesTitle"><?= $category->getTitle() ?></h3>
                             </div>
-                            <p class="myListsDate">Created on 19.08.2020 // WARN NOT FROM DB</p>
-                            <p class="myListsDescritpion"><?= $category->getDescription() ?></p>
+                            <p class="myCategoriesDate">Created on 19.08.2020 // WARN NOT FROM DB</p>
+                            <p class="myCategoriesDescritpion"><?= $category->getDescription() ?></p>
                         </div>
                     <?php endforeach; ?>
 
-                    <div class="p-3 addListsItem" id="addListTrigger">
-                        <img src="assets/icons/bigAdd.svg" alt="Add a list icon" class="addListsImg">
+                    <div class="p-3 addCategoriesItem" id="addListTrigger">
+                        <img src="assets/icons/bigAdd.svg" alt="Add a category icon" class="addListsImg">
                     </div>
                 </div>
             </main>
