@@ -23,7 +23,7 @@ $categories = $categoryManager->getCategories();
 
 <?php
 require_once 'components/head.php';
-loadHead("Categories", ["dashboard", "task", "list", "taskCheckboxColor"]);
+loadHead("Categories", ["main", "navBar", "dashboard", "task", "list", "taskCheckboxColor"]);
 ?>
 
 <body>
@@ -37,6 +37,8 @@ loadHead("Categories", ["dashboard", "task", "list", "taskCheckboxColor"]);
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
                     <h1 class="h2" id="dashboardTitle">Dashboard</h1>
                 </div>
+                <?= Flash::displayFlashMessage("global") ?>
+                <?= Flash::displayFlashMessage("dashboard") ?>
 
                 <!-- Liste ToDo -->
                 <div class="d-flex flex-row justify-content-center align-items-start flex-wrap dasboardMyCategories" id="myCategories">
