@@ -45,7 +45,9 @@ if (isset($_POST["submit"])) {
     ];
 
     new Flash("global", "Welcome back " . $user->getFirstName() . " " . $user->getLastName(), "success");
-    header("Location: dashboard.php");
+    $redirect = $_SESSION["redirect"] ?? "dashboard.php";
+    unset($_SESSION["redirect"]);
+    header("Location: " . $redirect);
     die();
 }
 
