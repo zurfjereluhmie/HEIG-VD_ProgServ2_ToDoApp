@@ -6,7 +6,7 @@
     top: 0;
     bottom: 0;
     left: 0;
-    z-index: 100;
+    z-index: 1000;
     padding: 48px 0 0;
 }
 
@@ -17,19 +17,12 @@
 }
 
 .sidebar-sticky {
-    position: relative;
+    position: sticky;
     top: 0;
     height: calc(100vh - 48px);
     padding-top: .5rem;
     overflow-x: hidden;
     overflow-y: auto;
-}
-
-@supports ((position: -webkit-sticky) or (position: sticky)) {
-    .sidebar-sticky {
-        position: -webkit-sticky;
-        position: sticky;
-    }
 }
 
 .sidebar .nav-link .feather {

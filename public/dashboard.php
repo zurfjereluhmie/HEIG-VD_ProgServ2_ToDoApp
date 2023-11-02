@@ -44,8 +44,8 @@ echo "<br>";
 try {
 
     $categoryBuilder = new CategoryBuilder("test", "#000000");
-    $category = $categoryBuilder
-        ->build();
+    // $category = $categoryBuilder
+    //     ->build();
 
     $categoryManager = CategoryManager::getInstance();
 
