@@ -58,7 +58,8 @@ loadHead("Categories", ["dashboard", "task", "list", "taskCheckboxColor"]);
         </div>
     </div>
 
-    <?php include_once './components/script.php';
+    <?php
+    include_once './components/script.php';
     loadScript(["categories"]);
     ?>
 </body>
