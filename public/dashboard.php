@@ -255,7 +255,7 @@ loadHead("Categories", ["main", "navBar", "dashboard", "task", "list", "taskChec
 
     <?php
     include_once './components/script.php';
-    loadScript(["categories"]);
+    loadScript(["categories", "searchBar"]);
     ?>
 </body>
 

@@ -198,11 +198,6 @@ input[type="search"]::-webkit-search-results-decoration {
     border-radius: 15px;
 }
 
-#livesearch ul li:not(.noResult):hover {
-    cursor: pointer;
-    background-color: #e8eaed;
-}
-
 /*End top navbar*/
 /*Sidebar*/
 .sidebarUl {
