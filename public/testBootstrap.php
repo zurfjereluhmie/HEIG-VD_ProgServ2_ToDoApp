@@ -102,9 +102,9 @@
 
                     <!-- Sidebar menu end -->
 
-                    <!-- My ToDo Lists -->
+                    <!-- My ToDo Categories -->
                     <h6 class="d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <span class="navItem navToDoListTitle">My ToDo Lists :</span>
+                        <span class="navItem navToDoListTitle">My ToDo Categories :</span>
                     </h6>
                     <ul class="nav flex-column mb-2 navToDoList">
                         <li class="nav-item">
@@ -133,7 +133,7 @@
                         </li>
                     </ul>
                     <hr>
-                    <!-- My ToDo Lists end -->
+                    <!-- My ToDo Categories end -->
 
                     <!-- Settings -->
                     <ul class="nav flex-column mb-2 sidebarUl bottomUl">

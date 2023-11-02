@@ -47,22 +47,6 @@ body {
     border-radius: 3px;
 }
 
-.BlueTag {
-    background: #497efe;
-}
-
-.RedTag {
-    background: #dc3545;
-}
-
-.GreenTag {
-    background: #28a745;
-}
-
-.YellowTag {
-    background: #ffc107;
-}
-
 /*Filtre*/
 .filtre input:not(:first-of-type) {
     margin-left: 15px;
