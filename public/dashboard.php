@@ -40,17 +40,23 @@ loadHead("Categories", ["dashboard", "task", "list", "taskCheckboxColor"]);
 
                 <!-- Liste ToDo -->
                 <div class="d-flex flex-row justify-content-center align-items-start flex-wrap dasboardMyCategories">
-                    <?php foreach ($categories as $category) : ?>
-                        <div class="p-3 myCategoriesItem" data-id="<?= $category->getId() ?>">
-                            <div class="d-flex">
-                                <div class="colorTag" style="background: <?= $category->getColor() ?>;"></div>
-                                <h3 class="myCategoriesTitle"><?= $category->getTitle() ?></h3>
+                    <?php if (!empty($categories)) : ?>
+                        <?php foreach ($categories as $category) : ?>
+                            <div class="p-3 myCategoriesItem" data-id="<?= $category->getId() ?>">
+                                <div class="d-flex">
+                                    <div class="colorTag" style="background: <?= $category->getColor() ?>;"></div>
+                                    <h3 class="myCategoriesTitle"><?= $category->getTitle() ?></h3>
+                                </div>
+                                <p class="myCategoriesDate">Created on <?= $category->getCreatedAt()->format('d.m.Y') ?></p>
+                                <p class="myCategoriesDescritpion"><?= $category->getDescription() ?></p>
                             </div>
-                            <p class="myCategoriesDate">Created on <?= $category->getCreatedAt()->format('d.m.Y') ?></p>
-                            <p class="myCategoriesDescritpion"><?= $category->getDescription() ?></p>
+                        <?php endforeach; ?>
+                        <a href="/categories.php" class="seeAllCategories">See All &#62;</a>
+                    <?php else : ?>
+                        <div class="p-3 addCategoriesItem" id="addListTrigger">
+                            <img src="assets/icons/bigAdd.svg" alt="Add a category icon" class="addListsImg">
                         </div>
-                    <?php endforeach; ?>
-                    <a href="/categories.php" class="seeAllCategories">See All &#62;</a>
+                    <?php endif; ?>
                 </div>
 
                 <!-- ToDo due to today and Tomorow -->

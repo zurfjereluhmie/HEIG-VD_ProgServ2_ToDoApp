@@ -50,14 +50,22 @@ $categories = $categoryManager->getCategories();
             <span class="navItem navToDoCategoryTitle">My ToDo Categories :</span>
         </h6>
         <ul class="nav flex-column mb-2 navToDoCategory">
-            <?php foreach ($categories as $category) : ?>
+            <?php if (!empty($categories)) : ?>
+                <?php foreach ($categories as $category) : ?>
+                    <li class="nav-item">
+                        <a class="nav-link navToDoItem d-flex" href="./category?id=<?= $category->getId() ?>">
+                            <div class="colorTag" style="background: <?= $category->getColor() ?>;"></div>
+                            <span><?= $category->getTitle() ?></span>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            <?php else : ?>
                 <li class="nav-item">
-                    <a class="nav-link navToDoItem d-flex" href="./category?id=<?= $category->getId() ?>">
-                        <div class="colorTag" style="background: <?= $category->getColor() ?>;"></div>
-                        <span><?= $category->getTitle() ?></span>
+                    <a class="nav-link navToDoItem d-flex" href="/categories.php">
+                        <span>No categories yet</span>
                     </a>
                 </li>
-            <?php endforeach; ?>
+            <?php endif; ?>
         </ul>
         <hr>
         <!-- My ToDo Categories end -->
