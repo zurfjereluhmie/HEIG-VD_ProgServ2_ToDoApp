@@ -3,6 +3,7 @@
 require_once '../app/autoload.php';
 
 use ch\comem\todoapp\flash\Flash;
+use ch\comem\todoapp\category\CategoryManager;
 
 session_start();
 
@@ -11,6 +12,9 @@ if (!isset($_SESSION["user"])) {
     header("Location: login.php");
     exit();
 }
+
+$categoryManager = CategoryManager::getInstance();
+$categories = $categoryManager->getCategories();
 
 ?>
 
@@ -36,30 +40,16 @@ loadHead("Categories", ["dashboard", "task", "list", "taskCheckboxColor"]);
 
                 <!-- Liste ToDo -->
                 <div class="d-flex flex-row justify-content-center align-items-start flex-wrap dasboardMyCategories">
-                    <div class="p-3 myCategoriesItem">
-                        <div class="d-flex">
-                            <div class="colorTag BlueTag"></div>
-                            <h3 class="myCategoriesTitle">Course</h3>
+                    <?php foreach ($categories as $category) : ?>
+                        <div class="p-3 myCategoriesItem" data-id="<?= $category->getId() ?>">
+                            <div class="d-flex">
+                                <div class="colorTag" style="background: <?= $category->getColor() ?>;"></div>
+                                <h3 class="myCategoriesTitle"><?= $category->getTitle() ?></h3>
+                            </div>
+                            <p class="myCategoriesDate">Created on <?= $category->getCreatedAt()->format('d.m.Y') ?></p>
+                            <p class="myCategoriesDescritpion"><?= $category->getDescription() ?></p>
                         </div>
-                        <p class="myCategoriesDate">Created on 19.08.2020</p>
-                        <p class="myCategoriesDescritpion">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                    </div>
-                    <div class="p-3 myCategoriesItem">
-                        <div class="d-flex">
-                            <div class="colorTag RedTag"></div>
-                            <h3 class="myCategoriesTitle">Devoirs</h3>
-                        </div>
-                        <p class="myCategoriesDate">Created on 19.08.2020</p>
-                        <p class="myCategoriesDescritpion">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                    </div>
-                    <div class="p-3 myCategoriesItem">
-                        <div class="d-flex">
-                            <div class="colorTag GreenTag"></div>
-                            <h3 class="myCategoriesTitle">Vacances</h3>
-                        </div>
-                        <p class="myCategoriesDate">Created on 19.08.2020</p>
-                        <p class="myCategoriesDescritpion">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                    </div>
+                    <?php endforeach; ?>
                     <a href="/categories.php" class="seeAllCategories">See All &#62;</a>
                 </div>
 
