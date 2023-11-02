@@ -2,6 +2,7 @@
 
 namespace ch\comem\todoapp\category;
 
+use DateTime;
 use Exception;
 
 
@@ -18,6 +19,7 @@ class CategoryBuilder
     private string $title;
     private ?string $description;
     private string $color;
+    private DateTime $createdAt;
     private array $tasks;
 
     public function __construct(string $title, string $hexColor)
@@ -30,6 +32,7 @@ class CategoryBuilder
         $this->title = $title;
         $this->description = null;
         $this->color = $hexColor;
+        $this->createdAt = new DateTime();
         $this->tasks = [];
     }
 
@@ -48,6 +51,12 @@ class CategoryBuilder
     public function setDescription(?string $description): CategoryBuilder
     {
         $this->description = $description;
+        return $this;
+    }
+
+    public function setCreatedAt(DateTime $createdAt): CategoryBuilder
+    {
+        $this->createdAt = $createdAt;
         return $this;
     }
 
@@ -75,6 +84,11 @@ class CategoryBuilder
     public function getColor(): string
     {
         return $this->color;
+    }
+
+    public function getCreatedAt(): DateTime
+    {
+        return $this->createdAt;
     }
 
     public function getTasks(): array

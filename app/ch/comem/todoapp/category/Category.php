@@ -3,6 +3,7 @@
 namespace ch\comem\todoapp\category;
 
 use Exception;
+use DateTime;
 use ch\comem\todoapp\category\CategoryBuilder;
 
 /**
@@ -28,6 +29,9 @@ class Category
      * @property string $color The color of the category.
      */
     private string $color;
+
+    private DateTime $createdAt;
+
     /**
      * @var array $tasks An array of tasks associated with this category.
      */
@@ -39,6 +43,7 @@ class Category
         $this->title = $builder->getTitle();
         $this->description = $builder->getDescription();
         $this->color = $builder->getColor();
+        $this->createdAt = $builder->getCreatedAt();
         $this->tasks = $builder->getTasks();
     }
 
@@ -80,6 +85,16 @@ class Category
     public function getColor(): string
     {
         return $this->color;
+    }
+
+    /**
+     * Returns the date of creation of the category.
+     *
+     * @return DateTime La date de création de la catégorie.
+     */
+    public function getCreatedAt(): DateTime
+    {
+        return $this->createdAt;
     }
 
     /**

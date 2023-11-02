@@ -4,6 +4,7 @@ namespace ch\comem\todoapp\dbCRUD;
 
 use ch\comem\todoapp\category\Category;
 use ch\comem\todoapp\category\CategoryBuilder;
+use DateTime;
 use Exception;
 
 /**
@@ -80,6 +81,7 @@ class DbManagerCRUD_Category extends DbManagerCRUD
             $result[] = (new CategoryBuilder($category["title"], $category["color"]))
                 ->setId($category["id"])
                 ->setDescription($category["description"])
+                ->setCreatedAt((new DateTime($category["created_at"])))
                 ->build();
         }
 

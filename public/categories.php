@@ -45,7 +45,7 @@ loadHead("Categories", ["dashboard", "task", "list", "taskCheckboxColor"]);
                                 <div class="colorTag" style="background: <?= $category->getColor() ?>;"></div>
                                 <h3 class="myCategoriesTitle"><?= $category->getTitle() ?></h3>
                             </div>
-                            <p class="myCategoriesDate">Created on 19.08.2020 // WARN NOT FROM DB</p>
+                            <p class="myCategoriesDate">Created on <?= $category->getCreatedAt()->format('d.m.yy') ?></p>
                             <p class="myCategoriesDescritpion"><?= $category->getDescription() ?></p>
                         </div>
                     <?php endforeach; ?>
