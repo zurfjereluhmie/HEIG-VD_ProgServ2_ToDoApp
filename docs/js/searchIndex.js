@@ -106,6 +106,11 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020color\u0020of\u0020the\u0020category.",
             "url": "classes/ch-comem-todoapp-category-Category.html#method_getColor"
         },                {
+            "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003AgetCreatedAt\u0028\u0029",
+            "name": "getCreatedAt",
+            "summary": "Returns\u0020the\u0020date\u0020of\u0020creation\u0020of\u0020the\u0020category.",
+            "url": "classes/ch-comem-todoapp-category-Category.html#method_getCreatedAt"
+        },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003AgetTasks\u0028\u0029",
             "name": "getTasks",
             "summary": "Returns\u0020an\u0020array\u0020of\u0020tasks\u0020associated\u0020with\u0020this\u0020category.",
@@ -151,6 +156,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ch-comem-todoapp-category-Category.html#property_color"
         },                {
+            "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003A\u0024createdAt",
+            "name": "createdAt",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-category-Category.html#property_createdAt"
+        },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003A\u0024tasks",
             "name": "tasks",
             "summary": "",
@@ -181,6 +191,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ch-comem-todoapp-category-CategoryBuilder.html#method_setDescription"
         },                {
+            "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryBuilder\u003A\u003AsetCreatedAt\u0028\u0029",
+            "name": "setCreatedAt",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-category-CategoryBuilder.html#method_setCreatedAt"
+        },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryBuilder\u003A\u003AsetTasks\u0028\u0029",
             "name": "setTasks",
             "summary": "",
@@ -205,6 +220,11 @@ Search.appendIndex(
             "name": "getColor",
             "summary": "",
             "url": "classes/ch-comem-todoapp-category-CategoryBuilder.html#method_getColor"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryBuilder\u003A\u003AgetCreatedAt\u0028\u0029",
+            "name": "getCreatedAt",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-category-CategoryBuilder.html#method_getCreatedAt"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryBuilder\u003A\u003AgetTasks\u0028\u0029",
             "name": "getTasks",
@@ -235,6 +255,11 @@ Search.appendIndex(
             "name": "color",
             "summary": "",
             "url": "classes/ch-comem-todoapp-category-CategoryBuilder.html#property_color"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryBuilder\u003A\u003A\u0024createdAt",
+            "name": "createdAt",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-category-CategoryBuilder.html#property_createdAt"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryBuilder\u003A\u003A\u0024tasks",
             "name": "tasks",
