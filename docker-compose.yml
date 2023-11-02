@@ -11,7 +11,7 @@ services:
       - ./database:/var/www/database # database
       - ./vendor:/var/www/vendor # vendor
     environment:
-      - PHP_INI_SCAN_DIR=/var/config
+      - PHPRC=/var/config/php.ini
     ports:
       - 80:80
     depends_on:
