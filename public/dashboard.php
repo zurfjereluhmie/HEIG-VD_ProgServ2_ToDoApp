@@ -35,7 +35,7 @@ loadHead("Categories", ["dashboard", "task", "list", "taskCheckboxColor"]);
                 </div>
 
                 <!-- Liste ToDo -->
-                <div class="d-flex flex-row justify-content-center align-items-start flex-wrap dasboardmyCategories">
+                <div class="d-flex flex-row justify-content-center align-items-start flex-wrap dasboardMyCategories">
                     <div class="p-3 myCategoriesItem">
                         <div class="d-flex">
                             <div class="colorTag BlueTag"></div>
