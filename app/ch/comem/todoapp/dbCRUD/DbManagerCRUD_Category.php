@@ -77,8 +77,7 @@ class DbManagerCRUD_Category extends DbManagerCRUD
         $categories = $stmt->fetchAll();
         $result = [];
         foreach ($categories as $category) {
-            $builder = new CategoryBuilder($category["title"], $category["color"]);
-            $result[] = $builder
+            $result[] = (new CategoryBuilder($category["title"], $category["color"]))
                 ->setId($category["id"])
                 ->setDescription($category["description"])
                 ->build();
