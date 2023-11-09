@@ -64,6 +64,27 @@ class CategoryManager
     }
 
     /**
+     * Returns all categories with the specified title, or null if none exist. If a limit is specified, only the first $limit categories will be returned.
+     *
+     * @param string $title The title of the category to retrieve.
+     * @param int $limit The maximum number of categories to return. Defaults to -1, which means no limit.
+     * @return array<Category>|null An array of Category objects with the specified title, or null if none exist.
+     */
+    public function getCategoriesByTitle(string $title, int $limit = -1): array
+    {
+        $categories = [];
+        foreach ($this->categories as $category) {
+            if ($category instanceof Category) {
+                if (strpos(strtoupper($category->getTitle()), strtoupper($title)) !== false) {
+                    $categories[] = $category;
+                    if ($limit > 0 && count($categories) >= $limit) break;
+                }
+            }
+        }
+        return $categories;
+    }
+
+    /**
      * Adds a category to the CategoryManager and inside the DB.
      *
      * @param Category $category The category to add.

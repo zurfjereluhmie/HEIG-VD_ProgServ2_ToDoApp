@@ -64,7 +64,7 @@ class Category
      */
     public function getTitle(): string
     {
-        return ucfirst($this->title);
+        return $this->title;
     }
 
     /**
