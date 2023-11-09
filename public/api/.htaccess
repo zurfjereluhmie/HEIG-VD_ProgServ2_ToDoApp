@@ -1,0 +1,3 @@
+<LimitExcept POST>
+    deny from all
+</LimitExcept>
