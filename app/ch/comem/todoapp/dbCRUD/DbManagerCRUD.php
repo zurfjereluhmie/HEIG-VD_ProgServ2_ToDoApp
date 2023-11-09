@@ -18,7 +18,8 @@ abstract class DbManagerCRUD implements I_APICRUD
 
     public function __construct()
     {
-        $config = parse_ini_file('../../config/db.ini', true);
+        $config = parse_ini_file('/var/config/db.ini', true);
+        if (!$config) throw new Exception('Could not read database configuration file');
         $this->db = new PDO($config['dsn']);
         if (!$this->db) throw new Exception('Could not connect to database');
         $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
