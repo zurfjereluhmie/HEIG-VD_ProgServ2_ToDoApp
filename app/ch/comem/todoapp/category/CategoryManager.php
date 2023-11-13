@@ -128,4 +128,25 @@ class CategoryManager
         }
         return false;
     }
+
+    /**
+     * Remove a category from the CategoryManager and from the DB.
+     *
+     * @param Category &$category The category to remove.
+     * @return bool Returns true if the category was successfully removed, false otherwise.
+     */
+    public function removeCategory(Category &$category): bool
+    {
+        if ($category->getId() == null) throw new Exception("Category id cannot be null");
+
+        $dbManager = DbManagerCRUD_Category::getInstance();
+        $res = $dbManager->delete($category->getId());
+
+        if ($res) {
+            $this->loadCategories();
+            $category = null;
+            return true;
+        }
+        return false;
+    }
 }
