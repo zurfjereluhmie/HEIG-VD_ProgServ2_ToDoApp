@@ -4,8 +4,6 @@ use ch\comem\todoapp\auth\User;
 use ch\comem\todoapp\dbCRUD\DbManagerCRUD_User;
 use ch\comem\todoapp\flash\Flash;
 
-print_r($_POST);
-
 $lastName = htmlspecialchars($_POST["lastName"]);
 $firstName = htmlspecialchars($_POST["firstName"]);
 $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once("../app/autoload.php");
+require_once "../app/autoload.php";
 
 use ch\comem\todoapp\flash\Flash;
 
@@ -11,9 +11,7 @@ if (isset($_SESSION["user"])) {
 
 define("FLASH_NAME", pathinfo(basename($_SERVER["PHP_SELF"]), PATHINFO_FILENAME));
 
-if (isset($_POST["submit"])) {
-    require_once("../controllers/validate-register.php");
-}
+if (isset($_POST["submit"])) require_once("../controllers/validate-register.php");
 
 ?>
 
