@@ -201,6 +201,13 @@
 <dd>Returns an array of all categories.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ch-comem-todoapp-category-CategoryManager.html#method_getCategoriesByTitle">getCategoriesByTitle()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, <a href="classes/ch-comem-todoapp-category-Category.html"><abbr title="\ch\comem\todoapp\category\Category">Category</abbr></a>&gt;|null    </span>
+</dt>
+<dd>Returns all categories with the specified title, or null if none exist. If a limit is specified, only the first $limit categories will be returned.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-category-CategoryManager.html#method_getCategory">getCategory()</a>
     <span>
                                 &nbsp;: <a href="classes/ch-comem-todoapp-category-Category.html"><abbr title="\ch\comem\todoapp\category\Category">Category</abbr></a>|null    </span>
@@ -335,7 +342,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryManager.php"><a href="files/app-ch-comem-todoapp-category-categorymanager.html"><abbr title="app/ch/comem/todoapp/category/CategoryManager.php">CategoryManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 
@@ -408,6 +415,67 @@
         <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
                     &mdash;
                 <section class="phpdocumentor-description"><p>An array of Category objects.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getCategoriesByTitle">
+        getCategoriesByTitle()
+        <a href="classes/ch-comem-todoapp-category-CategoryManager.html#method_getCategoriesByTitle" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryManager.php"><a href="files/app-ch-comem-todoapp-category-categorymanager.html"><abbr title="app/ch/comem/todoapp/category/CategoryManager.php">CategoryManager.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">73</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns all categories with the specified title, or null if none exist. If a limit is specified, only the first $limit categories will be returned.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getCategoriesByTitle</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$title</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">-1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/ch-comem-todoapp-category-Category.html"><abbr title="\ch\comem\todoapp\category\Category">Category</abbr></a>&gt;|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$title</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The title of the category to retrieve.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$limit</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">-1</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The maximum number of categories to return. Defaults to -1, which means no limit.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/ch-comem-todoapp-category-Category.html"><abbr title="\ch\comem\todoapp\category\Category">Category</abbr></a>&gt;|null</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>An array of Category objects with the specified title, or null if none exist.</p>
 </section>
 
             </section>
@@ -514,7 +582,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryManager.php"><a href="files/app-ch-comem-todoapp-category-categorymanager.html"><abbr title="app/ch/comem/todoapp/category/CategoryManager.php">CategoryManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">96</span>
+    <span class="phpdocumentor-element-found-in__line">117</span>
 
     </aside>
 
@@ -746,6 +814,7 @@
                 <ul class="phpdocumentor-list -clean">
                                             <li><a href="classes/ch-comem-todoapp-category-CategoryManager.html#method_addCategory">addCategory()</a></li>
                                             <li><a href="classes/ch-comem-todoapp-category-CategoryManager.html#method_getCategories">getCategories()</a></li>
+                                            <li><a href="classes/ch-comem-todoapp-category-CategoryManager.html#method_getCategoriesByTitle">getCategoriesByTitle()</a></li>
                                             <li><a href="classes/ch-comem-todoapp-category-CategoryManager.html#method_getCategory">getCategory()</a></li>
                                             <li><a href="classes/ch-comem-todoapp-category-CategoryManager.html#method_getInstance">getInstance()</a></li>
                                             <li><a href="classes/ch-comem-todoapp-category-CategoryManager.html#method_updateCategory">updateCategory()</a></li>

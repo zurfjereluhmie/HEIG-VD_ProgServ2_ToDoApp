@@ -296,6 +296,11 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020category\u0020with\u0020the\u0020specified\u0020ID,\u0020or\u0020null\u0020if\u0020it\u0020does\u0020not\u0020exist.",
             "url": "classes/ch-comem-todoapp-category-CategoryManager.html#method_getCategory"
         },                {
+            "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryManager\u003A\u003AgetCategoriesByTitle\u0028\u0029",
+            "name": "getCategoriesByTitle",
+            "summary": "Returns\u0020all\u0020categories\u0020with\u0020the\u0020specified\u0020title,\u0020or\u0020null\u0020if\u0020none\u0020exist.\u0020If\u0020a\u0020limit\u0020is\u0020specified,\u0020only\u0020the\u0020first\u0020\u0024limit\u0020categories\u0020will\u0020be\u0020returned.",
+            "url": "classes/ch-comem-todoapp-category-CategoryManager.html#method_getCategoriesByTitle"
+        },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryManager\u003A\u003AaddCategory\u0028\u0029",
             "name": "addCategory",
             "summary": "Adds\u0020a\u0020category\u0020to\u0020the\u0020CategoryManager\u0020and\u0020inside\u0020the\u0020DB.",
