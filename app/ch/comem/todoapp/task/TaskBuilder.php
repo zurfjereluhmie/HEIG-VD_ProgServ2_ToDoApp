@@ -5,7 +5,6 @@ namespace ch\comem\todoapp\task;
 use DateTime;
 use Exception;
 
-
 /**
  * Class TaskBuilder
  * 
@@ -18,22 +17,19 @@ class TaskBuilder
     private ?int $id;
     private string $title;
     private ?string $description;
-    private string $color;
-    private DateTime $createdAt;
-    private array $tasks;
+    private bool $isDone;
+    private bool $isFav;
+    private DateTime $dueDate;
 
-    public function __construct(string $title, string $hexColor)
-    {
+    public function __construct (string $title, DateTime $dueDate) {
         if (!isset($title) || empty($title)) throw new Exception("Title cannot be empty");
-        if (!isset($hexColor) || empty($hexColor)) throw new Exception("Color cannot be empty");
-        if (!preg_match("/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/", $hexColor)) throw new Exception("Color is not a valid hex color");
-
-        $this->id = null;
+        
+        $this->id=null;
         $this->title = $title;
         $this->description = null;
-        $this->color = $hexColor;
-        $this->createdAt = new DateTime();
-        $this->tasks = [];
+        $this->isDone = false;
+        $this->isFav = false;
+        $this->dueDate = $dueDate;
     }
 
     public function setId(int $id): TaskBuilder
@@ -54,17 +50,24 @@ class TaskBuilder
         return $this;
     }
 
-    public function setCreatedAt(DateTime $createdAt): TaskBuilder
+    public function setIsDone(bool $isDone): TaskBuilder
     {
-        $this->createdAt = $createdAt;
+        $this->isDone = $isDone;
         return $this;
     }
 
-    public function setTasks(array $tasks): TaskBuilder
+    public function setIsFav(bool $isFav): TaskBuilder
     {
-        $this->tasks[] = $tasks;
+        $this->isFav = $isFav;
         return $this;
     }
+
+    public function setDueDate(DateTime $dueDate): TaskBuilder
+    {
+        $this->dueDate = $dueDate;
+        return $this;
+    }
+
 
     public function getId(): ?int
     {
@@ -81,23 +84,24 @@ class TaskBuilder
         return $this->description;
     }
 
-    public function getColor(): string
+    public function isDone(): bool
     {
-        return $this->color;
+        return $this->isDone;
     }
 
-    public function getCreatedAt(): DateTime
+    public function isFav(): bool
     {
-        return $this->createdAt;
+        return $this->isFav;
     }
 
-    public function getTasks(): array
+    public function getDueDate(): DateTime
     {
-        return $this->tasks;
+        return $this->dueDate;
     }
 
     public function build(): Task
     {
         return new Task($this);
     }
+
 }
