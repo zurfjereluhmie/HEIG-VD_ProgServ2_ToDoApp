@@ -5,6 +5,7 @@ namespace ch\comem\todoapp\task;
 use Exception;
 use DateTime;
 use ch\comem\todoapp\task\TaskBuilder;
+use ch\comem\todoapp\category\Category;
 
 /**
  * Represents a task in the Todo app.
@@ -13,34 +14,13 @@ use ch\comem\todoapp\task\TaskBuilder;
  */
 class Task
 {
-    /**
-     * @var int $counter A static counter used to keep track of the number of tasks created.
-     */
-    static private $counter = 0;
-    /**
-     * @var int $id The unique identifier of the task.
-     */
-    private $id;
-    /**
-     * @var string $title The title of the task.
-     */
-    private $title;
-    /**
-     * @var string $description The description of the task.
-     */
-    private $description;
-    /**
-     * @var bool $isDone Indicates whether the task is done or not.
-     */
-    private $isDone;
-    /**
-     * @var bool $isFav Indicates whether the task is a favorite or not.
-     */
-    private $isFav;
-    /** 
-     * @var DateTime $dueDate The due date of the task.
-     */
-    private $dueDate;
+    private ?int $id;
+    private string $title;
+    private ?string $description;
+    private bool $isDone;
+    private bool $isFav;
+    private DateTime $dueDate;
+    private Category $category;
 
     public function __construct(TaskBuilder $builder)
     {
@@ -50,6 +30,7 @@ class Task
         $this->isDone = $builder->isDone();
         $this->isFav = $builder->isFav();
         $this->dueDate = $builder->getDueDate();
+        $this->category = $builder->getCategory();
     }
 
     /**
@@ -112,6 +93,16 @@ class Task
         return $this->dueDate;
     }
 
+    /**
+     * Returns the category of the task.
+     *
+     * @return Category The category of the task.
+     */
+    public function getCategory(): Category
+    {
+        return $this->category;
+    }
+
         /**
      * Sets the title of the task.
      *
@@ -162,4 +153,16 @@ class Task
         if ($dueDate < new DateTime()) throw new Exception("Due date cannot be in the past");
         $this->dueDate = $dueDate;
     }
+
+    /**
+     * Sets the category of the task.
+     * 
+     * @param Category $category The category of the task.
+     */
+    public function setCategory(Category $category): void
+    {
+        $this->category = $category;
+    }
+
+
 }
