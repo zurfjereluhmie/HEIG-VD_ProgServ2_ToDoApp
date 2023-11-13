@@ -123,7 +123,7 @@ class DbManagerCRUD_Category extends DbManagerCRUD
      */
     private function getUserId(): ?int
     {
-        if (!isset($_SESSION)) session_start();
+        if (session_status() === PHP_SESSION_NONE) session_start();
         if (!isset($_SESSION["user"])) throw new Exception("User not logged in");
 
         return $_SESSION["user"]["id"];

@@ -56,7 +56,7 @@ class Flash
      */
     private function setToSession(): void
     {
-        if (!isset($_SESSION)) session_start();
+        if (session_status() === PHP_SESSION_NONE) session_start();
         if (!isset($_SESSION['flash'])) $_SESSION['flash'] = [];
         if (isset($_SESSION['flash'][$this->name])) unset($_SESSION['flash'][$this->name]);
 
@@ -95,7 +95,7 @@ class Flash
      */
     public static function displayFlashMessage(string $name): void
     {
-        if (!isset($_SESSION)) session_start();
+        if (session_status() === PHP_SESSION_NONE) session_start();
         if (isset($_SESSION['flash'][$name])) {
             $flash = $_SESSION['flash'][$name];
             unset($_SESSION['flash'][$name]);
@@ -110,7 +110,7 @@ class Flash
      */
     public static function displayAllFlashMessages(): void
     {
-        if (!isset($_SESSION)) session_start();
+        if (session_status() === PHP_SESSION_NONE) session_start();
         if (!isset($_SESSION['flash'])) return;
 
         foreach ($_SESSION['flash'] as $name => $flash) {
