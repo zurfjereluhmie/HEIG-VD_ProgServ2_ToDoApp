@@ -42,6 +42,7 @@ if (isset($_POST["submit"])) {
         "email" => $user->getEmail(),
         "firstName" => $user->getFirstName(),
         "lastName" => $user->getLastName(),
+        "isValid" => $user->getIsValid(),
     ];
 
     new Flash("global", "Welcome back " . $user->getFirstName() . " " . $user->getLastName(), "success");
