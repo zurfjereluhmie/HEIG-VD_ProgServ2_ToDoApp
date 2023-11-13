@@ -32,43 +32,6 @@ class TaskBuilder
         $this->dueDate = $dueDate;
     }
 
-    public function setId(int $id): TaskBuilder
-    {
-        $this->id = $id;
-        return $this;
-    }
-
-    public function setTitle(string $title): TaskBuilder
-    {
-        $this->title = $title;
-        return $this;
-    }
-
-    public function setDescription(?string $description): TaskBuilder
-    {
-        $this->description = $description;
-        return $this;
-    }
-
-    public function setIsDone(bool $isDone): TaskBuilder
-    {
-        $this->isDone = $isDone;
-        return $this;
-    }
-
-    public function setIsFav(bool $isFav): TaskBuilder
-    {
-        $this->isFav = $isFav;
-        return $this;
-    }
-
-    public function setDueDate(DateTime $dueDate): TaskBuilder
-    {
-        $this->dueDate = $dueDate;
-        return $this;
-    }
-
-
     public function getId(): ?int
     {
         return $this->id;
@@ -104,4 +67,40 @@ class TaskBuilder
         return new Task($this);
     }
 
+    public function setId(int $id): TaskBuilder
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    public function setTitle(string $title): TaskBuilder
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    public function setDescription(?string $description): TaskBuilder
+    {
+        $this->description = $description;
+        return $this;
+    }
+
+    public function setIsDone(bool $isDone): TaskBuilder
+    {
+        $this->isDone = $isDone;
+        return $this;
+    }
+
+    public function setIsFav(bool $isFav): TaskBuilder
+    {
+        $this->isFav = $isFav;
+        return $this;
+    }
+
+    public function setDueDate(DateTime $dueDate): TaskBuilder
+    {
+        if ($dueDate < new DateTime()) throw new Exception("Due date cannot be in the past");
+        $this->dueDate = $dueDate;
+        return $this;
+    }
 }
