@@ -22,19 +22,19 @@ if (isset($_POST['submit-PW'])) {
     if (!$tokenTroughPOST) {
         new Flash(constant("FLASH_NAME"), 'No token provided', 'danger');
         header('Location: ' . $_SERVER['PHP_SELF'] . '?token=' . $token);
-        die();
+        exit();
     }
 
     if (!$password || !$password2) {
         new Flash(constant("FLASH_NAME"), 'Fill all the forms fields', 'danger');
         header('Location: ' . $_SERVER['PHP_SELF'] . '?token=' . $tokenTroughPOST);
-        die();
+        exit();
     }
 
     if ($password !== $password2) {
         new Flash(constant("FLASH_NAME"), 'Passwords do not match', 'danger');
         header('Location: ' . $_SERVER['PHP_SELF'] . '?token=' . $tokenTroughPOST);
-        die();
+        exit();
     }
 
     $dbManagerUser = DbManagerCRUD_User::getInstance();
@@ -57,12 +57,12 @@ if (isset($_POST['submit-PW'])) {
     if (!$newUser) {
         new Flash(constant("FLASH_NAME"), 'Error while updating the password', 'danger');
         header('Location: ' . $_SERVER['PHP_SELF'] . '?token=' . $tokenTroughPOST);
-        die();
+        exit();
     }
 
     new Flash("global", 'Password updated', 'success');
     header('Location: login.php');
-    die();
+    exit();
 }
 
 if (isset($_POST['submit-email'])) {
@@ -71,7 +71,7 @@ if (isset($_POST['submit-email'])) {
     if (!$email) {
         new Flash(constant("FLASH_NAME"), 'Fill all the forms fields', 'danger');
         header('Location: ' . $_SERVER['PHP_SELF']);
-        die();
+        exit();
     }
 
     $dbManagerUser = DbManagerCRUD_User::getInstance();
@@ -80,7 +80,7 @@ if (isset($_POST['submit-email'])) {
     if (!$user) {
         new Flash(constant("FLASH_NAME"), 'Email not found', 'danger');
         header('Location: ' . $_SERVER['PHP_SELF']);
-        die();
+        exit();
     }
 
     $res = $user->resetPassword();
@@ -88,7 +88,7 @@ if (isset($_POST['submit-email'])) {
     if (!$res) {
         new Flash(constant("FLASH_NAME"), 'Error while resetting the password', 'danger');
         header('Location: ' . $_SERVER['PHP_SELF']);
-        die();
+        exit();
     }
 
     new Flash("global", 'Email sent, check your inbox', 'success');

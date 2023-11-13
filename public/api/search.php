@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION["user"])) {
-    die();
+    exit();
 }
 
 $req = file_get_contents('php://input');
@@ -10,7 +10,7 @@ $req = json_decode($req, true);
 $search = $req["searchValue"];
 
 if (empty($search)) {
-    die();
+    exit();
 }
 
 include_once "../../app/autoload.php";
@@ -21,7 +21,7 @@ $categoryManager = CategoryManager::getInstance();
 $categories = $categoryManager->getCategoriesByTitle($search);
 if (empty($categories)) {
     echo json_encode([]);
-    die();
+    exit();
 }
 
 $data = [];

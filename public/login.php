@@ -20,7 +20,7 @@ if (isset($_POST["submit"])) {
     if (!$email || !$password) {
         new Flash(constant("FLASH_NAME"), "Fill all the forms fields", "warning");
         header("Location: " . $_SERVER["PHP_SELF"]);
-        die();
+        exit();
     }
 
     $user = DbManagerCRUD_User::getInstance()->readUsingEmail($email);
@@ -28,13 +28,13 @@ if (isset($_POST["submit"])) {
     if (!$user) {
         new Flash(constant("FLASH_NAME"), "Wrong email or password", "danger");
         header("Location: " . $_SERVER["PHP_SELF"]);
-        die();
+        exit();
     }
 
     if (!password_verify($password, $user->getPassword())) {
         new Flash(constant("FLASH_NAME"), "Wrong email or password", "danger");
         header("Location: " . $_SERVER["PHP_SELF"]);
-        die();
+        exit();
     }
 
     $_SESSION["user"] = [
@@ -48,7 +48,7 @@ if (isset($_POST["submit"])) {
     $redirect = $_SESSION["redirect"] ?? "dashboard.php";
     unset($_SESSION["redirect"]);
     header("Location: " . $redirect);
-    die();
+    exit();
 }
 
 ?>
