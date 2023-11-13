@@ -3,6 +3,8 @@
 namespace ch\comem\todoapp\task;
 
 use Exception;
+use DateTime;
+use ch\comem\todoapp\task\TaskBuilder;
 
 /**
  * Represents a task in the Todo app.
@@ -31,23 +33,23 @@ class Task
      * @var bool $isDone Indicates whether the task is done or not.
      */
     private $isDone;
-
     /**
-     * Task constructor.
-     * @param string $title The title of the task.
-     * @param string $description The description of the task.
-     * @param bool $isDone The status of the task (done or not).
+     * @var bool $isFav Indicates whether the task is a favorite or not.
      */
-    public function __construct($title, $description, $isDone)
-    {
-        if (!$title || !is_string($title)) throw new Exception('Title must be defined and of type string');
-        if (!$description || !is_string($description)) throw new Exception('Description must be defined and of type string');
+    private $isFav;
+    /** 
+     * @var DateTime $dueDate The due date of the task.
+     */
+    private $dueDate;
 
-        // Those values should be later replaced with values from the database
-        $this->id = ++self::$counter;
-        $this->title = $title;
-        $this->description = $description;
-        $this->isDone = $isDone;
+    public function __construct(TaskBuilder $builder)
+    {
+        $this->id = $builder->getId();
+        $this->title = $builder->getTitle();
+        $this->description = $builder->getDescription();
+        $this->isDone = $builder->isDone();
+        $this->isFav = $builder->isFav();
+        $this->dueDate = $builder->getDueDate();
     }
 
     /**
@@ -55,7 +57,7 @@ class Task
      *
      * @return int The ID of the task.
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -76,7 +78,6 @@ class Task
      * @return string The description of the task.
      */
     public function getDescription(): string
-
     {
         return $this->description;
     }
@@ -89,5 +90,76 @@ class Task
     public function isDone(): bool
     {
         return $this->isDone;
+    }
+
+    /**
+     * Determines whether the task is a favorite or not.
+     *
+     * @return bool True if the task is a favorite, false otherwise.
+     */
+    public function isFav(): bool
+    {
+        return $this->isFav;
+    }
+
+    /**
+     * Returns the due date of the task.
+     *
+     * @return DateTime The due date of the task.
+     */
+    public function getDueDate(): DateTime
+    {
+        return $this->dueDate;
+    }
+
+        /**
+     * Sets the title of the task.
+     *
+     * @param string $title The title of the task.
+     */
+    public function setTitle(string $title): void
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * Sets the description of the task.
+     * 
+     * @param string $description The description of the task.
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * Sets whether the task is done or not.
+     *
+     * @param bool $isDone True if the task is done, false otherwise.
+     */
+    public function setIsDone(bool $isDone): void
+    {
+        $this->isDone = $isDone;
+    }
+
+    /**
+     * Sets whether the task is a favorite or not.
+     *
+     * @param bool $isFav True if the task is a favorite, false otherwise.
+     */
+    public function setIsFav(bool $isFav): void
+    {
+        $this->isFav = $isFav;
+    }
+
+    /**
+     * Sets the due date of the task.
+     *
+     * @param DateTime $dueDate The due date of the task.
+     */
+    public function setDueDate(DateTime $dueDate): void
+    {
+        if ($dueDate < new DateTime()) throw new Exception("Due date cannot be in the past");
+        $this->dueDate = $dueDate;
     }
 }
