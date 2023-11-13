@@ -36,6 +36,11 @@ Search.appendIndex(
             "summary": "Get\u0020the\u0020last\u0020name\u0020of\u0020the\u0020user.",
             "url": "classes/ch-comem-todoapp-auth-User.html#method_getLastName"
         },                {
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AgetIsValid\u0028\u0029",
+            "name": "getIsValid",
+            "summary": "Get\u0020the\u0020validation\u0020status\u0020of\u0020the\u0020user.",
+            "url": "classes/ch-comem-todoapp-auth-User.html#method_getIsValid"
+        },                {
             "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AsetId\u0028\u0029",
             "name": "setId",
             "summary": "Sets\u0020the\u0020ID\u0020of\u0020the\u0020user.\u0020Should\u0020only\u0020be\u0020used\u0020when\u0020retrieving\u0020the\u0020user\u0020from\u0020the\u0020database.",
@@ -46,10 +51,25 @@ Search.appendIndex(
             "summary": "Sets\u0020the\u0020password\u0020for\u0020the\u0020user.",
             "url": "classes/ch-comem-todoapp-auth-User.html#method_setPassword"
         },                {
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AsetIsValid\u0028\u0029",
+            "name": "setIsValid",
+            "summary": "Set\u0020the\u0020validity\u0020of\u0020the\u0020user.\u0020Should\u0020only\u0020be\u0020used\u0020when\u0020validating\u0020the\u0020user\u0027s\u0020account\u0020trough\u0020token.",
+            "url": "classes/ch-comem-todoapp-auth-User.html#method_setIsValid"
+        },                {
             "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AresetPassword\u0028\u0029",
             "name": "resetPassword",
             "summary": "Create\u0020a\u0020token\u0020to\u0020reset\u0020the\u0020user\u0027s\u0020password\u0020and\u0020send\u0020it\u0020to\u0020them\u0020by\u0020email.",
             "url": "classes/ch-comem-todoapp-auth-User.html#method_resetPassword"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AsendValidationEmail\u0028\u0029",
+            "name": "sendValidationEmail",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-auth-User.html#method_sendValidationEmail"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AgenerateToken\u0028\u0029",
+            "name": "generateToken",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-auth-User.html#method_generateToken"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003A\u0024id",
             "name": "id",
@@ -75,6 +95,11 @@ Search.appendIndex(
             "name": "lastName",
             "summary": "",
             "url": "classes/ch-comem-todoapp-auth-User.html#property_lastName"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003A\u0024isValid",
+            "name": "isValid",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-auth-User.html#property_isValid"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\Category",
             "name": "Category",
@@ -311,6 +336,11 @@ Search.appendIndex(
             "summary": "Updates\u0020a\u0020category\u0020inside\u0020the\u0020CategoryManager\u0020and\u0020inside\u0020the\u0020DB.",
             "url": "classes/ch-comem-todoapp-category-CategoryManager.html#method_updateCategory"
         },                {
+            "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryManager\u003A\u003AremoveCategory\u0028\u0029",
+            "name": "removeCategory",
+            "summary": "Remove\u0020a\u0020category\u0020from\u0020the\u0020CategoryManager\u0020and\u0020from\u0020the\u0020DB.",
+            "url": "classes/ch-comem-todoapp-category-CategoryManager.html#method_removeCategory"
+        },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\CategoryManager\u003A\u003A\u0024instance",
             "name": "instance",
             "summary": "",
@@ -445,6 +475,11 @@ Search.appendIndex(
             "name": "readUsingPWToken",
             "summary": "Reads\u0020a\u0020user\u0020from\u0020the\u0020database\u0020using\u0020a\u0020password\u0020reset\u0020token.",
             "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-User.html#method_readUsingPWToken"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_User\u003A\u003AreadUsingValidationToken\u0028\u0029",
+            "name": "readUsingValidationToken",
+            "summary": "Reads\u0020a\u0020user\u0020from\u0020the\u0020database\u0020using\u0020a\u0020validation\u0020token.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-User.html#method_readUsingValidationToken"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_User\u003A\u003Aupdate\u0028\u0029",
             "name": "update",
