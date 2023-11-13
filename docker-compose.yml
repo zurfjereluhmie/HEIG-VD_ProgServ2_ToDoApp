@@ -8,6 +8,7 @@ services:
       - ./config:/var/config # config
       - ./public:/var/www/html # public
       - ./app:/var/www/app # app
+      - ./controllers:/var/www/controllers # controllers
       - ./database:/var/www/database # database
       - ./vendor:/var/www/vendor # vendor
     environment:
