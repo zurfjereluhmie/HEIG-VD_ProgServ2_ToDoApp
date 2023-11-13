@@ -9,15 +9,16 @@
     <a href="testInsert.php">Test Insert</a>
     <br>
     <?php
+
+    use ch\comem\todoapp\dbCRUD\DbManagerCRUD_User;
+
     include_once "../app/autoload.php";
 
-    use ch\comem\todoapp\category\CategoryManager;
-
-    $categoryManager = CategoryManager::getInstance();
-    $categories = $categoryManager->getCategoriesByTitle("m");
+    $dbManagerUser = DbManagerCRUD_User::getInstance();
+    $u1 = $dbManagerUser->read(1);
 
     echo "<pre>";
-    print_r($categories);
+    print_r($u1);
     echo "</pre>";
 
 

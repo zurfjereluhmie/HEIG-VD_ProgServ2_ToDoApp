@@ -1,18 +1,12 @@
 <?php
+session_start();
 
 require_once '../app/autoload.php';
+require_once '../controllers/protect.php';
 
 use ch\comem\todoapp\flash\Flash;
 use ch\comem\todoapp\category\CategoryManager;
 
-session_start();
-
-if (!isset($_SESSION["user"])) {
-    new Flash("global", "You must be logged in to access this page", "danger");
-    $_SESSION["redirect"] = $_SERVER["REQUEST_URI"];
-    header("Location: login.php");
-    exit();
-}
 
 $categoryManager = CategoryManager::getInstance();
 $categories = $categoryManager->getCategories();

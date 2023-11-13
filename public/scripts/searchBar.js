@@ -35,7 +35,7 @@ searchInput.addEventListener("keyup", () => {
                 liveSearchUl.innerHTML = "";
                 data.forEach(todo => {
                     const li = document.createElement("li");
-                    li.innerHTML = `<a href="/todo/${todo.id}">${todo.title}</a>`;
+                    li.innerHTML = `<a href="/category.php?id=${todo.id}">${todo.title}</a>`;
                     liveSearchUl.appendChild(li);
                 });
             })
