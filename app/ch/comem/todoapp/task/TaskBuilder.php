@@ -2,6 +2,7 @@
 
 namespace ch\comem\todoapp\task;
 
+use ch\comem\todoapp\category\Category;
 use DateTime;
 use Exception;
 
@@ -20,9 +21,13 @@ class TaskBuilder
     private bool $isDone;
     private bool $isFav;
     private DateTime $dueDate;
+    private Category $category;
 
-    public function __construct (string $title, DateTime $dueDate) {
+    public function __construct (string $title, DateTime $dueDate, Category $category) {
         if (!isset($title) || empty($title)) throw new Exception("Title cannot be empty");
+        if (!isset($dueDate) || empty($dueDate)) throw new Exception("Due date cannot be empty");
+        if ($dueDate < new DateTime()) throw new Exception("Due date cannot be in the past");
+        if (!isset($category) || empty($category)) throw new Exception("Category cannot be empty");
         
         $this->id=null;
         $this->title = $title;
@@ -30,6 +35,7 @@ class TaskBuilder
         $this->isDone = false;
         $this->isFav = false;
         $this->dueDate = $dueDate;
+        $this->category = $category;
     }
 
     public function getId(): ?int
@@ -62,6 +68,11 @@ class TaskBuilder
         return $this->dueDate;
     }
 
+    public function getCategory(): Category
+    {
+        return $this->category;
+    }
+
     public function build(): Task
     {
         return new Task($this);
@@ -70,12 +81,6 @@ class TaskBuilder
     public function setId(int $id): TaskBuilder
     {
         $this->id = $id;
-        return $this;
-    }
-
-    public function setTitle(string $title): TaskBuilder
-    {
-        $this->title = $title;
         return $this;
     }
 
@@ -94,13 +99,6 @@ class TaskBuilder
     public function setIsFav(bool $isFav): TaskBuilder
     {
         $this->isFav = $isFav;
-        return $this;
-    }
-
-    public function setDueDate(DateTime $dueDate): TaskBuilder
-    {
-        if ($dueDate < new DateTime()) throw new Exception("Due date cannot be in the past");
-        $this->dueDate = $dueDate;
         return $this;
     }
 }
