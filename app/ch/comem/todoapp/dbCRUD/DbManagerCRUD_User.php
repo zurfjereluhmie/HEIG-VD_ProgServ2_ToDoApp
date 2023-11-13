@@ -44,6 +44,7 @@ class DbManagerCRUD_User extends DbManagerCRUD
         if (!$res) throw new Exception('Error while creating user');
         return $this->getDb()->lastInsertId();
     }
+
     public function read(int $id): ?User
     {
         if (!$id) throw new Exception('Invalid id');
@@ -92,6 +93,12 @@ class DbManagerCRUD_User extends DbManagerCRUD
         return $this->createUser($user);
     }
 
+    /**
+     * Reads a user from the database using a validation token.
+     *
+     * @param string $token The validation token to search for.
+     * @return User|null The user found, or null if not found.
+     */
     public function readUsingValidationToken(string $token): ?User
     {
         if (!$token) throw new Exception('Invalid token');
@@ -121,6 +128,7 @@ class DbManagerCRUD_User extends DbManagerCRUD
         ]);
         return ($stmt->execute()) ? $this->read($id) : null;
     }
+
     public function delete(int $id): bool
     {
         if (!$id) throw new Exception('Invalid id');
