@@ -1,9 +1,8 @@
 <?php
 session_start();
 
-require_once("../app/autoload.php");
+require_once "../app/autoload.php";
 
-use ch\comem\todoapp\dbCRUD\DbManagerCRUD_User;
 use ch\comem\todoapp\flash\Flash;
 
 if (isset($_SESSION["user"])) {

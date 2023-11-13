@@ -11,7 +11,7 @@ if (isset($_SESSION["user"])) {
 
 define("FLASH_NAME", pathinfo(basename($_SERVER["PHP_SELF"]), PATHINFO_FILENAME));
 
-if (isset($_POST["submit"])) require_once("../controllers/validate-register.php");
+if (isset($_POST["submit"])) require_once "../controllers/validate-register.php";
 
 ?>
 
