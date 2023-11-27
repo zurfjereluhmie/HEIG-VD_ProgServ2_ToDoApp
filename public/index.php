@@ -19,6 +19,7 @@
 
     echo "<pre>";
     print_r($u1);
+    // REGSITER INIT
     echo "</pre>";
 
 

@@ -10,3 +10,9 @@ if (!isset($_SESSION['user'])) {
     header("Location: login.php");
     exit();
 }
+
+if (!$_SESSION['user']['isValid']) {
+    new Flash("global", "You must validate your account before accessing this page", "danger");
+    header("Location: validate-account.php");
+    exit();
+}
