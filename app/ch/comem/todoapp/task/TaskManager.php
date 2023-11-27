@@ -2,6 +2,7 @@
 
 namespace ch\comem\todoapp\task;
 
+use ch\comem\todoapp\dbCRUD\DbManagerCRUD_Task;
 use Exception;
 
 /**
@@ -12,31 +13,19 @@ use Exception;
  */
 class TaskManager
 {
-    /**
-     * This is a static private variable that holds an instance of the TaskManager class.
-     * @var TaskManager $instance
-     */
-    static private $instance = null;
-    /**
-     * @var Task[] $tasks An array of tasks managed by the TaskManager
-     */
-    private $tasks = [];
+    private static ?TaskManager $instance = null;
+    private array $tasks;
 
-    /**
-     * Constructor for the TaskManager class.
-     * This method is private to ensure that only one instance of the TaskManager can be created.
-     * @access private
-     */
     private function __construct()
     {
         $this->tasks = [];
-        $this->initTasks();
+        $this->loadTasks();
     }
 
     /**
      * Returns an instance of the TaskManager class.
      *
-     * @return TaskManager
+     * @return TaskManager The instance of the TaskManager class.
      */
     static public function getInstance(): TaskManager
     {
@@ -45,41 +34,112 @@ class TaskManager
     }
 
     /**
-     * Adds a task to the task manager.
+     * Loads the tasks.
      *
-     * @param Task $task The task to add.
-     * @return void
+     * @return bool Returns true if the tasks were successfully loaded, false otherwise.
      */
-    public function add(Task $task): void
+    private function loadTasks(): bool
     {
-        if (!$task instanceof Task) throw new Exception("Task must be of type Task");
-        if (in_array($task, $this->tasks)) throw new Exception("Task already exists");
-        $this->tasks[] = $task;
+        $this->tasks = DbManagerCRUD_Task::getInstance()->readAll();
+        return true;
     }
 
     /**
-     * Displays the tasks.
+     * Retrieves an array of tasks.
      *
-     * @return void
+     * @return array The array of tasks.
      */
-    public function displayTasks(): void
+    public function getTasks(): array
+    {
+        return $this->tasks;
+    }
+
+    /**
+     * Retrieves a task by its ID.
+     *
+     * @param int $id The ID of the task to retrieve.
+     * @return Task|null The task object if found, null otherwise.
+     */
+    public function getTask(int $id): ?Task
     {
         foreach ($this->tasks as $task) {
-            echo $task->getTitle() . "<br>";
-            echo $task->getDescription() . "<br>";
-            echo $task->isDone() . "<br>";
+            if ($task->getId() == $id) return $task;
         }
+        return null;
+    }
+
+    // TODO : Tester cette fonction
+    /**
+     * Retrieves tasks by category ID.
+     *
+     * @param int $categoryId The ID of the category.
+     * @return array An array of tasks.
+     */
+    public function getTasksByCategory(int $categoryId): array
+    {
+        $tasks = [];
+        foreach ($this->tasks as $task) {
+            if ($task->getCategory()->getId() == $categoryId) $tasks[] = $task;
+        }
+        return $tasks;
     }
 
     /**
-     * Initializes the tasks.
-     * @return void
+     * Adds a task to the task manager.
+     *
+     * @param Task $task The task to be added.
+     * @return bool Returns true if the task was successfully added, false otherwise.
      */
-    private function initTasks(): void
+    public function addTask(Task $task): bool
     {
-        echo "initTasks() called<br>";
-        $this->tasks[] = new Task("Test", "Test", false);
-        $this->tasks[] = new Task("Test2", "Test2", false);
-        $this->tasks[] = new Task("Test3", "Test3", false);
+        $dbManager = DbManagerCRUD_Task::getInstance();
+        $id = $dbManager->create($task);
+        if (!$id) throw new Exception("Error while creating task");
+
+        $task = $dbManager->read($id);
+
+        if (!$task) throw new Exception("Error while reading task");
+
+        $this->tasks[] = $task;
+        return true;
+    }
+
+    /**
+     * Updates a task.
+     *
+     * @param Task $task The task to update.
+     * @return bool Returns true if the task was successfully updated, false otherwise.
+     */
+    public function updateTask(Task $task): bool
+    {
+        if ($task->getId() == null) throw new Exception("Cannot update task without ID");
+
+        $dbManager = DbManagerCRUD_Task::getInstance();
+        $res = $dbManager->update($task->getId(), $task);
+        if (!$res) throw new Exception("Error while updating task");
+
+        if ($res instanceof Task) {
+            $this->loadTasks();
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Removes a task from the task manager.
+     *
+     * @param Task $task The task to be removed.
+     * @return bool Returns true if the task was successfully removed, false otherwise.
+     */
+    public function removeTask(Task $task): bool
+    {
+        if ($task->getId() == null) throw new Exception("Cannot remove task without ID");
+
+        $dbManager = DbManagerCRUD_Task::getInstance();
+        $res = $dbManager->delete($task->getId());
+        if (!$res) throw new Exception("Error while removing task");
+
+        $this->loadTasks();
+        return true;
     }
 }

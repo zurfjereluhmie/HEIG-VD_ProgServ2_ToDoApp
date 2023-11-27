@@ -3,6 +3,9 @@
 namespace ch\comem\todoapp\task;
 
 use Exception;
+use DateTime;
+use ch\comem\todoapp\task\TaskBuilder;
+use ch\comem\todoapp\category\Category;
 
 /**
  * Represents a task in the Todo app.
@@ -11,37 +14,28 @@ use Exception;
  */
 class Task
 {
-    /**
-     * @var int $counter A static counter used to keep track of the number of tasks created.
-     */
-    static private $counter = 0;
-    /**
-     * @var int $id The unique identifier of the task.
-     */
-    private $id;
-    /**
-     * @var string $title The title of the task.
-     */
-    private $title;
-    /**
-     * @var string $description The description of the task.
-     */
-    private $description;
-    /**
-     * @var bool $isDone Indicates whether the task is done or not.
-     */
-    private $isDone;
+    private ?int $id;
+    private string $title;
+    private ?string $description;
+    private bool $isDone;
+    private bool $isFav;
+    private DateTime $dueDate;
+    private Category $category;
 
+    /**
+     * Task constructor.
+     *
+     * @param TaskBuilder $builder The task builder object used to construct the task.
+     */
     public function __construct(TaskBuilder $builder)
     {
-        if (!$title || !is_string($title)) throw new Exception('Title must be defined and of type string');
-        if (!$description || !is_string($description)) throw new Exception('Description must be defined and of type string');
-
-        // Those values should be later replaced with values from the database
-        $this->id = ++self::$counter;
-        $this->title = $title;
-        $this->description = $description;
-        $this->isDone = $isDone;
+        $this->id = $builder->getId();
+        $this->title = $builder->getTitle();
+        $this->description = $builder->getDescription();
+        $this->isDone = $builder->isDone();
+        $this->isFav = $builder->isFav();
+        $this->dueDate = $builder->getDueDate();
+        $this->category = $builder->getCategory();
     }
 
     /**
@@ -49,7 +43,7 @@ class Task
      *
      * @return int The ID of the task.
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -69,7 +63,7 @@ class Task
      *
      * @return string The description of the task.
      */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
@@ -114,7 +108,7 @@ class Task
         return $this->category;
     }
 
-        /**
+    /**
      * Sets the title of the task.
      *
      * @param string $title The title of the task.
@@ -174,6 +168,4 @@ class Task
     {
         $this->category = $category;
     }
-
-
 }
