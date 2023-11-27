@@ -26,7 +26,6 @@ class TaskBuilder
     public function __construct (string $title, DateTime $dueDate, Category $category) {
         if (!isset($title) || empty($title)) throw new Exception("Title cannot be empty");
         if (!isset($dueDate) || empty($dueDate)) throw new Exception("Due date cannot be empty");
-        if ($dueDate < new DateTime()) throw new Exception("Due date cannot be in the past");
         if (!isset($category) || empty($category)) throw new Exception("Category cannot be empty");
         
         $this->id=null;
