@@ -3,6 +3,7 @@
 namespace ch\comem\todoapp\task;
 
 use ch\comem\todoapp\category\Category;
+use ch\comem\todoapp\category\CategoryManager;
 use DateTime;
 use Exception;
 
@@ -23,10 +24,10 @@ class TaskBuilder
     private DateTime $dueDate;
     private Category $category;
 
-    public function __construct (string $title, DateTime $dueDate, Category $category) {
+    public function __construct (string $title, DateTime $dueDate, int $categoryId) {
         if (!isset($title) || empty($title)) throw new Exception("Title cannot be empty");
         if (!isset($dueDate) || empty($dueDate)) throw new Exception("Due date cannot be empty");
-        if (!isset($category) || empty($category)) throw new Exception("Category cannot be empty");
+        if (!isset($categoryId) || empty($categoryId)) throw new Exception("Category ID cannot be empty");
         
         $this->id=null;
         $this->title = $title;
@@ -34,7 +35,7 @@ class TaskBuilder
         $this->isDone = false;
         $this->isFav = false;
         $this->dueDate = $dueDate;
-        $this->category = $category;
+        $this->category = CategoryManager::getInstance()->getCategory($categoryId);
     }
 
     public function getId(): ?int
