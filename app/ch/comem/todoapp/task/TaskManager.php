@@ -2,6 +2,7 @@
 
 namespace ch\comem\todoapp\task;
 
+use ch\comem\todoapp\dbCRUD\DbManagerCRUD_Task;
 use Exception;
 
 /**
@@ -12,74 +13,87 @@ use Exception;
  */
 class TaskManager
 {
-    /**
-     * This is a static private variable that holds an instance of the TaskManager class.
-     * @var TaskManager $instance
-     */
-    static private $instance = null;
-    /**
-     * @var Task[] $tasks An array of tasks managed by the TaskManager
-     */
-    private $tasks = [];
+    private static ?TaskManager $instance = null;
+    private array $tasks;
 
-    /**
-     * Constructor for the TaskManager class.
-     * This method is private to ensure that only one instance of the TaskManager can be created.
-     * @access private
-     */
     private function __construct()
     {
         $this->tasks = [];
-        $this->initTasks();
+        $this->loadTasks();
     }
 
-    /**
-     * Returns an instance of the TaskManager class.
-     *
-     * @return TaskManager
-     */
     static public function getInstance(): TaskManager
     {
         if (is_null(self::$instance)) self::$instance = new self();
         return self::$instance;
     }
 
-    /**
-     * Adds a task to the task manager.
-     *
-     * @param Task $task The task to add.
-     * @return void
-     */
-    public function add(Task $task): void
+    public function loadTasks(): bool
     {
-        if (!$task instanceof Task) throw new Exception("Task must be of type Task");
-        if (in_array($task, $this->tasks)) throw new Exception("Task already exists");
-        $this->tasks[] = $task;
+        $this->tasks = DbManagerCRUD_Task::getInstance()->readAll();
+        return true;
     }
 
-    /**
-     * Displays the tasks.
-     *
-     * @return void
-     */
-    public function displayTasks(): void
+    public function getTasks(): array
+    {
+        return $this->tasks;
+    }
+
+    public function getTask(int $id): ?Task
     {
         foreach ($this->tasks as $task) {
-            echo $task->getTitle() . "<br>";
-            echo $task->getDescription() . "<br>";
-            echo $task->isDone() . "<br>";
+            if ($task->getId() == $id) return $task;
         }
+        return null;
     }
 
-    /**
-     * Initializes the tasks.
-     * @return void
-     */
-    private function initTasks(): void
+    public function getTasksByCategory(int $categoryId): array
     {
-        echo "initTasks() called<br>";
-        $this->tasks[] = new Task("Test", "Test", false);
-        $this->tasks[] = new Task("Test2", "Test2", false);
-        $this->tasks[] = new Task("Test3", "Test3", false);
+        $tasks = [];
+        foreach ($this->tasks as $task) {
+            if ($task->getCategory()->getId() == $categoryId) $tasks[] = $task;
+        }
+        return $tasks;
+    }
+
+    public function addTask(Task $task): bool
+    {
+        $dbManager = DbManagerCRUD_Task::getInstance();
+        $id = $dbManager->create($task);
+        if (!$id) throw new Exception("Error while creating task");
+
+        $task = $dbManager->read($id);
+
+        if (!$task) throw new Exception("Error while reading task");
+
+        $this->tasks[] = $task;
+        return true;
+    }
+
+    public function updateTask(Task $task): bool
+    {
+        if ($task->getId() == null) throw new Exception("Cannot update task without ID");
+
+        $dbManager = DbManagerCRUD_Task::getInstance();
+        $res = $dbManager->update($task->getId(), $task);
+        if (!$res) throw new Exception("Error while updating task");
+
+        if ($res instanceof Task) {
+            $this->loadTasks();
+            return true;
+        }
+        return false;
+    }
+
+    public function removeTask(Task $task): bool
+    {
+        if ($task->getId() == null) throw new Exception("Cannot remove task without ID");
+
+        $dbManager = DbManagerCRUD_Task::getInstance();
+        $res = $dbManager->delete($task->getId());
+        if (!$res) throw new Exception("Error while removing task");
+
+        $this->loadTasks();
+        return true;
     }
 }
