@@ -32,13 +32,7 @@ class Task
      */
     private $isDone;
 
-    /**
-     * Task constructor.
-     * @param string $title The title of the task.
-     * @param string $description The description of the task.
-     * @param bool $isDone The status of the task (done or not).
-     */
-    public function __construct($title, $description, $isDone)
+    public function __construct(TaskBuilder $builder)
     {
         if (!$title || !is_string($title)) throw new Exception('Title must be defined and of type string');
         if (!$description || !is_string($description)) throw new Exception('Description must be defined and of type string');
@@ -76,7 +70,6 @@ class Task
      * @return string The description of the task.
      */
     public function getDescription(): string
-
     {
         return $this->description;
     }
@@ -90,4 +83,97 @@ class Task
     {
         return $this->isDone;
     }
+
+    /**
+     * Determines whether the task is a favorite or not.
+     *
+     * @return bool True if the task is a favorite, false otherwise.
+     */
+    public function isFav(): bool
+    {
+        return $this->isFav;
+    }
+
+    /**
+     * Returns the due date of the task.
+     *
+     * @return DateTime The due date of the task.
+     */
+    public function getDueDate(): DateTime
+    {
+        return $this->dueDate;
+    }
+
+    /**
+     * Returns the category of the task.
+     *
+     * @return Category The category of the task.
+     */
+    public function getCategory(): Category
+    {
+        return $this->category;
+    }
+
+        /**
+     * Sets the title of the task.
+     *
+     * @param string $title The title of the task.
+     */
+    public function setTitle(string $title): void
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * Sets the description of the task.
+     * 
+     * @param string $description The description of the task.
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * Sets whether the task is done or not.
+     *
+     * @param bool $isDone True if the task is done, false otherwise.
+     */
+    public function setIsDone(bool $isDone): void
+    {
+        $this->isDone = $isDone;
+    }
+
+    /**
+     * Sets whether the task is a favorite or not.
+     *
+     * @param bool $isFav True if the task is a favorite, false otherwise.
+     */
+    public function setIsFav(bool $isFav): void
+    {
+        $this->isFav = $isFav;
+    }
+
+    /**
+     * Sets the due date of the task.
+     *
+     * @param DateTime $dueDate The due date of the task.
+     */
+    public function setDueDate(DateTime $dueDate): void
+    {
+        if ($dueDate < new DateTime()) throw new Exception("Due date cannot be in the past");
+        $this->dueDate = $dueDate;
+    }
+
+    /**
+     * Sets the category of the task.
+     * 
+     * @param Category $category The category of the task.
+     */
+    public function setCategory(Category $category): void
+    {
+        $this->category = $category;
+    }
+
+
 }
