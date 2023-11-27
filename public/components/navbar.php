@@ -6,7 +6,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div id="searchContent">
-        <input class="mx-auto searchBar" type="search" placeholder="Search" aria-label="Search">
+        <input class="mx-auto searchBar" type="search" placeholder="<?= TEXT['search']; ?>" aria-label="<?= TEXT['search']; ?>">
         <!-- Result of the search -->
         <div id="livesearch">
             <ul>

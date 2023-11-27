@@ -1,6 +1,7 @@
 <?php
 
 require_once "../app/autoload.php";
+require_once "locale/locale-conf.php";
 
 use ch\comem\todoapp\category\CategoryManager;
 
@@ -15,31 +16,31 @@ $categories = $categoryManager->getCategories();
             <li class="nav-item navItemAddTask">
                 <a class="nav-link navLinkAddTask" href="#">
                     <img class="navImg" src="assets/icons/addtask.svg" alt="Add a task icon">
-                    Add a task
+                    <?= TEXT['add-a-task']; ?>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link navItem <?php echo (basename($_SERVER['PHP_SELF']) === 'dashboard.php') ? 'navItemActive' : ''; ?>" href="/dashboard.php">
                     <img class="navImg" src="assets/icons/dashboard.svg" alt="Dashboard icon">
-                    Dashboard
+                    <?= TEXT['dashboard']; ?>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link navItem <?php echo (basename($_SERVER['PHP_SELF']) === 'categories.php') ? 'navItemActive' : ''; ?>" href="/categories.php">
                     <img class="navImg" src="assets/icons/lists.svg" alt="Lists icon">
-                    Categories
+                    <?= TEXT['categories']; ?>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link navItem <?php echo (basename($_SERVER['PHP_SELF']) === 'favourites.php') ? 'navItemActive' : ''; ?>" href="/favourites.php">
                     <img class="navImg" src="assets/icons/favourite.svg" alt="Favourites icon">
-                    Favourites
+                    <?= TEXT['favourites']; ?>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link navItem <?php echo (basename($_SERVER['PHP_SELF']) === 'calendar.php') ? 'navItemActive' : ''; ?>" href="/calendar.php">
                     <img class="navImg" src="assets/icons/calendar.svg" alt="Calendar icon">
-                    Calendar
+                    <?= TEXT['calendar']; ?>
                 </a>
             </li>
         </ul>
@@ -47,7 +48,7 @@ $categories = $categoryManager->getCategories();
         <!-- Sidebar menu end -->
         <!-- My ToDo Categories -->
         <h6 class="d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span class="navItem navToDoCategoryTitle">My ToDo Categories :</span>
+            <span class="navItem navToDoCategoryTitle"><?= TEXT['my-todo-categories'] ?></span>
         </h6>
         <ul class="nav flex-column mb-2 navToDoCategory">
             <?php if (!empty($categories)) : ?>
@@ -62,7 +63,7 @@ $categories = $categoryManager->getCategories();
             <?php else : ?>
                 <li class="nav-item">
                     <a class="nav-link navToDoItem d-flex" href="/categories.php">
-                        <span>No categories yet</span>
+                        <span><?= TEXT['my-todo-categories-empty']; ?></span>
                     </a>
                 </li>
             <?php endif; ?>
@@ -74,13 +75,13 @@ $categories = $categoryManager->getCategories();
             <li class="nav-item">
                 <a class="nav-link navItem" href="#" id="settings">
                     <img class="navImg" src="assets/icons/settings.svg" alt="">
-                    Settings
+                    <?= TEXT['settings']; ?>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link navItem" href="/logout.php">
                     <img class="navImg" src="assets/icons/logout.svg" alt="">
-                    Log out
+                    <?= TEXT['logout']; ?>
                 </a>
             </li>
         </ul>

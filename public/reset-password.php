@@ -3,6 +3,8 @@ session_start();
 
 require_once '../app/autoload.php';
 
+require_once "locale/locale-conf.php";
+
 use ch\comem\todoapp\dbCRUD\DbManagerCRUD_User;
 use ch\comem\todoapp\flash\Flash;
 
@@ -20,19 +22,19 @@ if (isset($_POST['submit-PW'])) {
     $password2 = htmlspecialchars($_POST['password2'] ?? '');
 
     if (!$tokenTroughPOST) {
-        new Flash(constant("FLASH_NAME"), 'No token provided', 'danger');
+        new Flash(constant("FLASH_NAME"), TEXT['no-token'], 'danger');
         header('Location: ' . $_SERVER['PHP_SELF'] . '?token=' . $token);
         exit();
     }
 
     if (!$password || !$password2) {
-        new Flash(constant("FLASH_NAME"), 'Fill all the forms fields', 'danger');
+        new Flash(constant("FLASH_NAME"), TEXT['must-fill-both-password'], 'danger');
         header('Location: ' . $_SERVER['PHP_SELF'] . '?token=' . $tokenTroughPOST);
         exit();
     }
 
     if ($password !== $password2) {
-        new Flash(constant("FLASH_NAME"), 'Passwords do not match', 'danger');
+        new Flash(constant("FLASH_NAME"), TEXT['must-fill-both-password'], 'danger');
         header('Location: ' . $_SERVER['PHP_SELF'] . '?token=' . $tokenTroughPOST);
         exit();
     }
@@ -42,7 +44,7 @@ if (isset($_POST['submit-PW'])) {
     $user = $dbManagerUser->readUsingPWToken($tokenTroughPOST);
 
     if (!$user) {
-        new Flash(constant("FLASH_NAME"), 'Token invalid', 'danger');
+        new Flash(constant("FLASH_NAME"), TEXT['invalid-token'], 'danger');
         header('Location: ' . $_SERVER['PHP_SELF'] . '?token=' . $tokenTroughPOST);
     }
 
@@ -55,12 +57,12 @@ if (isset($_POST['submit-PW'])) {
     $newUser = $dbManagerUser->update($user->getId(), $user);
 
     if (!$newUser) {
-        new Flash(constant("FLASH_NAME"), 'Error while updating the password', 'danger');
+        new Flash(constant("FLASH_NAME"), TEXT['error-while-updating-password'], 'danger');
         header('Location: ' . $_SERVER['PHP_SELF'] . '?token=' . $tokenTroughPOST);
         exit();
     }
 
-    new Flash("global", 'Password updated', 'success');
+    new Flash("global", TEXT['password-updated'], 'success');
     header('Location: login.php');
     exit();
 }
@@ -69,7 +71,7 @@ if (isset($_POST['submit-email'])) {
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 
     if (!$email) {
-        new Flash(constant("FLASH_NAME"), 'Fill all the forms fields', 'danger');
+        new Flash(constant("FLASH_NAME"), TEXT['must-fill-all-fields'], 'danger');
         header('Location: ' . $_SERVER['PHP_SELF']);
         exit();
     }
@@ -78,7 +80,7 @@ if (isset($_POST['submit-email'])) {
     $user = $dbManagerUser->readUsingEmail($email);
 
     if (!$user) {
-        new Flash(constant("FLASH_NAME"), 'Email not found', 'danger');
+        new Flash(constant("FLASH_NAME"), TEXT['email-not-registered'], 'danger');
         header('Location: ' . $_SERVER['PHP_SELF']);
         exit();
     }
@@ -86,12 +88,12 @@ if (isset($_POST['submit-email'])) {
     $res = $user->resetPassword();
 
     if (!$res) {
-        new Flash(constant("FLASH_NAME"), 'Error while resetting the password', 'danger');
+        new Flash(constant("FLASH_NAME"), TEXT['error-while-reseting-password'], 'danger');
         header('Location: ' . $_SERVER['PHP_SELF']);
         exit();
     }
 
-    new Flash("global", 'Email sent, check your inbox', 'success');
+    new Flash("global", TEXT['email-sent'], 'success');
     header('Location: login.php');
 }
 
@@ -102,6 +104,7 @@ if (isset($_POST['submit-email'])) {
 
 <?php
 require_once 'components/head.php';
+// TODO: add reset-password title to the array of translated strings
 loadHead("Reset Password", ["password-reset"]);
 ?>
 
@@ -117,22 +120,22 @@ loadHead("Reset Password", ["password-reset"]);
             if ($formToDisplay === 'PW') :
             ?>
 
-                <label for="password" class="sr-only">New password</label>
-                <input type="password" name="password" class="formInput" id="password" placeholder="New password" autofocus required autocomplete="new-password">
+                <label for="password" class="sr-only"><?= TEXT['new-password-placeholder']; ?></label>
+                <input type="password" name="password" class="formInput" id="password" placeholder="<?= TEXT['new-password-placeholder']; ?>" autofocus required autocomplete="new-password">
 
-                <label for="password2" class="sr-only">Confirm</label>
-                <input type="password" name="password2" class="formInput" id="password2" placeholder="Repeate" required autocomplete="new-password">
+                <label for="password2" class="sr-only"><?= TEXT['confirm-password-placeholder']; ?></label>
+                <input type="password" name="password2" class="formInput" id="password2" placeholder="<?= TEXT['confirm-password-placeholder']; ?>" required autocomplete="new-password">
 
                 <input type="hidden" name="token" value="<?= $token ?>">
 
-                <button class="btn-lgb btn-block" type="submit" name="submit-PW">Submit</button>
+                <button class="btn-lgb btn-block" type="submit" name="submit-PW"><?= TEXT['reset-password']; ?></button>
             <?php
             else :
             ?>
-                <p>Enter your email address and we will send you a link to reset your password.</p>
-                <label for="inputEmail" class="sr-only">Email</label>
-                <input type="email" id="inputEmail" class="formInput" placeholder="Email address" required autofocus name="email" autocomplete="new-password">
-                <button class="btn-lgb btn-block" type="submit" name="submit-email">Submit</button>
+                <p><?= TEXT['email-hint']; ?></p>
+                <label for="inputEmail" class="sr-only"><?= TEXT['email-placeholder']; ?></label>
+                <input type="email" id="inputEmail" class="formInput" placeholder="<?= TEXT['email-placeholder']; ?>" required autofocus name="email" autocomplete="new-password">
+                <button class="btn-lgb btn-block" type="submit" name="submit-email"><?= TEXT['reset-password']; ?></button>
             <?php
             endif;
             ?>

@@ -3,6 +3,8 @@ session_start();
 
 require_once "../app/autoload.php";
 
+require_once "locale/locale-conf.php";
+
 use ch\comem\todoapp\flash\Flash;
 
 if (isset($_SESSION["user"])) {
@@ -20,6 +22,7 @@ if (isset($_POST["submit"])) require_once "../controllers/validate-register.php"
 
 <?php
 require_once 'components/head.php';
+// TODO: add reset-password title to the array of translated strings
 loadHead("Register", ["register"]);
 ?>
 
@@ -34,17 +37,17 @@ loadHead("Register", ["register"]);
             <img class="" src="assets/icons/logo.svg" alt="" width="72" height="auto">
 
             <div class="d-flex flex-row justify-content-center align-items-center nameInput">
-                <input type="text" id="inputLastName" class="formInputSmall" placeholder="Last name" required name="lastName">
-                <input type="text" id="inputFirstName" class="formInputSmall" placeholder="First name" required name="firstName">
+                <input type="text" id="inputLastName" class="formInputSmall" placeholder="<?= TEXT['lastname-placeholder']; ?>" required name="lastName">
+                <input type="text" id="inputFirstName" class="formInputSmall" placeholder="<?= TEXT['firstname-placeholder']; ?>" required name="firstName">
             </div>
 
-            <input type="email" id="inputEmail" class="formInput" placeholder="Email address" required autocomplete="off" name="email">
+            <input type="email" id="inputEmail" class="formInput" placeholder="<?= TEXT['email-placeholder']; ?>" required autocomplete="off" name="email">
 
-            <input type="password" id="inputPassword" class="formInput" placeholder="Password" required name="password">
-            <input type="password" id="inputRePassword" class="formInput" placeholder="Repeat password" required name="password2">
+            <input type="password" id="inputPassword" class="formInput" placeholder="<?= TEXT['password-placeholder']; ?>" required name="password">
+            <input type="password" id="inputRePassword" class="formInput" placeholder="<?= TEXT['confirm-password-placeholder']; ?>" required name="password2">
 
-            <button class="btn-lgb btn-block" type="submit" name="submit">Register</button>
-            <p>Already have an account ? <a href="login.php">Login here</a></p>
+            <button class="btn-lgb btn-block" type="submit" name="submit"><?= TEXT['register']; ?></button>
+            <p><?= TEXT['register-cta']; ?> <a href="login.php"><?= TEXT['register-link']; ?></a></p>
         </div>
     </form>
 

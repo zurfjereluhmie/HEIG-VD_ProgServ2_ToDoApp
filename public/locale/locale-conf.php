@@ -8,7 +8,7 @@ foreach ($langs as $key => $value) {
 
 define("AVAILABLE_LANGS", $langs);
 
-$lang = $_COOKIE["locale"] ?? "en";
+$lang = $_COOKIE["locale"] ?? "fr";
 
 if (!in_array($lang, AVAILABLE_LANGS)) throw new Exception("Invalid language option");
 

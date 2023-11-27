@@ -3,6 +3,7 @@ session_start();
 
 require_once '../app/autoload.php';
 require_once '../controllers/protect.php';
+require_once "locale/locale-conf.php";
 
 use ch\comem\todoapp\flash\Flash;
 use ch\comem\todoapp\category\CategoryManager;
@@ -18,7 +19,7 @@ $categories = $categoryManager->getCategories();
 
 <?php
 require_once 'components/head.php';
-loadHead("Categories", ["main", "navBar", "dashboard", "task", "list", "taskCheckboxColor"]);
+loadHead(TEXT['dashboard'], ["main", "navBar", "dashboard", "task", "list", "taskCheckboxColor"]);
 ?>
 
 <body>
@@ -30,7 +31,7 @@ loadHead("Categories", ["main", "navBar", "dashboard", "task", "list", "taskChec
 
             <main class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 bg-light mainFullHeight">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
-                    <h1 class="h2" id="dashboardTitle">Dashboard</h1>
+                    <h1 class="h2" id="dashboardTitle"><?= TEXT['dashboard'] ?></h1>
                 </div>
                 <?= Flash::displayFlashMessage("global") ?>
                 <?= Flash::displayFlashMessage("dashboard") ?>
@@ -44,11 +45,11 @@ loadHead("Categories", ["main", "navBar", "dashboard", "task", "list", "taskChec
                                     <div class="colorTag" style="background: <?= $category->getColor() ?>;"></div>
                                     <h3 class="myCategoriesTitle"><?= $category->getTitle() ?></h3>
                                 </div>
-                                <p class="myCategoriesDate">Created on <?= $category->getCreatedAt()->format('d.m.Y') ?></p>
+                                <p class="myCategoriesDate"><?= TEXT['created-on'] ?> <?= $category->getCreatedAt()->format('d.m.Y') ?></p>
                                 <p class="myCategoriesDescritpion"><?= $category->getDescription() ?></p>
                             </div>
                         <?php endforeach; ?>
-                        <a href="/categories.php" class="seeAllCategories">See All &#62;</a>
+                        <a href="/categories.php" class="seeAllCategories"><?= TEXT['see-all'] ?> &#62;</a>
                     <?php else : ?>
                         <div class="p-3 addCategoriesItem" id="addListTrigger">
                             <img src="assets/icons/bigAdd.svg" alt="Add a category icon" class="addListsImg">
@@ -62,8 +63,8 @@ loadHead("Categories", ["main", "navBar", "dashboard", "task", "list", "taskChec
                     <!-- ToDo due today -->
                     <div class="p-3 todoElt">
                         <div class="d-flex">
-                            <h3 class="toDoTitle mr-auto p-2">Due today :</h3>
-                            <a class="p-2" href="/calendar.html#today">See All</a>
+                            <h3 class="toDoTitle mr-auto p-2"><?= TEXT['due-today'] ?> :</h3>
+                            <a class="p-2" href="/calendar.html#today"><?= TEXT['see-all'] ?></a>
                         </div>
                         <div class="taskContainer">
 
@@ -154,8 +155,8 @@ loadHead("Categories", ["main", "navBar", "dashboard", "task", "list", "taskChec
                     <!-- ToDO due tomorrow start -->
                     <div class="p-3 todoElt">
                         <div class="d-flex">
-                            <h3 class="toDoTitle mr-auto p-2">Due tomorrow :</h3>
-                            <a class="p-2" href="/calendar.html#tomorrow">See All</a>
+                            <h3 class="toDoTitle mr-auto p-2"><?= TEXT['due-tomorrow'] ?> :</h3>
+                            <a class="p-2" href="/calendar.html#tomorrow"><?= TEXT['see-all'] ?></a>
                         </div>
                         <div class="taskContainer">
 

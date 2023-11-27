@@ -8,6 +8,7 @@ return [
     "favourites" => "Favoris",
     "calendar" => "Calendrier",
     "my-todo-categories" => "Mes catégories de tâches",
+    "my-todo-categories-empty" => "Pas encore de catégories",
     "settings" => "Paramètres",
     "logout" => "Déconnexion",
     "search" => "Rechercher",
@@ -36,7 +37,7 @@ return [
     "login-link" => "Connectez-vous ici",
 
     // Reset Password
-    "reset-password" => "Réinitialiser le mot de passe",
+    "reset-password" => "Réinitialiser",
     "email-hint" => "Entrez votre adresse e-mail, nous vous enverrons un lien pour réinitialiser votre mot de passe.",
 
     // Validate Account
@@ -62,7 +63,7 @@ return [
     "email-not-registered" => "Cet e-mail n'est pas enregistré",
     "error-while-creating-account" => "Une erreur s'est produite lors de la création de votre compte",
     "error-while-updating-password" => "Erreur lors de la mise à jour du mot de passe",
-    "error-while-resetting-password" => "Une erreur s'est produite lors de la réinitialisation de votre mot de passe",
+    "error-while-reseting-password" => "Une erreur s'est produite lors de la réinitialisation de votre mot de passe",
     "error-while-sending-email" => "Une erreur s'est produite lors de l'envoi de l'e-mail",
     "wrong-email-or-password" => "Mauvais e-mail ou mot de passe",
 

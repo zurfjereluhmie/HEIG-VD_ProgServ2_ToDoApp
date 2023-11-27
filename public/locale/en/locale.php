@@ -8,6 +8,7 @@ return [
     "favourites" => "Favourites",
     "calendar" => "Calendar",
     "my-todo-categories" => "My todo categories",
+    "my-todo-categories-empty" => "No categories yet",
     "settings" => "Settings",
     "logout" => "Logout",
     "search" => "Search",
@@ -62,7 +63,7 @@ return [
     "email-not-registered" => "This email is not registered",
     "error-while-creating-account" => "An error occured while creating your account",
     "error-while-updating-password" => "Error while updating the password",
-    "error-while-resseting-password" => "An error occured while resetting your password",
+    "error-while-reseting-password" => "An error occured while resetting your password",
     "error-while-sending-email" => "An error occured while sending the email",
     "wrong-email-or-password" => "Wrong email or password",
 

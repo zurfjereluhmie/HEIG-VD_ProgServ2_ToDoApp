@@ -3,6 +3,7 @@ session_start();
 
 require_once '../app/autoload.php';
 require_once '../controllers/protect.php';
+require_once 'locale/locale-conf.php';
 
 use ch\comem\todoapp\flash\Flash;
 use ch\comem\todoapp\category\CategoryManager;
@@ -17,7 +18,7 @@ $categories = $categoryManager->getCategories();
 
 <?php
 require_once 'components/head.php';
-loadHead("Categories", ["main", "navBar", "dashboard", "task", "list", "taskCheckboxColor"]);
+loadHead(TEXT['categories'], ["main", "navBar", "dashboard", "task", "list", "taskCheckboxColor"]);
 ?>
 
 <body>
@@ -29,7 +30,7 @@ loadHead("Categories", ["main", "navBar", "dashboard", "task", "list", "taskChec
 
             <main class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 bg-light mainFullHeight">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
-                    <h1 class="h2" id="categoriesTitle">My ToDo Categories</h1>
+                    <h1 class="h2" id="categoriesTitle"><?= TEXT['my-todo-categories'] ?></h1>
                 </div>
                 <?= Flash::displayFlashMessage("global") ?>
                 <?= Flash::displayFlashMessage("categories") ?>
@@ -43,7 +44,7 @@ loadHead("Categories", ["main", "navBar", "dashboard", "task", "list", "taskChec
                                     <div class="colorTag" style="background: <?= $category->getColor() ?>;"></div>
                                     <h3 class="myCategoriesTitle"><?= $category->getTitle() ?></h3>
                                 </div>
-                                <p class="myCategoriesDate">Created on <?= $category->getCreatedAt()->format('d.m.Y') ?></p>
+                                <p class="myCategoriesDate"><?= TEXT['created-on'] ?> <?= $category->getCreatedAt()->format('d.m.Y') ?></p>
                                 <p class="myCategoriesDescritpion"><?= $category->getDescription() ?></p>
                             </div>
                         <?php endforeach; ?>

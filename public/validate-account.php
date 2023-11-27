@@ -5,6 +5,8 @@ use ch\comem\todoapp\flash\Flash;
 
 require_once "../app/autoload.php";
 
+require_once "locale/locale-conf.php";
+
 define("FLASH_NAME", pathinfo(basename($_SERVER["PHP_SELF"]), PATHINFO_FILENAME));
 
 if (isset($_GET["token"])) {
@@ -15,7 +17,7 @@ if (isset($_GET["token"])) {
     $user = $userManager->readUsingValidationToken($token);
 
     if (!$user) {
-        new Flash("global", "Invalid token", "danger");
+        new Flash("global", TEXT['invalid-token'], "danger");
         exit();
     }
 
@@ -23,7 +25,7 @@ if (isset($_GET["token"])) {
 
     $userManager->update($user->getId(), $user);
 
-    new Flash("global", "Your account has been validated", "success");
+    new Flash("global", TEXT['account-validated'], "success");
 
     include_once 'logout.php';
 
@@ -35,7 +37,7 @@ if (isset($_POST["submit"])) {
     $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
 
     if (!$email) {
-        new Flash(constant("FLASH_NAME"), "Please enter your email", "danger");
+        new Flash(constant("FLASH_NAME"), TEXT['must-fill-email'], "danger");
         header("Location: " . $_SERVER["PHP_SELF"]);
         exit();
     }
@@ -43,15 +45,15 @@ if (isset($_POST["submit"])) {
     $user = DbManagerCRUD_User::getInstance()->readUsingEmail($email);
 
     if (!$user) {
-        new Flash(constant("FLASH_NAME"), "This email is not registered", "danger");
+        new Flash(constant("FLASH_NAME"), TEXT['email-not-registered'], "danger");
         header("Location: " . $_SERVER["PHP_SELF"]);
         exit();
     }
 
     if ($user->sendValidationEmail()) {
-        new Flash(constant("FLASH_NAME"), "An email has been sent to you", "success");
+        new Flash(constant("FLASH_NAME"), TEXT['email-sent'], "success");
     } else {
-        new Flash(constant("FLASH_NAME"), "An error occured while sending the email", "danger");
+        new Flash(constant("FLASH_NAME"), TEXT['error-while-sending-email'], "danger");
     }
     header("Location: " . $_SERVER["PHP_SELF"]);
     exit();
@@ -63,6 +65,7 @@ if (isset($_POST["submit"])) {
 
 <?php
 require_once 'components/head.php';
+// TODO: add reset-password title to the array of translated strings
 loadHead("Validate Account", ["login"]);
 ?>
 
@@ -76,13 +79,13 @@ loadHead("Validate Account", ["login"]);
         <div class="d-flex flex-column justify-content-center align-items-center loginCard">
 
             <img class="" src="assets/icons/logo.svg" alt="" width="72" height="auto">
-            <p>Check out your email to find your acctivation link</p>
+            <p><?= TEXT['check-mail']; ?></p>
             <br>
-            <p>Didn't receive any email ?</p>
+            <p><?= TEXT['no-mail-hint']; ?></p>
             <input class="formInput" type="email" name="email" id="inputEmail" required value="<?= $_SESSION['user']['email'] ?? '' ?>">
-            <button type="submit" class="btn-lgb btn-block" name="submit">Resend email</button>
+            <button type="submit" class="btn-lgb btn-block" name="submit"><?= TEXT['resend-mail']; ?></button>
             <br>
-            <a class="small" href="login.php">Login here</a>
+            <a class="small" href="login.php"><?= TEXT['login-link']; ?></a>
         </div>
     </form>
 
