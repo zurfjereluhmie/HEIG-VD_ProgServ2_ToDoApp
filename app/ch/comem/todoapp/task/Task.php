@@ -22,6 +22,11 @@ class Task
     private DateTime $dueDate;
     private Category $category;
 
+    /**
+     * Task constructor.
+     *
+     * @param TaskBuilder $builder The task builder object used to construct the task.
+     */
     public function __construct(TaskBuilder $builder)
     {
         $this->id = $builder->getId();
@@ -58,7 +63,7 @@ class Task
      *
      * @return string The description of the task.
      */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
@@ -163,6 +168,4 @@ class Task
     {
         $this->category = $category;
     }
-
-
 }
