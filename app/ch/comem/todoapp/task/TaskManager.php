@@ -22,23 +22,44 @@ class TaskManager
         $this->loadTasks();
     }
 
+    /**
+     * Returns an instance of the TaskManager class.
+     *
+     * @return TaskManager The instance of the TaskManager class.
+     */
     static public function getInstance(): TaskManager
     {
         if (is_null(self::$instance)) self::$instance = new self();
         return self::$instance;
     }
 
-    public function loadTasks(): bool
+    /**
+     * Loads the tasks.
+     *
+     * @return bool Returns true if the tasks were successfully loaded, false otherwise.
+     */
+    private function loadTasks(): bool
     {
         $this->tasks = DbManagerCRUD_Task::getInstance()->readAll();
         return true;
     }
 
+    /**
+     * Retrieves an array of tasks.
+     *
+     * @return array The array of tasks.
+     */
     public function getTasks(): array
     {
         return $this->tasks;
     }
 
+    /**
+     * Retrieves a task by its ID.
+     *
+     * @param int $id The ID of the task to retrieve.
+     * @return Task|null The task object if found, null otherwise.
+     */
     public function getTask(int $id): ?Task
     {
         foreach ($this->tasks as $task) {
@@ -47,6 +68,13 @@ class TaskManager
         return null;
     }
 
+    // TODO : Tester cette fonction
+    /**
+     * Retrieves tasks by category ID.
+     *
+     * @param int $categoryId The ID of the category.
+     * @return array An array of tasks.
+     */
     public function getTasksByCategory(int $categoryId): array
     {
         $tasks = [];
@@ -56,6 +84,12 @@ class TaskManager
         return $tasks;
     }
 
+    /**
+     * Adds a task to the task manager.
+     *
+     * @param Task $task The task to be added.
+     * @return bool Returns true if the task was successfully added, false otherwise.
+     */
     public function addTask(Task $task): bool
     {
         $dbManager = DbManagerCRUD_Task::getInstance();
@@ -70,6 +104,12 @@ class TaskManager
         return true;
     }
 
+    /**
+     * Updates a task.
+     *
+     * @param Task $task The task to update.
+     * @return bool Returns true if the task was successfully updated, false otherwise.
+     */
     public function updateTask(Task $task): bool
     {
         if ($task->getId() == null) throw new Exception("Cannot update task without ID");
@@ -85,6 +125,12 @@ class TaskManager
         return false;
     }
 
+    /**
+     * Removes a task from the task manager.
+     *
+     * @param Task $task The task to be removed.
+     * @return bool Returns true if the task was successfully removed, false otherwise.
+     */
     public function removeTask(Task $task): bool
     {
         if ($task->getId() == null) throw new Exception("Cannot remove task without ID");

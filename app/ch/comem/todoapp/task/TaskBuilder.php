@@ -31,12 +31,13 @@ class TaskBuilder
      * @param DateTime $dueDate The due date of the task.
      * @param int $categoryId The ID of the category the task belongs to.
      */
-    public function __construct (string $title, DateTime $dueDate, int $categoryId) {
+    public function __construct(string $title, DateTime $dueDate, int $categoryId)
+    {
         if (!isset($title) || empty($title)) throw new Exception("Title cannot be empty");
         if (!isset($dueDate) || empty($dueDate)) throw new Exception("Due date cannot be empty");
         if (!isset($categoryId) || empty($categoryId)) throw new Exception("Category ID cannot be empty");
-        
-        $this->id=null;
+
+        $this->id = null;
         $this->title = $title;
         $this->description = null;
         $this->isDone = false;

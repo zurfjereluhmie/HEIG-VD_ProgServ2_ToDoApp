@@ -108,7 +108,7 @@ class Task
         return $this->category;
     }
 
-        /**
+    /**
      * Sets the title of the task.
      *
      * @param string $title The title of the task.
