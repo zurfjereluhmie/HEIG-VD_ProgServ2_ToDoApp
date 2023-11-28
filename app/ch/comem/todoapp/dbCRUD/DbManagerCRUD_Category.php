@@ -4,6 +4,7 @@ namespace ch\comem\todoapp\dbCRUD;
 
 use ch\comem\todoapp\category\Category;
 use ch\comem\todoapp\category\CategoryBuilder;
+use ch\comem\todoapp\task\TaskManager;
 use DateTime;
 use Exception;
 
@@ -77,11 +78,23 @@ class DbManagerCRUD_Category extends DbManagerCRUD
         $stmt->execute(["user_id" => $userId]);
         $categories = $stmt->fetchAll();
         $result = [];
+        $tasksPerCategory = [];
+        
+        // TODO : Delete tests
+        $cnt = 0;
+        echo "<pre>";
+        print_r($categories);
+        echo "</pre>";
+        // -----------
         foreach ($categories as $category) {
+
+            $tasksPerCategory[] = TaskManager::getInstance()->getTasksByCategory($category["id"]);
+
             $result[] = (new CategoryBuilder($category["title"], $category["color"]))
                 ->setId($category["id"])
                 ->setDescription($category["description"])
                 ->setCreatedAt((new DateTime($category["created_at"])))
+                //->setTasks($tasksPerCategory)
                 ->build();
         }
 

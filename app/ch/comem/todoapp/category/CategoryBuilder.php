@@ -2,6 +2,7 @@
 
 namespace ch\comem\todoapp\category;
 
+use ch\comem\todoapp\task\Task;
 use DateTime;
 use Exception;
 

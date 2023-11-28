@@ -68,7 +68,6 @@ class TaskManager
         return null;
     }
 
-    // TODO : Tester cette fonction
     /**
      * Retrieves tasks by category ID.
      *

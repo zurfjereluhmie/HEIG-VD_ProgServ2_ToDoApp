@@ -13,19 +13,24 @@ use Exception;
  */
 class CategoryManager
 {
-    private static ?CategoryManager $instance = null;
+    private static $instances = [];
     private array $categories;
 
     private function __construct()
     {
+        echo "construct";
         $this->categories = [];
         $this->loadCategories();
     }
 
     public static function getInstance(): CategoryManager
     {
-        if (self::$instance == null) self::$instance = new CategoryManager();
-        return self::$instance;
+        $cls = static::class;
+        if (!isset(self::$instances[$cls])) {
+            self::$instances[$cls] = new static();
+        }
+
+        return self::$instances[$cls];
     }
 
     /**
