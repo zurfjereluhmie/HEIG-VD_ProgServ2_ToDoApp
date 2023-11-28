@@ -54,7 +54,7 @@ $categories = $categoryManager->getCategories();
             <?php if (!empty($categories)) : ?>
                 <?php foreach ($categories as $category) : ?>
                     <li class="nav-item">
-                        <a class="nav-link navToDoItem d-flex" href="./category?id=<?= $category->getId() ?>">
+                        <a class="nav-link navToDoItem d-flex" href="./category.php?id=<?= $category->getId() ?>">
                             <div class="colorTag" style="background: <?= $category->getColor() ?>;"></div>
                             <span><?= $category->getTitle() ?></span>
                         </a>
