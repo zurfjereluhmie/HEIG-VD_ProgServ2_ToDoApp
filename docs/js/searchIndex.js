@@ -670,7 +670,6 @@ Search.appendIndex(
             "name": "getCategoryId",
             "summary": "Get\u0020the\u0020category\u0020ID\u0020of\u0020the\u0020task.",
             "url": "classes/ch-comem-todoapp-task-Task.html#method_getCategoryId"
-
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003AsetTitle\u0028\u0029",
             "name": "setTitle",
@@ -856,6 +855,11 @@ Search.appendIndex(
             "name": "getTasksByCategory",
             "summary": "Retrieves\u0020tasks\u0020by\u0020category\u0020ID.",
             "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_getTasksByCategory"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003AgetTasksByTitle\u0028\u0029",
+            "name": "getTasksByTitle",
+            "summary": "Retrieves\u0020an\u0020array\u0020of\u0020tasks\u0020with\u0020the\u0020given\u0020title.",
+            "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_getTasksByTitle"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003AaddTask\u0028\u0029",
             "name": "addTask",
