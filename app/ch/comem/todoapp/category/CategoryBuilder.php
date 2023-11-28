@@ -63,6 +63,10 @@ class CategoryBuilder
 
     public function setTasks(array $tasks): CategoryBuilder
     {
+        // check instance of Task
+        foreach ($tasks as $task) {
+            if (!$task instanceof Task) throw new Exception("Tasks must be an array of Task objects");
+        }
         $this->tasks = $tasks;
         return $this;
     }
