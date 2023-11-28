@@ -65,8 +65,7 @@ if (isset($_POST["submit"])) {
 
 <?php
 require_once 'components/head.php';
-// TODO: add reset-password title to the array of translated strings
-loadHead("Validate Account", ["login"]);
+loadHead(TEXT['validate-account-title'], ["login"]);
 ?>
 
 

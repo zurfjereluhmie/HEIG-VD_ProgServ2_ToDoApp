@@ -26,21 +26,25 @@ return [
     "new-password-placeholder" => "New password",
 
     //Login
-    "login" => "Login",
+    "login-title" => "Login",
+    "login-btn" => "Login",
     "forgot-password" => "Forgot password ?",
     "register-cta" => "Don't have an account ?",
     "register-link" => "register here",
 
     //Register
-    "register" => "Register",
+    "register-title" => "Register",
+    "register-btn" => "Register",
     "login-cta" => "Already have an account ?",
     "login-link" => "login here",
 
     //Reset Password
-    "reset-password" => "Reset password",
+    "reset-password-title" => "Reset password",
+    "reset-password-btn" => "Reset password",
     "email-hint" => "Enter your email address and we will send you a link to reset your password.",
 
     //Validate Account
+    "validate-account-title" => "Validate account",
     "check-mail" => "Check out your email to find your acctivation link",
     "no-mail-hint" => "Didn't receive the email ?",
     "resend-mail" => "Resend email",

@@ -22,8 +22,7 @@ if (isset($_POST["submit"])) require_once "../controllers/validate-register.php"
 
 <?php
 require_once 'components/head.php';
-// TODO: add reset-password title to the array of translated strings
-loadHead("Register", ["register"]);
+loadHead(TEXT['register-title'], ["register"]);
 ?>
 
 
@@ -46,7 +45,7 @@ loadHead("Register", ["register"]);
             <input type="password" id="inputPassword" class="formInput" placeholder="<?= TEXT['password-placeholder']; ?>" required name="password">
             <input type="password" id="inputRePassword" class="formInput" placeholder="<?= TEXT['confirm-password-placeholder']; ?>" required name="password2">
 
-            <button class="btn-lgb btn-block" type="submit" name="submit"><?= TEXT['register']; ?></button>
+            <button class="btn-lgb btn-block" type="submit" name="submit"><?= TEXT['register-btn']; ?></button>
             <p><?= TEXT['register-cta']; ?> <a href="login.php"><?= TEXT['register-link']; ?></a></p>
         </div>
     </form>

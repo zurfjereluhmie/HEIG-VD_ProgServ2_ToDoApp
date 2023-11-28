@@ -26,21 +26,25 @@ return [
     "new-password-placeholder" => "Nouveau mot de passe",
 
     // Login
-    "login" => "Connexion",
+    "login-title" => "Connexion",
+    "login-btn" => "Connexion",
     "forgot-password" => "Mot de passe oublié ?",
     "register-cta" => "Vous n'avez pas de compte ?",
     "register-link" => "Inscrivez-vous ici",
 
     // Register
-    "register" => "Inscription",
+    "register-title" => "Inscription",
+    "register-btn" => "Inscription",
     "login-cta" => "Vous avez déjà un compte ?",
     "login-link" => "Connectez-vous ici",
 
     // Reset Password
-    "reset-password" => "Réinitialiser",
+    "reset-password-title" => "Réinitialiser le mot de passe",
+    "reset-password-btn" => "Réinitialiser",
     "email-hint" => "Entrez votre adresse e-mail, nous vous enverrons un lien pour réinitialiser votre mot de passe.",
 
     // Validate Account
+    "validate-account-title" => "Valider votre compte",
     "check-mail" => "Consultez votre e-mail pour trouver votre lien d'activation",
     "no-mail-hint" => "Vous n'avez pas reçu l'e-mail ?",
     "resend-mail" => "Renvoyer l'e-mail",

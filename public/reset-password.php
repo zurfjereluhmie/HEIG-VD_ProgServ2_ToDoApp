@@ -104,8 +104,7 @@ if (isset($_POST['submit-email'])) {
 
 <?php
 require_once 'components/head.php';
-// TODO: add reset-password title to the array of translated strings
-loadHead("Reset Password", ["password-reset"]);
+loadHead(TEXT['reset-password-title'], ["password-reset"]);
 ?>
 
 <body class="d-flex justify-content-center align-items-center">
@@ -128,14 +127,14 @@ loadHead("Reset Password", ["password-reset"]);
 
                 <input type="hidden" name="token" value="<?= $token ?>">
 
-                <button class="btn-lgb btn-block" type="submit" name="submit-PW"><?= TEXT['reset-password']; ?></button>
+                <button class="btn-lgb btn-block" type="submit" name="submit-PW"><?= TEXT['reset-password-btn']; ?></button>
             <?php
             else :
             ?>
                 <p><?= TEXT['email-hint']; ?></p>
                 <label for="inputEmail" class="sr-only"><?= TEXT['email-placeholder']; ?></label>
                 <input type="email" id="inputEmail" class="formInput" placeholder="<?= TEXT['email-placeholder']; ?>" required autofocus name="email" autocomplete="new-password">
-                <button class="btn-lgb btn-block" type="submit" name="submit-email"><?= TEXT['reset-password']; ?></button>
+                <button class="btn-lgb btn-block" type="submit" name="submit-email"><?= TEXT['reset-password-btn']; ?></button>
             <?php
             endif;
             ?>

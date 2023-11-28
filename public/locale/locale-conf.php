@@ -28,8 +28,8 @@ foreach ($langs as $lang) {
 
 define("AVAILABLE_LANGS", $langs);
 
-$lang = $_COOKIE["locale"] ?? "en";
+$lang = $_COOKIE["locale"];
 
-if (!in_array($lang, AVAILABLE_LANGS)) throw new Exception("Invalid language option");
+if (!in_array($lang, AVAILABLE_LANGS)) $lang = "en";
 
 define("TEXT", require "$lang/locale.php");

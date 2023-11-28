@@ -22,8 +22,7 @@ if (isset($_POST["submit"])) require_once "../controllers/validate-login.php";
 
 <?php
 require_once 'components/head.php';
-// TODO: add reset-password title to the array of translated strings
-loadHead("Login", ["login"]);
+loadHead(TEXT['login-title'], ["login"]);
 ?>
 
 
@@ -40,7 +39,7 @@ loadHead("Login", ["login"]);
             <input type="email" id="inputEmail" class="formInput" placeholder="<?= TEXT["email-placeholder"]; ?>" required autofocus name="email" autocomplete="new-password">
             <label for="inputPassword" class="sr-only"><?= TEXT['password-placeholder']; ?></label>
             <input type="password" id="inputPassword" class="formInput" placeholder="<?= TEXT['password-placeholder']; ?>" required name="password" autocomplete="new-password">
-            <button class="btn-lgb btn-block" type="submit" name="submit"><?= TEXT['login']; ?></button>
+            <button class="btn-lgb btn-block" type="submit" name="submit"><?= TEXT['login-btn']; ?></button>
             <p><?= TEXT['register-cta']; ?> <a href="register.php"><?= TEXT['register-link']; ?></a></p>
 
             <p class="small"><a href="reset-password.php"><?= TEXT['forgot-password']; ?></a></p>
