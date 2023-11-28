@@ -1,5 +1,7 @@
 <?php
 
+require_once "./locale/locale-conf.php";
+
 use ch\comem\todoapp\auth\User;
 use ch\comem\todoapp\dbCRUD\DbManagerCRUD_User;
 use ch\comem\todoapp\flash\Flash;
@@ -11,25 +13,25 @@ $password = htmlspecialchars($_POST["password"]);
 $password2 = htmlspecialchars($_POST["password2"]);
 
 if (!$lastName) {
-    new Flash(constant("FLASH_NAME"), "Please enter your last name", "danger");
+    new Flash(constant("FLASH_NAME"), TEXT['must-fill-lastname'], "danger");
     header("Location: " . $_SERVER["PHP_SELF"]);
     exit();
 }
 
 if (!$firstName) {
-    new Flash(constant("FLASH_NAME"), "Please enter your first name", "danger");
+    new Flash(constant("FLASH_NAME"), TEXT['must-fill-firstname'], "danger");
     header("Location: " . $_SERVER["PHP_SELF"]);
     exit();
 }
 
 if (!$email) {
-    new Flash(constant("FLASH_NAME"), "Please enter your email", "danger");
+    new Flash(constant("FLASH_NAME"), TEXT['must-fill-email'], "danger");
     header("Location: " . $_SERVER["PHP_SELF"]);
     exit();
 }
 
 if (!$password || !$password2 || $password !== $password2) {
-    new Flash(constant("FLASH_NAME"), "Please fill both password field with same password", "danger");
+    new Flash(constant("FLASH_NAME"), TEXT['must-fill-both-password'], "danger");
     header("Location: " . $_SERVER["PHP_SELF"]);
     exit();
 }
@@ -38,7 +40,7 @@ $dbManagerUser = DbManagerCRUD_User::getInstance();
 
 // Find if a user with this email already exists
 if ($dbManagerUser->readUsingEmail($email)) {
-    new Flash(constant("FLASH_NAME"), "This email is already used", "danger");
+    new Flash(constant("FLASH_NAME"), TEXT['email-already-used'], "danger");
     header("Location: " . $_SERVER["PHP_SELF"]);
     exit();
 }
@@ -49,14 +51,14 @@ $dbManagerUser->create($user);
 
 $user = $dbManagerUser->readUsingEmail($email);
 if (!$user) {
-    new Flash(constant("FLASH_NAME"), "An error occured while creating your account", "danger");
+    new Flash(constant("FLASH_NAME"), TEXT['error-while-creating-account'], "danger");
     header("Location: " . $_SERVER["PHP_SELF"]);
     exit();
 }
 
 $user->sendValidationEmail();
 
-new Flash("global", "Thanks for creating an account " . $user->getFirstName() . " " . $user->getLastName(), "success");
+new Flash("global", TEXT['account-created'] . " " . $user->getFirstName() . " " . $user->getLastName(), "success");
 $redirect = "validate-account.php";
 unset($_SESSION["redirect"]);
 header("Location: " . $redirect);
