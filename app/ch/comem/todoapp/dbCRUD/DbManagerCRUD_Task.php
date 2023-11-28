@@ -91,7 +91,7 @@ class DbManagerCRUD_Task extends DbManagerCRUD
         $userId = $this->getUserId();
         if (!isset($userId)) throw new Exception("User not logged in");
 
-        $sql = "SELECT * FROM Task WHERE user_id = :user_id";
+        $sql = "SELECT * FROM Task WHERE user_id = :user_id ORDER BY due_date ASC";
         $stmt = $this->getDb()->prepare($sql);
         $stmt->execute(["user_id" => $userId]);
         $tasks = $stmt->fetchAll();
@@ -126,8 +126,8 @@ class DbManagerCRUD_Task extends DbManagerCRUD
         $res = $stmt->execute([
             "title" => $object->getTitle(),
             "description" => $object->getDescription(),
-            "isDone" => $object->isDone(),
-            "isFav" => $object->isFav(),
+            "isDone" => (int) $object->isDone(),
+            "isFav" => (int) $object->isFav(),
             "dueDate" => $object->getDueDate()->format("Y-m-d H:i:s"),
             "category_id" => $object->getCategoryId(),
             "id" => $id
