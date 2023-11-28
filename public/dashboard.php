@@ -250,7 +250,7 @@ loadHead(TEXT['dashboard'], ["main", "navBar", "dashboard", "task", "list", "tas
 
     <?php
     include_once './components/script.php';
-    loadScript(["categories", "searchBar"]);
+    loadScript(["categories", "searchBar"], ["locale"]);
     ?>
 </body>
 

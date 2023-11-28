@@ -22,7 +22,15 @@
             </ul>
         </div>
     </div>
-    <ul class="navbar-nav px-3">
+    <ul class="navbar-nav px-3 flex flex-row">
+        <li class="nav-item mr-1 align-self-center">
+            <?php $currentLang = $_COOKIE["locale"] ?? "fr"; ?>
+            <select class="custom-select" id="languageSelect">
+                <?php foreach (AVAILABLE_LANGS as $lang) : ?>
+                    <option value="<?= $lang ?>" <?= $lang == $currentLang ? "selected" : "" ?>><?= $lang ?></option>
+                <?php endforeach ?>
+            </select>
+        </li>
         <li class="nav-item text-nowrap">
             <div class="d-flex flex-row justify-content-end align-items-center">
                 <p class="navUserDisplayName"><?= $_SESSION["user"]["firstName"] . " " . $_SESSION["user"]["lastName"] ?></p>
