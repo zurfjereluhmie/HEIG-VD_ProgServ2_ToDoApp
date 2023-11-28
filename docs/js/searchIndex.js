@@ -441,6 +441,56 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Category.html#property_instance"
         },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Task",
+            "name": "DbManagerCRUD_Task",
+            "summary": "This\u0020abstract\u0020class\u0020represents\u0020a\u0020CRUD\u0020manager\u0020for\u0020a\u0020database.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Task\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method___construct"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Task\u003A\u003AgetInstance\u0028\u0029",
+            "name": "getInstance",
+            "summary": "Returns\u0020an\u0020instance\u0020of\u0020the\u0020DbManagerCRUD_Task\u0020class.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_getInstance"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Task\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Creates\u0020a\u0020new\u0020record\u0020in\u0020the\u0020database\u0020for\u0020the\u0020given\u0020object.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_create"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Task\u003A\u003Aread\u0028\u0029",
+            "name": "read",
+            "summary": "Reads\u0020a\u0020task\u0020from\u0020the\u0020database\u0020based\u0020on\u0020its\u0020ID.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_read"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Task\u003A\u003AreadAll\u0028\u0029",
+            "name": "readAll",
+            "summary": "Reads\u0020all\u0020tasks\u0020from\u0020the\u0020database.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_readAll"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Task\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "Updates\u0020a\u0020task\u0020in\u0020the\u0020database.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_update"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Task\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Deletes\u0020a\u0020task\u0020from\u0020the\u0020database.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_delete"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Task\u003A\u003AgetUserId\u0028\u0029",
+            "name": "getUserId",
+            "summary": "Returns\u0020the\u0020user\u0020ID\u0020associated\u0020with\u0020the\u0020current\u0020task.",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_getUserId"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Task\u003A\u003A\u0024instance",
+            "name": "instance",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#property_instance"
+        },                {
             "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_User",
             "name": "DbManagerCRUD_User",
             "summary": "This\u0020class\u0020extends\u0020the\u0020DbManagerCRUD\u0020class\u0020and\u0020is\u0020used\u0020for\u0020CRUD\u0020operations\u0020on\u0020the\u0020User\u0020table\u0020in\u0020the\u0020database.",
@@ -606,10 +656,50 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ch-comem-todoapp-task-Task.html#property_isDone"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003A\u0024counter",
-            "name": "counter",
+            "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003A\u0024isFav",
+            "name": "isFav",
             "summary": "",
-            "url": "classes/ch-comem-todoapp-task-Task.html#property_counter"
+            "url": "classes/ch-comem-todoapp-task-Task.html#property_isFav"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003AgetDueDate\u0028\u0029",
+            "name": "getDueDate",
+            "summary": "Returns\u0020the\u0020due\u0020date\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-task-Task.html#method_getDueDate"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003AgetCategory\u0028\u0029",
+            "name": "getCategory",
+            "summary": "Returns\u0020the\u0020category\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-task-Task.html#method_getCategory"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003AsetTitle\u0028\u0029",
+            "name": "setTitle",
+            "summary": "Sets\u0020the\u0020title\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-task-Task.html#method_setTitle"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003AsetDescription\u0028\u0029",
+            "name": "setDescription",
+            "summary": "Sets\u0020the\u0020description\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-task-Task.html#method_setDescription"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003AsetIsDone\u0028\u0029",
+            "name": "setIsDone",
+            "summary": "Sets\u0020whether\u0020the\u0020task\u0020is\u0020done\u0020or\u0020not.",
+            "url": "classes/ch-comem-todoapp-task-Task.html#method_setIsDone"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003AsetIsFav\u0028\u0029",
+            "name": "setIsFav",
+            "summary": "Sets\u0020whether\u0020the\u0020task\u0020is\u0020a\u0020favorite\u0020or\u0020not.",
+            "url": "classes/ch-comem-todoapp-task-Task.html#method_setIsFav"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003AsetDueDate\u0028\u0029",
+            "name": "setDueDate",
+            "summary": "Sets\u0020the\u0020due\u0020date\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-task-Task.html#method_setDueDate"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003AsetCategory\u0028\u0029",
+            "name": "setCategory",
+            "summary": "Sets\u0020the\u0020category\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-task-Task.html#method_setCategory"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003A\u0024id",
             "name": "id",
@@ -626,6 +716,111 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ch-comem-todoapp-task-Task.html#property_description"
         },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003A\u0024dueDate",
+            "name": "dueDate",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-task-Task.html#property_dueDate"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003A\u0024category",
+            "name": "category",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-task-Task.html#property_category"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder",
+            "name": "TaskBuilder",
+            "summary": "Class\u0020TaskBuilder",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "TaskBuilder\u0020constructor.",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#method___construct"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "Get\u0020the\u0020ID\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#method_getId"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003AgetTitle\u0028\u0029",
+            "name": "getTitle",
+            "summary": "Get\u0020the\u0020title\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#method_getTitle"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003AgetDescription\u0028\u0029",
+            "name": "getDescription",
+            "summary": "Get\u0020the\u0020description\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#method_getDescription"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003A\u0024isDone",
+            "name": "isDone",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#property_isDone"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003A\u0024isFav",
+            "name": "isFav",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#property_isFav"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003AgetDueDate\u0028\u0029",
+            "name": "getDueDate",
+            "summary": "Get\u0020the\u0020due\u0020date\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#method_getDueDate"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003AgetCategory\u0028\u0029",
+            "name": "getCategory",
+            "summary": "Get\u0020the\u0020category\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#method_getCategory"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003Abuild\u0028\u0029",
+            "name": "build",
+            "summary": "Builds\u0020a\u0020Task\u0020object.",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#method_build"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003AsetId\u0028\u0029",
+            "name": "setId",
+            "summary": "Set\u0020the\u0020ID\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#method_setId"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003AsetDescription\u0028\u0029",
+            "name": "setDescription",
+            "summary": "Set\u0020the\u0020description\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#method_setDescription"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003AsetIsDone\u0028\u0029",
+            "name": "setIsDone",
+            "summary": "Set\u0020the\u0020value\u0020of\u0020isDone.",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#method_setIsDone"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003AsetIsFav\u0028\u0029",
+            "name": "setIsFav",
+            "summary": "Set\u0020the\u0020favorite\u0020status\u0020of\u0020the\u0020task.",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#method_setIsFav"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#property_id"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003A\u0024title",
+            "name": "title",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#property_title"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003A\u0024description",
+            "name": "description",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#property_description"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003A\u0024dueDate",
+            "name": "dueDate",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#property_dueDate"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskBuilder\u003A\u003A\u0024category",
+            "name": "category",
+            "summary": "",
+            "url": "classes/ch-comem-todoapp-task-TaskBuilder.html#property_category"
+        },                {
             "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager",
             "name": "TaskManager",
             "summary": "This\u0020class\u0020manages\u0020tasks\u0020for\u0020the\u0020Todo\u0020app.",
@@ -633,7 +828,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructor\u0020for\u0020the\u0020TaskManager\u0020class.",
+            "summary": "",
             "url": "classes/ch-comem-todoapp-task-TaskManager.html#method___construct"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003AgetInstance\u0028\u0029",
@@ -641,24 +836,44 @@ Search.appendIndex(
             "summary": "Returns\u0020an\u0020instance\u0020of\u0020the\u0020TaskManager\u0020class.",
             "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_getInstance"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003Aadd\u0028\u0029",
-            "name": "add",
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003AloadTasks\u0028\u0029",
+            "name": "loadTasks",
+            "summary": "Loads\u0020the\u0020tasks.",
+            "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_loadTasks"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003AgetTasks\u0028\u0029",
+            "name": "getTasks",
+            "summary": "Retrieves\u0020an\u0020array\u0020of\u0020tasks.",
+            "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_getTasks"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003AgetTask\u0028\u0029",
+            "name": "getTask",
+            "summary": "Retrieves\u0020a\u0020task\u0020by\u0020its\u0020ID.",
+            "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_getTask"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003AgetTasksByCategory\u0028\u0029",
+            "name": "getTasksByCategory",
+            "summary": "Retrieves\u0020tasks\u0020by\u0020category\u0020ID.",
+            "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_getTasksByCategory"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003AaddTask\u0028\u0029",
+            "name": "addTask",
             "summary": "Adds\u0020a\u0020task\u0020to\u0020the\u0020task\u0020manager.",
-            "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_add"
+            "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_addTask"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003AdisplayTasks\u0028\u0029",
-            "name": "displayTasks",
-            "summary": "Displays\u0020the\u0020tasks.",
-            "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_displayTasks"
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003AupdateTask\u0028\u0029",
+            "name": "updateTask",
+            "summary": "Updates\u0020a\u0020task.",
+            "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_updateTask"
         },                {
-            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003AinitTasks\u0028\u0029",
-            "name": "initTasks",
-            "summary": "Initializes\u0020the\u0020tasks.",
-            "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_initTasks"
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003AremoveTask\u0028\u0029",
+            "name": "removeTask",
+            "summary": "Removes\u0020a\u0020task\u0020from\u0020the\u0020task\u0020manager.",
+            "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_removeTask"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003A\u0024instance",
             "name": "instance",
-            "summary": "This\u0020is\u0020a\u0020static\u0020private\u0020variable\u0020that\u0020holds\u0020an\u0020instance\u0020of\u0020the\u0020TaskManager\u0020class.",
+            "summary": "",
             "url": "classes/ch-comem-todoapp-task-TaskManager.html#property_instance"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003A\u0024tasks",

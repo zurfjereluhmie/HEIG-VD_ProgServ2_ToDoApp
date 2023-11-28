@@ -104,21 +104,21 @@
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/ch.html">ch</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/ch-comem.html">comem</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/ch-comem-todoapp.html">todoapp</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/ch-comem-todoapp-task.html">task</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/ch-comem-todoapp-dbcrud.html">dbCRUD</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    TaskManager
+    DbManagerCRUD_Task
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD.html"><abbr title="\ch\comem\todoapp\dbCRUD\DbManagerCRUD">DbManagerCRUD</abbr></a>
+    </span>
     
             <div class="phpdocumentor-element__package">
             in package
             <ul class="phpdocumentor-breadcrumbs">
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/ch.html">ch</a></li>
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/ch-comem.html">comem</a></li>
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/ch-comem-todoapp.html">todoapp</a></li>
-                                    <li class="phpdocumentor-breadcrumb"><a href="packages/ch-comem-todoapp-task.html">task</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/Application.html">Application</a></li>
                             </ul>
         </div>
     
@@ -131,15 +131,15 @@
 </div>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/task/TaskManager.php"><a href="files/app-ch-comem-todoapp-task-taskmanager.html"><abbr title="app/ch/comem/todoapp/task/TaskManager.php">TaskManager.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php"><a href="files/app-ch-comem-todoapp-dbcrud-dbmanagercrud-task.html"><abbr title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php">DbManagerCRUD_Task.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">10</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">This class manages tasks for the Todo app.</p>
+            <p class="phpdocumentor-summary">This abstract class represents a CRUD manager for a database.</p>
 
-    <section class="phpdocumentor-description"><p>It is a singleton class, meaning that only one instance of this class can exist.</p>
+    <section class="phpdocumentor-description"><p>It implements the I_APICRUD interface.</p>
 </section>
 
 
@@ -148,7 +148,7 @@
 
 <h3 id="toc">
     Table of Contents
-    <a href="classes/ch-comem-todoapp-task-TaskManager.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
@@ -162,91 +162,90 @@
 
 <h4 id="toc-properties">
     Properties
-    <a href="classes/ch-comem-todoapp-task-TaskManager.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/ch-comem-todoapp-task-TaskManager.html#property_instance">$instance</a>
+    <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD.html#property_db">$db</a>
     <span>
-                        &nbsp;: <a href="classes/ch-comem-todoapp-task-TaskManager.html"><abbr title="\ch\comem\todoapp\task\TaskManager">TaskManager</abbr></a>|null            </span>
+                        &nbsp;: mixed            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/ch-comem-todoapp-task-TaskManager.html#property_tasks">$tasks</a>
+    <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#property_instance">$instance</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html"><abbr title="\ch\comem\todoapp\dbCRUD\DbManagerCRUD_Task">DbManagerCRUD_Task</abbr></a>|null            </span>
 </dt>
 
     </dl>
 
 <h4 id="toc-methods">
     Methods
-    <a href="classes/ch-comem-todoapp-task-TaskManager.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ch-comem-todoapp-task-TaskManager.html#method_addTask">addTask()</a>
+    <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_create">create()</a>
+    <span>
+                                &nbsp;: int    </span>
+</dt>
+<dd>Creates a new record in the database for the given object.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_delete">delete()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd>Adds a task to the task manager.</dd>
+<dd>Deletes a task from the database.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ch-comem-todoapp-task-TaskManager.html#method_getInstance">getInstance()</a>
+    <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD.html#method_getDb">getDb()</a>
     <span>
-                                &nbsp;: <a href="classes/ch-comem-todoapp-task-TaskManager.html"><abbr title="\ch\comem\todoapp\task\TaskManager">TaskManager</abbr></a>    </span>
+                                &nbsp;: <abbr title="\PDO">PDO</abbr>    </span>
 </dt>
-<dd>Returns an instance of the TaskManager class.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ch-comem-todoapp-task-TaskManager.html#method_getTask">getTask()</a>
+    <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_getInstance">getInstance()</a>
     <span>
-                                &nbsp;: <a href="classes/ch-comem-todoapp-task-Task.html"><abbr title="\ch\comem\todoapp\task\Task">Task</abbr></a>|null    </span>
+                                &nbsp;: <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html"><abbr title="\ch\comem\todoapp\dbCRUD\DbManagerCRUD_Task">DbManagerCRUD_Task</abbr></a>    </span>
 </dt>
-<dd>Retrieves a task by its ID.</dd>
+<dd>Returns an instance of the DbManagerCRUD_Task class.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ch-comem-todoapp-task-TaskManager.html#method_getTasks">getTasks()</a>
+    <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_read">read()</a>
+    <span>
+                                &nbsp;: object|null    </span>
+</dt>
+<dd>Reads a task from the database based on its ID.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_readAll">readAll()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd>Retrieves an array of tasks.</dd>
+<dd>Reads all tasks from the database.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ch-comem-todoapp-task-TaskManager.html#method_getTasksByCategory">getTasksByCategory()</a>
+    <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_update">update()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: object|null    </span>
 </dt>
-<dd>Retrieves tasks by category ID.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ch-comem-todoapp-task-TaskManager.html#method_removeTask">removeTask()</a>
-    <span>
-                                &nbsp;: bool    </span>
-</dt>
-<dd>Removes a task from the task manager.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/ch-comem-todoapp-task-TaskManager.html#method_updateTask">updateTask()</a>
-    <span>
-                                &nbsp;: bool    </span>
-</dt>
-<dd>Updates a task.</dd>
+<dd>Updates a task in the database.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/ch-comem-todoapp-task-TaskManager.html#method___construct">__construct()</a>
+    <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/ch-comem-todoapp-task-TaskManager.html#method_loadTasks">loadTasks()</a>
+    <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_getUserId">getUserId()</a>
     <span>
-                                &nbsp;: bool    </span>
+                                &nbsp;: int|null    </span>
 </dt>
-<dd>Loads the tasks.</dd>
+<dd>Returns the user ID associated with the current task.</dd>
 
     </dl>
 
@@ -259,7 +258,7 @@
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/ch-comem-todoapp-task-TaskManager.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -267,27 +266,27 @@
             phpdocumentor-element
             -property
             -private
-            -static                                            "
+                                                        "
 >
-    <h4 class="phpdocumentor-element__name" id="property_instance">
-        $instance
-        <a href="classes/ch-comem-todoapp-task-TaskManager.html#property_instance" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_db">
+        $db
+        <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD.html#property_db" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/task/TaskManager.php"><a href="files/app-ch-comem-todoapp-task-taskmanager.html"><abbr title="app/ch/comem/todoapp/task/TaskManager.php">TaskManager.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD.php"><a href="files/app-ch-comem-todoapp-dbcrud-dbmanagercrud.html"><abbr title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD.php">DbManagerCRUD.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type"><a href="classes/ch-comem-todoapp-task-TaskManager.html"><abbr title="\ch\comem\todoapp\task\TaskManager">TaskManager</abbr></a>|null</span>
-    <span class="phpdocumentor-signature__name">$instance</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$db</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
     
@@ -300,28 +299,28 @@
             phpdocumentor-element
             -property
             -private
-                                                        "
+            -static                                            "
 >
-    <h4 class="phpdocumentor-element__name" id="property_tasks">
-        $tasks
-        <a href="classes/ch-comem-todoapp-task-TaskManager.html#property_tasks" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_instance">
+        $instance
+        <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#property_instance" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/task/TaskManager.php"><a href="files/app-ch-comem-todoapp-task-taskmanager.html"><abbr title="app/ch/comem/todoapp/task/TaskManager.php">TaskManager.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php"><a href="files/app-ch-comem-todoapp-dbcrud-dbmanagercrud-task.html"><abbr title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php">DbManagerCRUD_Task.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$tasks</span>
-    </code>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type"><a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html"><abbr title="\ch\comem\todoapp\dbCRUD\DbManagerCRUD_Task">DbManagerCRUD_Task</abbr></a>|null</span>
+    <span class="phpdocumentor-signature__name">$instance</span>
+     = <span class="phpdocumentor-signature__default-value">null</span></code>
 
     
     
@@ -333,7 +332,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/ch-comem-todoapp-task-TaskManager.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -342,23 +341,23 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_addTask">
-        addTask()
-        <a href="classes/ch-comem-todoapp-task-TaskManager.html#method_addTask" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_create">
+        create()
+        <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_create" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/task/TaskManager.php"><a href="files/app-ch-comem-todoapp-task-taskmanager.html"><abbr title="app/ch/comem/todoapp/task/TaskManager.php">TaskManager.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php"><a href="files/app-ch-comem-todoapp-dbcrud-dbmanagercrud-task.html"><abbr title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php">DbManagerCRUD_Task.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">93</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a task to the task manager.</p>
+        <p class="phpdocumentor-summary">Creates a new record in the database for the given object.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addTask</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ch-comem-todoapp-task-Task.html"><abbr title="\ch\comem\todoapp\task\Task">Task</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$task</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">create</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -366,11 +365,11 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$task</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ch-comem-todoapp-task-Task.html"><abbr title="\ch\comem\todoapp\task\Task">Task</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$object</span>
+                : <span class="phpdocumentor-signature__argument__return-type">object</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The task to be added.</p>
+                    <section class="phpdocumentor-description"><p>The object to be created in the database.</p>
 </section>
 
             </dd>
@@ -380,49 +379,9 @@
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">bool</span>
+        <span class="phpdocumentor-signature__response_type">int</span>
                     &mdash;
-                <section class="phpdocumentor-description"><p>Returns true if the task was successfully added, false otherwise.</p>
-</section>
-
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_getInstance">
-        getInstance()
-        <a href="classes/ch-comem-todoapp-task-TaskManager.html#method_getInstance" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/task/TaskManager.php"><a href="files/app-ch-comem-todoapp-task-taskmanager.html"><abbr title="app/ch/comem/todoapp/task/TaskManager.php">TaskManager.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">30</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Returns an instance of the TaskManager class.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getInstance</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-task-TaskManager.html"><abbr title="\ch\comem\todoapp\task\TaskManager">TaskManager</abbr></a></span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-task-TaskManager.html"><abbr title="\ch\comem\todoapp\task\TaskManager">TaskManager</abbr></a></span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>The instance of the TaskManager class.</p>
+                <section class="phpdocumentor-description"><p>The ID of the newly created record.</p>
 </section>
 
             </section>
@@ -434,23 +393,23 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getTask">
-        getTask()
-        <a href="classes/ch-comem-todoapp-task-TaskManager.html#method_getTask" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_delete">
+        delete()
+        <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_delete" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/task/TaskManager.php"><a href="files/app-ch-comem-todoapp-task-taskmanager.html"><abbr title="app/ch/comem/todoapp/task/TaskManager.php">TaskManager.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php"><a href="files/app-ch-comem-todoapp-dbcrud-dbmanagercrud-task.html"><abbr title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php">DbManagerCRUD_Task.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">145</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Retrieves a task by its ID.</p>
+        <p class="phpdocumentor-summary">Deletes a task from the database.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getTask</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-task-Task.html"><abbr title="\ch\comem\todoapp\task\Task">Task</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -462,7 +421,7 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The ID of the task to retrieve.</p>
+                    <section class="phpdocumentor-description"><p>The ID of the task to delete.</p>
 </section>
 
             </dd>
@@ -472,7 +431,134 @@
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-task-Task.html"><abbr title="\ch\comem\todoapp\task\Task">Task</abbr></a>|null</span>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true if the task was successfully deleted, false otherwise.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getDb">
+        getDb()
+        <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD.html#method_getDb" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD.php"><a href="files/app-ch-comem-todoapp-dbcrud-dbmanagercrud.html"><abbr title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD.php">DbManagerCRUD.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">37</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getDb</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\PDO">PDO</abbr></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\PDO">PDO</abbr></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getInstance">
+        getInstance()
+        <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_getInstance" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php"><a href="files/app-ch-comem-todoapp-dbcrud-dbmanagercrud-task.html"><abbr title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php">DbManagerCRUD_Task.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">24</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns an instance of the DbManagerCRUD_Task class.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getInstance</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html"><abbr title="\ch\comem\todoapp\dbCRUD\DbManagerCRUD_Task">DbManagerCRUD_Task</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html"><abbr title="\ch\comem\todoapp\dbCRUD\DbManagerCRUD_Task">DbManagerCRUD_Task</abbr></a></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>An instance of the DbManagerCRUD_Task class.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_read">
+        read()
+        <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_read" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php"><a href="files/app-ch-comem-todoapp-dbcrud-dbmanagercrud-task.html"><abbr title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php">DbManagerCRUD_Task.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">63</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Reads a task from the database based on its ID.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">read</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$id</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The ID of the task to read.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">object|null</span>
                     &mdash;
                 <section class="phpdocumentor-description"><p>The task object if found, null otherwise.</p>
 </section>
@@ -486,80 +572,28 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getTasks">
-        getTasks()
-        <a href="classes/ch-comem-todoapp-task-TaskManager.html#method_getTasks" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_readAll">
+        readAll()
+        <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_readAll" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/task/TaskManager.php"><a href="files/app-ch-comem-todoapp-task-taskmanager.html"><abbr title="app/ch/comem/todoapp/task/TaskManager.php">TaskManager.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php"><a href="files/app-ch-comem-todoapp-dbcrud-dbmanagercrud-task.html"><abbr title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php">DbManagerCRUD_Task.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">89</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Retrieves an array of tasks.</p>
+        <p class="phpdocumentor-summary">Reads all tasks from the database.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getTasks</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">readAll</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
     
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>The array of tasks.</p>
-</section>
-
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getTasksByCategory">
-        getTasksByCategory()
-        <a href="classes/ch-comem-todoapp-task-TaskManager.html#method_getTasksByCategory" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/task/TaskManager.php"><a href="files/app-ch-comem-todoapp-task-taskmanager.html"><abbr title="app/ch/comem/todoapp/task/TaskManager.php">TaskManager.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">78</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Retrieves tasks by category ID.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getTasksByCategory</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$categoryId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$categoryId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The ID of the category.</p>
-</section>
-
-            </dd>
-            </dl>
-
     
 
             <section>
@@ -578,23 +612,23 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_removeTask">
-        removeTask()
-        <a href="classes/ch-comem-todoapp-task-TaskManager.html#method_removeTask" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_update">
+        update()
+        <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_update" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/task/TaskManager.php"><a href="files/app-ch-comem-todoapp-task-taskmanager.html"><abbr title="app/ch/comem/todoapp/task/TaskManager.php">TaskManager.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php"><a href="files/app-ch-comem-todoapp-dbcrud-dbmanagercrud-task.html"><abbr title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php">DbManagerCRUD_Task.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">134</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Removes a task from the task manager.</p>
+        <p class="phpdocumentor-summary">Updates a task in the database.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">removeTask</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ch-comem-todoapp-task-Task.html"><abbr title="\ch\comem\todoapp\task\Task">Task</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$task</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -602,11 +636,20 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$task</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ch-comem-todoapp-task-Task.html"><abbr title="\ch\comem\todoapp\task\Task">Task</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$id</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The task to be removed.</p>
+                    <section class="phpdocumentor-description"><p>The ID of the task to update.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$object</span>
+                : <span class="phpdocumentor-signature__argument__return-type">object</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The updated task object.</p>
 </section>
 
             </dd>
@@ -616,61 +659,9 @@
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">bool</span>
+        <span class="phpdocumentor-signature__response_type">object|null</span>
                     &mdash;
-                <section class="phpdocumentor-description"><p>Returns true if the task was successfully removed, false otherwise.</p>
-</section>
-
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_updateTask">
-        updateTask()
-        <a href="classes/ch-comem-todoapp-task-TaskManager.html#method_updateTask" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/task/TaskManager.php"><a href="files/app-ch-comem-todoapp-task-taskmanager.html"><abbr title="app/ch/comem/todoapp/task/TaskManager.php">TaskManager.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">113</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Updates a task.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">updateTask</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ch-comem-todoapp-task-Task.html"><abbr title="\ch\comem\todoapp\task\Task">Task</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$task</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$task</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ch-comem-todoapp-task-Task.html"><abbr title="\ch\comem\todoapp\task\Task">Task</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The task to update.</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">bool</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>Returns true if the task was successfully updated, false otherwise.</p>
+                <section class="phpdocumentor-description"><p>The updated task object if successful, null otherwise.</p>
 </section>
 
             </section>
@@ -684,13 +675,13 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/ch-comem-todoapp-task-TaskManager.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/task/TaskManager.php"><a href="files/app-ch-comem-todoapp-task-taskmanager.html"><abbr title="app/ch/comem/todoapp/task/TaskManager.php">TaskManager.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php"><a href="files/app-ch-comem-todoapp-dbcrud-dbmanagercrud-task.html"><abbr title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php">DbManagerCRUD_Task.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
@@ -713,23 +704,23 @@
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_loadTasks">
-        loadTasks()
-        <a href="classes/ch-comem-todoapp-task-TaskManager.html#method_loadTasks" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getUserId">
+        getUserId()
+        <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_getUserId" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/task/TaskManager.php"><a href="files/app-ch-comem-todoapp-task-taskmanager.html"><abbr title="app/ch/comem/todoapp/task/TaskManager.php">TaskManager.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php"><a href="files/app-ch-comem-todoapp-dbcrud-dbmanagercrud-task.html"><abbr title="app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php">DbManagerCRUD_Task.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">163</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Loads the tasks.</p>
+        <p class="phpdocumentor-summary">Returns the user ID associated with the current task.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">loadTasks</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">getUserId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -739,9 +730,9 @@
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">bool</span>
+        <span class="phpdocumentor-signature__response_type">int|null</span>
                     &mdash;
-                <section class="phpdocumentor-description"><p>Returns true if the tasks were successfully loaded, false otherwise.</p>
+                <section class="phpdocumentor-description"><p>The user ID or null if not found.</p>
 </section>
 
             </section>
@@ -753,7 +744,7 @@
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/app/ch/comem/todoapp/task/TaskManager.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/app/ch/comem/todoapp/dbCRUD/DbManagerCRUD_Task.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -852,31 +843,31 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                                            <li><a href="classes/ch-comem-todoapp-task-TaskManager.html#toc-properties">Properties</a></li>
-                                                            <li><a href="classes/ch-comem-todoapp-task-TaskManager.html#toc-methods">Methods</a></li>
+                                                            <li><a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
             
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li><a href="classes/ch-comem-todoapp-task-TaskManager.html#property_instance">$instance<a href="classes/ch-comem-todoapp-task-TaskManager.html"></li>
-                                                    <li><a href="classes/ch-comem-todoapp-task-TaskManager.html#property_tasks">$tasks<a href="classes/ch-comem-todoapp-task-TaskManager.html"></li>
+                                                    <li><a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD.html#property_db">$db<a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html"></li>
+                                                    <li><a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#property_instance">$instance<a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html"></li>
                                             </ul>
                 </li>
             
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li><a href="classes/ch-comem-todoapp-task-TaskManager.html#method_addTask">addTask()</a></li>
-                                            <li><a href="classes/ch-comem-todoapp-task-TaskManager.html#method_getInstance">getInstance()</a></li>
-                                            <li><a href="classes/ch-comem-todoapp-task-TaskManager.html#method_getTask">getTask()</a></li>
-                                            <li><a href="classes/ch-comem-todoapp-task-TaskManager.html#method_getTasks">getTasks()</a></li>
-                                            <li><a href="classes/ch-comem-todoapp-task-TaskManager.html#method_getTasksByCategory">getTasksByCategory()</a></li>
-                                            <li><a href="classes/ch-comem-todoapp-task-TaskManager.html#method_removeTask">removeTask()</a></li>
-                                            <li><a href="classes/ch-comem-todoapp-task-TaskManager.html#method_updateTask">updateTask()</a></li>
-                                            <li><a href="classes/ch-comem-todoapp-task-TaskManager.html#method___construct">__construct()</a></li>
-                                            <li><a href="classes/ch-comem-todoapp-task-TaskManager.html#method_loadTasks">loadTasks()</a></li>
+                                            <li><a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_create">create()</a></li>
+                                            <li><a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_delete">delete()</a></li>
+                                            <li><a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD.html#method_getDb">getDb()</a></li>
+                                            <li><a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_getInstance">getInstance()</a></li>
+                                            <li><a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_read">read()</a></li>
+                                            <li><a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_readAll">readAll()</a></li>
+                                            <li><a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_update">update()</a></li>
+                                            <li><a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method___construct">__construct()</a></li>
+                                            <li><a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#method_getUserId">getUserId()</a></li>
                                     </ul>
             </li>
                     </ul>
@@ -896,7 +887,7 @@
     </section>
 </section>
         </div>
-        <a href="classes/ch-comem-todoapp-task-TaskManager.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
