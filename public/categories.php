@@ -60,7 +60,7 @@ loadHead(TEXT['categories'], ["main", "navBar", "dashboard", "task", "list", "ta
 
     <?php
     include_once './components/script.php';
-    loadScript(["categories"]);
+    loadScript(["categories"], ["locale"]);
     ?>
 </body>
 
