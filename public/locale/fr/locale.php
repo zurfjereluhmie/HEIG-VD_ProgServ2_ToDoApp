@@ -85,4 +85,10 @@ return [
     "email-sent" => "E-mail envoyé, vérifiez votre boîte de réception",
     "welcome" => "Bienvenue",
     "welcome-back" => "Bienvenue de nouveau",
+
+    // Task
+    "task-title" => "Tâche",
+    "today" => "Aujourd'hui",
+    "tomorrow" => "Demain",
+    "at" => "à",
 ];

@@ -85,4 +85,10 @@ return [
     "email-sent" => "Email sent, check your inbox",
     "welcome" => "Welcome",
     "welcome-back" => "Welcome back",
+
+    // Task
+    "task-title" => "Task",
+    "today" => "Today",
+    "tomorrow" => "Tomorrow",
+    "at" => "at",
 ];
