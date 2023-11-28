@@ -24,7 +24,7 @@
     </div>
     <ul class="navbar-nav px-3 flex flex-row">
         <li class="nav-item mr-1 align-self-center">
-            <?php $currentLang = $_COOKIE["locale"] ?? "fr"; ?>
+            <?php $currentLang = $_COOKIE["locale"] ?? "en"; ?>
             <select class="custom-select" id="languageSelect">
                 <?php foreach (AVAILABLE_LANGS as $lang) : ?>
                     <option value="<?= $lang ?>" <?= $lang == $currentLang ? "selected" : "" ?>><?= $lang ?></option>
