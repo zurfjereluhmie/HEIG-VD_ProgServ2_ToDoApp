@@ -26,18 +26,37 @@ searchInput.addEventListener("keyup", () => {
                 if (!response.ok) throw new Error("Network NOK");
                 return response;
             })
-            .then(response => response.json())
+            .then(response => {
+                return response.json();
+            })
             .then(data => {
-                if (data.length === 0) throw new Error("No result");
+                if (!Object.keys(data).length) throw new Error("No result");
                 return data;
             })
             .then(data => {
                 liveSearchUl.innerHTML = "";
-                data.forEach(todo => {
+                if (data.categories.length) {
                     const li = document.createElement("li");
-                    li.innerHTML = `<a href="/category.php?id=${todo.id}">${todo.title}</a>`;
+                    li.innerHTML = `<span class="small">Categories :</span>`;
                     liveSearchUl.appendChild(li);
-                });
+
+                    data.categories.forEach(category => {
+                        const li = document.createElement("li");
+                        li.innerHTML = `<a href="/category.php?id=${category.id}">${category.title}</a>`;
+                        liveSearchUl.appendChild(li);
+                    });
+                }
+                if (data.tasks.length) {
+                    const li = document.createElement("li");
+                    li.innerHTML = `<span class="small">Tasks :</span>`;
+                    liveSearchUl.appendChild(li);
+
+                    data.tasks.forEach(todo => {
+                        const li = document.createElement("li");
+                        li.innerHTML = `<a href="/todo.php?id=${todo.id}">${todo.title}</a>`;
+                        liveSearchUl.appendChild(li);
+                    });
+                }
             })
             .catch(error => {
                 switch (error.message) {

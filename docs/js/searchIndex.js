@@ -670,6 +670,7 @@ Search.appendIndex(
             "name": "getCategoryId",
             "summary": "Get\u0020the\u0020category\u0020ID\u0020of\u0020the\u0020task.",
             "url": "classes/ch-comem-todoapp-task-Task.html#method_getCategoryId"
+
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003AsetTitle\u0028\u0029",
             "name": "setTitle",

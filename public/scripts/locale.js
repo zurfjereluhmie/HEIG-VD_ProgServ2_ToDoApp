@@ -1,12 +1,11 @@
 "use strict";
 
-import { setCookie, getCookie, checkCookie } from "./cookies.js";
+import { setCookie, getCookie, checkCookie } from "./modules/cookies.js";
 
 const $ = (selector) => document.querySelector(selector);
 
-// TODO: Implement this function on the language selection page
-$("#lang")?.addEventListener("submit", (e) => {
-    let lang = e.detail;
-    setCookie("lang", lang, 365);
+$("#languageSelect")?.addEventListener("change", (e) => {
+    let lang = e.currentTarget.value;
+    setCookie("locale", lang, 365);
     location.reload();
 });

@@ -1,6 +1,6 @@
 <?php
 
-function loadScript(array $scripts = []): void
+function loadScript(array $scripts = [], array $module = []): void
 {
 ?>
     <!-- Lib -->
@@ -19,6 +19,11 @@ function loadScript(array $scripts = []): void
     <!-- Custom specific-->
     <?php foreach ($scripts as $script) : ?>
         <script src="./scripts/<?= $script ?>.js"></script>
+    <?php endforeach; ?>
+
+    <!-- Module -->
+    <?php foreach ($module as $script) : ?>
+        <script src="./scripts/<?= $script ?>.js" type="module"></script>
     <?php endforeach; ?>
 <?php
 }
