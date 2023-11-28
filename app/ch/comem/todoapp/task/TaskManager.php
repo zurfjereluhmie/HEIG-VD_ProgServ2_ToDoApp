@@ -85,6 +85,21 @@ class TaskManager
     }
 
     /**
+     * Retrieves an array of tasks with the given title.
+     *
+     * @param string $title The title of the tasks to retrieve.
+     * @return array An array of tasks with the given title.
+     */
+    public function getTasksByTitle(string $title): array
+    {
+        $tasks = [];
+        foreach ($this->tasks as $task) {
+            if (strpos($task->getTitle(), $title)) $tasks[] = $task;
+        }
+        return $tasks;
+    }
+
+    /**
      * Adds a task to the task manager.
      *
      * @param Task $task The task to be added.

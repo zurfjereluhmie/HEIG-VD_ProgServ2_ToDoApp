@@ -16,19 +16,32 @@ if (empty($search)) {
 include_once "../../app/autoload.php";
 
 use ch\comem\todoapp\category\CategoryManager;
+use ch\comem\todoapp\task\TaskManager;
 
 $categoryManager = CategoryManager::getInstance();
 $categories = $categoryManager->getCategoriesByTitle($search);
-if (empty($categories)) {
+
+$taskManager = TaskManager::getInstance();
+$tasks = $taskManager->getTasksByTitle($search);
+if (empty($tasks)) {
     echo json_encode([]);
     exit();
 }
 
-$data = [];
+$data = [
+    "categories" => [],
+    "tasks" => []
+];
 foreach ($categories as $category) {
-    $data[] = [
+    $data["categories"][] = [
         "id" => $category->getId(),
         "title" => $category->getTitle()
+    ];
+}
+foreach ($tasks as $task) {
+    $data["tasks"][] = [
+        "id" => $task->getId(),
+        "title" => $task->getTitle()
     ];
 }
 
