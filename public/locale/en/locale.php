@@ -17,6 +17,14 @@ return [
     "due-tomorrow" => "Due tomorrow",
     "created-on" => "Created on",
 
+    // Category
+    "category-title" => "Category",
+    "filter-show-late-tasks" => "Show late tasks",
+    "filter-show-done-tasks" => "Show done tasks",
+    "task-late" => "Late",
+    "task-done" => "Done",
+    "error-category-not-found" => "Category not found",
+
     //Forms
     "lastname-placeholder" => "Lastname",
     "firstname-placeholder" => "Firstname",

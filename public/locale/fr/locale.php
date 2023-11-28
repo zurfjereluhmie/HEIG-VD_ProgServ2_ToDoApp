@@ -17,6 +17,14 @@ return [
     "due-tomorrow" => "À faire demain",
     "created-on" => "Créé le",
 
+    // Category
+    "category-title" => "Catégorie",
+    "filter-show-late-tasks" => "Montrer les retards",
+    "filter-show-done-tasks" => "Montrer les tâches terminées",
+    "task-late" => "En retard",
+    "task-done" => "Terminé",
+    "error-category-not-found" => "Catégorie non trouvée",
+
     // Forms
     "lastname-placeholder" => "Nom de famille",
     "firstname-placeholder" => "Prénom",
