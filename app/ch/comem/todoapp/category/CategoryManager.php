@@ -14,17 +14,18 @@ use Exception;
 class CategoryManager
 {
     private static ?CategoryManager $instance = null;
-    private array $categories;
+    private array $categories = [];
 
     private function __construct()
     {
-        $this->categories = [];
         $this->loadCategories();
     }
 
     public static function getInstance(): CategoryManager
     {
-        if (self::$instance == null) self::$instance = new CategoryManager();
+        if (!isset(self::$instance)) {
+            self::$instance = new CategoryManager();
+        }
         return self::$instance;
     }
 

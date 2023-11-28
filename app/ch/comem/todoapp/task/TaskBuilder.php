@@ -22,7 +22,7 @@ class TaskBuilder
     private bool $isDone;
     private bool $isFav;
     private DateTime $dueDate;
-    private Category $category;
+    private int $categoryId;
 
     /**
      * TaskBuilder constructor.
@@ -43,7 +43,7 @@ class TaskBuilder
         $this->isDone = false;
         $this->isFav = false;
         $this->dueDate = $dueDate;
-        $this->category = CategoryManager::getInstance()->getCategory($categoryId);
+        $this->categoryId = $categoryId;
     }
 
     /**
@@ -107,13 +107,13 @@ class TaskBuilder
     }
 
     /**
-     * Get the category of the task.
+     * Returns the category ID of the task.
      *
-     * @return Category The category of the task.
+     * @return int The category ID.
      */
-    public function getCategory(): Category
+    public function getCategoryId(): int
     {
-        return $this->category;
+        return $this->categoryId;
     }
 
     /**

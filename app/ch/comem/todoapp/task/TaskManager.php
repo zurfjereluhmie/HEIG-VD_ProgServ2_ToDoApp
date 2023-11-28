@@ -14,11 +14,10 @@ use Exception;
 class TaskManager
 {
     private static ?TaskManager $instance = null;
-    private array $tasks;
+    private array $tasks = [];
 
     private function __construct()
     {
-        $this->tasks = [];
         $this->loadTasks();
     }
 
@@ -38,7 +37,7 @@ class TaskManager
      *
      * @return bool Returns true if the tasks were successfully loaded, false otherwise.
      */
-    private function loadTasks(): bool
+    public function loadTasks(): bool
     {
         $this->tasks = DbManagerCRUD_Task::getInstance()->readAll();
         return true;
@@ -51,6 +50,7 @@ class TaskManager
      */
     public function getTasks(): array
     {
+        $this->loadTasks();
         return $this->tasks;
     }
 
@@ -68,7 +68,6 @@ class TaskManager
         return null;
     }
 
-    // TODO : Tester cette fonction
     /**
      * Retrieves tasks by category ID.
      *
@@ -79,7 +78,8 @@ class TaskManager
     {
         $tasks = [];
         foreach ($this->tasks as $task) {
-            if ($task->getCategory()->getId() == $categoryId) $tasks[] = $task;
+            if (!$task instanceof Task) throw new Exception("Task is not a Task object");
+            if ($task->getCategoryId() == $categoryId) $tasks[] = $task;
         }
         return $tasks;
     }

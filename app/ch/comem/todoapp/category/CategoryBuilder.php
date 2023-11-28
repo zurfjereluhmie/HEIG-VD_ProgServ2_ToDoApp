@@ -2,6 +2,7 @@
 
 namespace ch\comem\todoapp\category;
 
+use ch\comem\todoapp\task\Task;
 use DateTime;
 use Exception;
 
@@ -62,7 +63,7 @@ class CategoryBuilder
 
     public function setTasks(array $tasks): CategoryBuilder
     {
-        $this->tasks[] = $tasks;
+        $this->tasks = $tasks;
         return $this;
     }
 

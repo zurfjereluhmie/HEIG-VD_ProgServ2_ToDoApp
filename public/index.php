@@ -4,30 +4,16 @@
 </head>
 
 <body>
-    <h1>Index.php</h1>
-    <a href="testMail.php">Test Mail</a>
-    <a href="testInsert.php">Test Insert</a>
-    <br>
     <?php
+    require_once '../app/autoload.php';
 
-    use ch\comem\todoapp\dbCRUD\DbManagerCRUD_User;
+    use ch\comem\todoapp\category\CategoryManager;
 
-    include_once "../app/autoload.php";
-
-    $dbManagerUser = DbManagerCRUD_User::getInstance();
-    $u1 = $dbManagerUser->read(1);
-
+    $categoryManager = CategoryManager::getInstance();
+    $categories = $categoryManager->getCategories();
     echo "<pre>";
-    print_r($u1);
-    // REGSITER INIT
+    print_r($categories);
     echo "</pre>";
-
-
-
-    // Check if the correct php.ini file is loaded
-    echo ini_get('upload_max_filesize') . '<br>';
-    echo php_ini_loaded_file();
-    echo phpinfo();
     ?>
 </body>
 
