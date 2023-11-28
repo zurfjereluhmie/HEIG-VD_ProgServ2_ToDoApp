@@ -20,7 +20,7 @@ class Task
     private bool $isDone;
     private bool $isFav;
     private DateTime $dueDate;
-    private Category $category;
+    private int $categoryId;
 
     /**
      * Task constructor.
@@ -35,7 +35,7 @@ class Task
         $this->isDone = $builder->isDone();
         $this->isFav = $builder->isFav();
         $this->dueDate = $builder->getDueDate();
-        $this->category = $builder->getCategory();
+        $this->categoryId = $builder->getCategoryId();
     }
 
     /**
@@ -99,13 +99,13 @@ class Task
     }
 
     /**
-     * Returns the category of the task.
+     * Get the category ID of the task.
      *
-     * @return Category The category of the task.
+     * @return int The category ID.
      */
-    public function getCategory(): Category
+    public function getCategoryId(): int
     {
-        return $this->category;
+        return $this->categoryId;
     }
 
     /**
@@ -160,12 +160,13 @@ class Task
     }
 
     /**
-     * Sets the category of the task.
-     * 
-     * @param Category $category The category of the task.
+     * Set the category of the task.
+     *
+     * @param int $categoryId The ID of the category.
+     * @return void
      */
-    public function setCategory(Category $category): void
+    public function setCategory(int $categoryId): void
     {
-        $this->category = $category;
+        $this->categoryId = $categoryId;
     }
 }

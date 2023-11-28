@@ -63,7 +63,7 @@ class CategoryBuilder
 
     public function setTasks(array $tasks): CategoryBuilder
     {
-        $this->tasks[] = $tasks;
+        $this->tasks = $tasks;
         return $this;
     }
 

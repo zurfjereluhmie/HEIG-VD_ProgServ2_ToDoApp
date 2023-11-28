@@ -79,22 +79,19 @@ class DbManagerCRUD_Category extends DbManagerCRUD
         $categories = $stmt->fetchAll();
         $result = [];
         $tasksPerCategory = [];
-        
-        // TODO : Delete tests
-        $cnt = 0;
-        echo "<pre>";
-        print_r($categories);
-        echo "</pre>";
-        // -----------
+
+        $tm = TaskManager::getInstance();
+        $tm->loadTasks();
+
         foreach ($categories as $category) {
 
-            $tasksPerCategory[] = TaskManager::getInstance()->getTasksByCategory($category["id"]);
+            $tasksPerCategory = $tm->getTasksByCategory($category["id"]);
 
             $result[] = (new CategoryBuilder($category["title"], $category["color"]))
                 ->setId($category["id"])
                 ->setDescription($category["description"])
                 ->setCreatedAt((new DateTime($category["created_at"])))
-                //->setTasks($tasksPerCategory)
+                ->setTasks($tasksPerCategory)
                 ->build();
         }
 

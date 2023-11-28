@@ -48,7 +48,7 @@ class DbManagerCRUD_Task extends DbManagerCRUD
             "is_fav" => (int) $object->isFav(),
             "due_date" => $object->getDueDate()->format("Y-m-d H:i:s"),
             "user_id" => $userId,
-            "category_id" => $object->getCategory()->getId()
+            "category_id" => $object->getCategoryId()
         ]);
         if (!$res) throw new Exception("Error while creating task");
         return $this->getDb()->lastInsertId();
@@ -129,7 +129,7 @@ class DbManagerCRUD_Task extends DbManagerCRUD
             "isDone" => $object->isDone(),
             "isFav" => $object->isFav(),
             "dueDate" => $object->getDueDate()->format("Y-m-d H:i:s"),
-            "category_id" => $object->getCategory()->getId(),
+            "category_id" => $object->getCategoryId(),
             "id" => $id
         ]);
         if (!$res) throw new Exception("Error while updating task");
