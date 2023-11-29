@@ -169,4 +169,21 @@ class Task
     {
         $this->categoryId = $categoryId;
     }
+
+    /**
+     * Determines whether the task late, due today or due later.
+     * 
+     * @return int -1 if the task is late, 0 if the task is due today, 1 if the task is due later.
+     */
+    public function isDueFor(): int
+    {
+        $today = new DateTime();
+        $today->setTime(0, 0, 0);
+        $dueDate = $this->getDueDate();
+        $dueDate->setTime(0, 0, 0);
+
+        if ($dueDate < $today) return -1;
+        if ($dueDate == $today) return 0;
+        return 1;
+    }
 }
