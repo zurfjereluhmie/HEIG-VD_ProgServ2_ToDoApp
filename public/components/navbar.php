@@ -11,13 +11,7 @@
         <div id="livesearch">
             <ul>
                 <li>
-                    Resultat #1
-                </li>
-                <li>
-                    Resultat #2
-                </li>
-                <li>
-                    Resultat #3
+                    <span class="noResult">Search for a todo</span>
                 </li>
             </ul>
         </div>

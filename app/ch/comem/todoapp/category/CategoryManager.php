@@ -76,9 +76,9 @@ class CategoryManager
         $categories = [];
         foreach ($this->categories as $category) {
             if ($category instanceof Category) {
-                if (strpos(strtoupper($category->getTitle()), strtoupper($title)) !== false) {
+                if (str_contains(strtoupper($category->getTitle()), strtoupper($title))) {
                     $categories[] = $category;
-                    if ($limit > 0 && count($categories) >= $limit) break;
+                    if ($limit != -1 && count($categories) >= $limit) break;
                 }
             }
         }

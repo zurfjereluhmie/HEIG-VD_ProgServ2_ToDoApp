@@ -94,7 +94,7 @@ class TaskManager
     {
         $tasks = [];
         foreach ($this->tasks as $task) {
-            if (strpos($task->getTitle(), $title)) $tasks[] = $task;
+            if (str_contains(strtoupper($task->getTitle()), strtoupper($title))) $tasks[] = $task;
         }
         return $tasks;
     }
