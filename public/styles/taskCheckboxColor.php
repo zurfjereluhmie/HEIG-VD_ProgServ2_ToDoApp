@@ -27,7 +27,7 @@ $categories = $categoryManager->getCategories();
 $categoriesColors = [];
 
 foreach ($categories as $category) {
-    $id = strtolower(substr($category->getColor(), 1));
+    $id = "color" . strtolower(substr($category->getColor(), 1));
     $categoriesColors[$id] = $category->getColor();
 }
 
