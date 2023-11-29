@@ -68,10 +68,13 @@ loadHead(TEXT['category-title'], ["main", "navBar", "viewByDate", "task", "taskC
                             <h3 class="toDoTitle mr-auto p-2"><?= TEXT['task-late'] ?> :</h3>
                         </div>
                         <div class="taskContainer">
-
-                            <?php foreach ($category->getTasks() as $task) : ?>
-                                <?= ($task->getDueDate() < new DateTime() && !$task->isDone()) ? task($task->getId(), $task->getTitle(), $task->getDueDate(), $task->isFav(), $task->isDone(), $category->getColor()) : "" ?>
-                            <?php endforeach; ?>
+                            <?php if (count($category->getTasks()) === 0) : ?>
+                                <p class="text-center"><?= TEXT['no-task'] ?></p>
+                            <?php else : ?>
+                                <?php foreach ($category->getTasks() as $task) : ?>
+                                    <?= ($task->getDueDate() < new DateTime() && !$task->isDone()) ? task($task->getId(), $task->getTitle(), $task->getDueDate(), $task->isFav(), $task->isDone(), $category->getColor()) : "" ?>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
 
                         </div>
                     </div>
@@ -83,10 +86,13 @@ loadHead(TEXT['category-title'], ["main", "navBar", "viewByDate", "task", "taskC
                             <h3 class="toDoTitle mr-auto p-2"><?= TEXT['task-done'] ?> :</h3>
                         </div>
                         <div class="taskContainer">
-
-                            <?php foreach ($category->getTasks() as $task) : ?>
-                                <?= ($task->isDone()) ? task($task->getId(), $task->getTitle(), $task->getDueDate(), $task->isFav(), $task->isDone(), $category->getColor()) : "" ?>
-                            <?php endforeach; ?>
+                            <?php if (count($category->getTasks()) === 0) : ?>
+                                <p class="text-center"><?= TEXT['no-task'] ?></p>
+                            <?php else : ?>
+                                <?php foreach ($category->getTasks() as $task) : ?>
+                                    <?= ($task->isDone()) ? task($task->getId(), $task->getTitle(), $task->getDueDate(), $task->isFav(), $task->isDone(), $category->getColor()) : "" ?>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
 
                         </div>
                     </div>

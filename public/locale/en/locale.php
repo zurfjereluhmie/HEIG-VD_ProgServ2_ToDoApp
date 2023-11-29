@@ -88,6 +88,7 @@ return [
 
     // Task
     "task-title" => "Task",
+    "no-task" => "No task yet",
     "today" => "Today",
     "tomorrow" => "Tomorrow",
     "at" => "at",
