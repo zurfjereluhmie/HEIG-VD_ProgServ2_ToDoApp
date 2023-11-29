@@ -7,10 +7,14 @@ require_once "locale/locale-conf.php";
 
 use ch\comem\todoapp\flash\Flash;
 use ch\comem\todoapp\category\CategoryManager;
+use ch\comem\todoapp\task\TaskManager;
 
 
 $categoryManager = CategoryManager::getInstance();
 $categories = $categoryManager->getCategories();
+
+$taskManager = TaskManager::getInstance();
+$tasks = $taskManager->getTasks();
 
 ?>
 
@@ -20,6 +24,9 @@ $categories = $categoryManager->getCategories();
 <?php
 require_once 'components/head.php';
 loadHead(TEXT['dashboard'], ["main.css", "navBar.css", "dashboard.css", "task.css", "list.css", "taskCheckboxColor.php"]);
+
+require_once 'components/task-container-long.php';
+require_once 'components/task-long.php';
 ?>
 
 <body>
@@ -67,9 +74,10 @@ loadHead(TEXT['dashboard'], ["main.css", "navBar.css", "dashboard.css", "task.cs
                             <a class="p-2" href="/calendar.html#today"><?= TEXT['see-all'] ?></a>
                         </div>
                         <div class="taskContainer">
-
+                            
+                        <!-- TODO : DELETE - Old Task Model -->
                             <!-- Task#1 -->
-                            <div class="d-flex flex-row align-items-center task">
+                            <!-- <div class="d-flex flex-row align-items-center task">
                                 <label class="containerCheckBox taskCheckBox">
                                     <input type="checkbox" class="BlueCheckBox taskIsDone" data-color="#497efe" data-taskId="1">
                                     <span class="checkmark BlueCheckBoxSpan"></span>
@@ -85,68 +93,48 @@ loadHead(TEXT['dashboard'], ["main.css", "navBar.css", "dashboard.css", "task.cs
                                         <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
                                     </a>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- Task#1 end -->
+                            
+                            <!-- Tasks begin -->
+                            <!-- TODO : UPDATE VIEW - Charger les tasks depuis la DB (en cas d'update/delete) -->
 
-                            <!-- Task#2 -->
-                            <div class="d-flex flex-row align-items-center task">
-                                <label class="containerCheckBox taskCheckBox">
-                                    <input type="checkbox" class="BlueCheckBox taskIsDone" data-color="#497efe" data-taskId="2">
-                                    <span class="checkmark BlueCheckBoxSpan"></span>
-                                </label>
-                                <p class="taskTitle">Acheter de la fondue</p>
-                                <div class="d-flex flexEnd">
-                                    <p class="taskDelai">Today - 10h00</p>
-                                    <a class="taskStar" href="#" data-isFav="true">
-                                        <img src="assets/icons/favourite.svg" width="29" height="29" alt="star icon">
-                                    </a>
+                            <?php if (!empty($tasks)) : ?>
+                                <?php
+                                // Filter task because we only need task due today
+                                $dueTodayTasks = array_filter($tasks, function ($task) {
+                                    return $task->isDueFor() === 0;
+                                });
 
-                                    <a class="taskTrash" href="#">
-                                        <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Task#2 end -->
+                                // Filter task because we only need task not done
+                                $dueTodayTasks = array_filter($dueTodayTasks, function ($task) {
+                                    return !$task->isDone();
+                                });
 
-                            <!-- Task#3 -->
-                            <div class="d-flex flex-row align-items-center task">
-                                <label class="containerCheckBox taskCheckBox">
-                                    <input type="checkbox" class="RedCheckBox taskIsDone" data-color="#dc3545" data-taskId="3">
-                                    <span class="checkmark RedCheckBoxSpan"></span>
-                                </label>
-                                <p class="taskTitle">Ex p.134 + p.135</p>
-                                <div class="d-flex flexEnd">
-                                    <p class="taskDelai">Today - 13h00</p>
-                                    <a class="taskStar" href="#" data-isFav="true">
-                                        <img src="assets/icons/favourite.svg" width="29" height="29" alt="star icon">
-                                    </a>
+                                // TODO : ORDER in SQL ? (SELECT * FROM tasks ORDER BY dueDate ASC)
+                                // TODO : Idem pour les filtres au dessus
+                                // Order tasks by due date : hours, minutes, seconds
+                                usort($dueTodayTasks, function ($task1, $task2) {
+                                    return $task1->getDueDate() <=> $task2->getDueDate();
+                                });
+                                ?>
+                                <!-- TODO : NB DISPLAY - Stop loop ? -->
+                                <!-- TODO : DATETIME - Display only "Today" date/today/tomorrow and hh:mm ? -->
+                                <?php foreach ($dueTodayTasks as $task) : ?>
+                                    <?php 
+                                    echo task(
+                                        $task->getId(),
+                                        $task->getTitle(),
+                                        $task->getDueDate(),
+                                        $task->isFav(),
+                                        $task->isDone(),
+                                        $category->getColor()
+                                    );
+                                    ?>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                            <!-- Tasks end -->
 
-                                    <a class="taskTrash" href="#">
-                                        <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Task#3 end -->
-
-                            <!-- Task#4 -->
-                            <div class="d-flex flex-row align-items-center task">
-                                <label class="containerCheckBox taskCheckBox">
-                                    <input type="checkbox" class="RedCheckBox taskIsDone" data-color="#dc3545" data-taskId="4">
-                                    <span class="checkmark RedCheckBoxSpan"></span>
-                                </label>
-                                <p class="taskTitle">Rendre MCD</p>
-                                <div class="d-flex flexEnd">
-                                    <p class="taskDelai">Today - 16h40</p>
-                                    <a class="taskStar" href="#" data-isFav="false">
-                                        <img src="assets/icons/notFavourite.svg" width="29" height="29" alt="star icon">
-                                    </a>
-
-                                    <a class="taskTrash" href="#">
-                                        <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Task#4 end -->
 
                         </div>
                     </div>
@@ -160,8 +148,9 @@ loadHead(TEXT['dashboard'], ["main.css", "navBar.css", "dashboard.css", "task.cs
                         </div>
                         <div class="taskContainer">
 
+                        <!-- TODO : DELETE - Old Task Model -->
                             <!-- Task#1 -->
-                            <div class="d-flex flex-row align-items-center task">
+                            <!-- <div class="d-flex flex-row align-items-center task">
                                 <label class="containerCheckBox taskCheckBox">
                                     <input type="checkbox" class="RedCheckBox taskIsDone" data-color="#dc3545" data-taskId="5">
                                     <span class="checkmark RedCheckBoxSpan"></span>
@@ -177,68 +166,47 @@ loadHead(TEXT['dashboard'], ["main.css", "navBar.css", "dashboard.css", "task.cs
                                         <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
                                     </a>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- Task#1 end -->
 
-                            <!-- Task#2 -->
-                            <div class="d-flex flex-row align-items-center task">
-                                <label class="containerCheckBox taskCheckBox">
-                                    <input type="checkbox" class="RedCheckBox taskIsDone" data-color="#dc3545" data-taskId="6">
-                                    <span class="checkmark RedCheckBoxSpan"></span>
-                                </label>
-                                <p class="taskTitle">Test chapitre 23 economie</p>
-                                <div class="d-flex flexEnd">
-                                    <p class="taskDelai">Tomorrow - 11h00</p>
-                                    <a class="taskStar" href="#" data-isFav="true">
-                                        <img src="assets/icons/favourite.svg" width="29" height="29" alt="star icon">
-                                    </a>
+                            <!-- Tasks due later begin -->
+                            <!-- TODO : UPDATE VIEW - Charger les tasks depuis la DB (en cas d'update/delete) -->
 
-                                    <a class="taskTrash" href="#">
-                                        <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Task#2 end -->
+                            <?php if (!empty($tasks)) : ?>
+                                <?php
+                                // Filter task because we only need task due later
+                                $dueTomorrowTasks = array_filter($tasks, function ($task) {
+                                    return $task->isDueFor() === 1;
+                                });
 
-                            <!-- Task#3 -->
-                            <div class="d-flex flex-row align-items-center task">
-                                <label class="containerCheckBox taskCheckBox">
-                                    <input type="checkbox" class="RedCheckBox taskIsDone" data-color="#dc3545" data-taskId="7">
-                                    <span class="checkmark RedCheckBoxSpan"></span>
-                                </label>
-                                <p class="taskTitle">Ex p.134 + p.135</p>
-                                <div class="d-flex flexEnd">
-                                    <p class="taskDelai">Tomorrow - 13h00</p>
-                                    <a class="taskStar" href="#" data-isFav="true">
-                                        <img src="assets/icons/favourite.svg" width="29" height="29" alt="star icon">
-                                    </a>
+                                // Filter task because we only need task not done
+                                $dueTomorrowTasks = array_filter($dueTomorrowTasks, function ($task) {
+                                    return !$task->isDone();
+                                });
 
-                                    <a class="taskTrash" href="#">
-                                        <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Task#3 end -->
-
-                            <!-- Task#4 -->
-                            <div class="d-flex flex-row align-items-center task">
-                                <label class="containerCheckBox taskCheckBox">
-                                    <input type="checkbox" class="RedCheckBox taskIsDone" data-color="#dc3545" data-taskId="8">
-                                    <span class="checkmark RedCheckBoxSpan"></span>
-                                </label>
-                                <p class="taskTitle">Rendre Sujet TPI</p>
-                                <div class="d-flex flexEnd">
-                                    <p class="taskDelai">Tomorrow - 17h30</p>
-                                    <a class="taskStar" href="#" data-isFav="false">
-                                        <img src="assets/icons/notFavourite.svg" width="29" height="29" alt="star icon">
-                                    </a>
-
-                                    <a class="taskTrash" href="#">
-                                        <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Task#4 end -->
+                                // TODO : ORDER in SQL ? (SELECT * FROM tasks ORDER BY dueDate ASC)
+                                // TODO : Idem pour les filtres au dessus
+                                // Order tasks by due date
+                                usort($dueTomorrowTasks, function ($task1, $task2) {
+                                    return $task1->getDueDate() <=> $task2->getDueDate();
+                                });
+                                ?>
+                                <!-- TODO : NB DISPLAY - Stop loop ? -->
+                                <!-- TODO : DATETIME - Display only "Today" date/today/tomorrow and hh:mm ? -->
+                                <?php foreach ($dueTomorrowTasks as $task) : ?>
+                                    <?php 
+                                    echo task(
+                                        $task->getId(),
+                                        $task->getTitle(),
+                                        $task->getDueDate(),
+                                        $task->isFav(),
+                                        $task->isDone(),
+                                        $category->getColor()
+                                    );
+                                    ?>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                            <!-- Tasks due later end -->
 
                         </div>
 
