@@ -8,18 +8,15 @@ require_once 'locale/locale-conf.php';
 use ch\comem\todoapp\flash\Flash;
 use ch\comem\todoapp\category\CategoryManager;
 
-if (!isset($_GET['id'])) {
-    new Flash("categories", TEXT['error-category-not-found'], "warning");
-    header("Location: categories.php");
-}
+$catId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
-if (!is_numeric($_GET['id'])) {
+if (!$catId) {
     new Flash("categories", TEXT['error-category-not-found'], "warning");
     header("Location: categories.php");
 }
 
 $categoryManager = CategoryManager::getInstance();
-$category = $categoryManager->getCategory($_GET['id']);
+$category = $categoryManager->getCategory($catId);
 
 if (!$category) {
     new Flash("categories", TEXT['error-category-not-found'], "warning");
@@ -56,9 +53,9 @@ loadHead(TEXT['category-title'], ["main", "navBar", "viewByDate", "task", "taskC
                         <input type="checkbox" name="showDoneTask" data-checkbox="doneTask">
                         <label for="showDoneTask"><?= TEXT['filter-show-done-tasks'] ?></label>
                     </div>
-                    <?= Flash::displayFlashMessage("global") ?>
-                    <?= Flash::displayFlashMessage("category") ?>
                 </div>
+                <?= Flash::displayFlashMessage("global") ?>
+                <?= Flash::displayFlashMessage("category") ?>
 
                 <!-- Liste ToDo -->
                 <div class="d-flex flex-column justify-content-center align-items-start flex-wrap">

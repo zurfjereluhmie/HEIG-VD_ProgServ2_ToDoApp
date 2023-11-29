@@ -1,6 +1,9 @@
 <?php
 
 return [
+    // Global
+    "danger-zone" => "Danger zone",
+
     // Dashboard
     "add-a-task" => "Add a task",
     "dashboard" => "Dashboard",
@@ -24,6 +27,16 @@ return [
     "task-late" => "Late",
     "task-done" => "Done",
     "error-category-not-found" => "Category not found",
+    "create-category" => "Create category",
+    "update-category" => "Update category",
+    "delete-category" => "Delete category",
+    "category-title-placeholder" => "Title",
+    "category-color-placeholder" => "Color",
+    "category-description-placeholder" => "Description",
+
+    "error-category-update" => "Error while updating the category",
+    "error-category-delete" => "Error while deleting the category",
+
 
     //Forms
     "lastname-placeholder" => "Lastname",
@@ -82,6 +95,9 @@ return [
     "account-created" => "Thanks for creating an account",
     "password-updated" => "Password updated",
     "account-validated" => "Your account has been validated",
+    "category-create" => "Category created",
+    "category-update" => "Category updated",
+    "category-delete" => "Category deleted",
     "email-sent" => "Email sent, check your inbox",
     "welcome" => "Welcome",
     "welcome-back" => "Welcome back",

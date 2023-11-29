@@ -13,5 +13,5 @@ myCategories?.addEventListener("click", (e) => {
 const addListTrigger = document.querySelector("#addListTrigger");
 
 addListTrigger?.addEventListener("click", () => {
-    alert("Feature to implement in public/scripts/categories.js")
+    location.href = "/category-create.php";
 });

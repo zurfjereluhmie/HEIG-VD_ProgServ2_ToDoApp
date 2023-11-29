@@ -1,6 +1,9 @@
 <?php
 
 return [
+    // Global
+    "danger-zone" => "Zone de danger",
+
     // Dashboard
     "add-a-task" => "Ajouter une tâche",
     "dashboard" => "Tableau de bord",
@@ -24,6 +27,15 @@ return [
     "task-late" => "En retard",
     "task-done" => "Terminé",
     "error-category-not-found" => "Catégorie non trouvée",
+    "create-category" => "Créer la catégorie",
+    "update-category" => "Mettre à jour",
+    "delete-category" => "Supprimer la catégorie",
+    "category-title-placeholder" => "Titre",
+    "category-color-placeholder" => "Couleur",
+    "category-description-placeholder" => "Description",
+
+    "error-category-update" => "Erreur lors de la mise à jour de la catégorie",
+    "error-category-delete" => "Erreur lors de la suppression de la catégorie",
 
     // Forms
     "lastname-placeholder" => "Nom de famille",
@@ -82,6 +94,9 @@ return [
     "account-created" => "Merci de créer un compte",
     "password-updated" => "Mot de passe mis à jour",
     "account-validated" => "Votre compte a été validé",
+    "category-create" => "Categorie créée",
+    "category-update" => "Catégorie mise à jour",
+    "category-delete" => "Catégorie supprimée",
     "email-sent" => "E-mail envoyé, vérifiez votre boîte de réception",
     "welcome" => "Bienvenue",
     "welcome-back" => "Bienvenue de nouveau",
