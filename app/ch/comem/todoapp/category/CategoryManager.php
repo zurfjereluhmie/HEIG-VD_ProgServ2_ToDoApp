@@ -3,6 +3,7 @@
 namespace ch\comem\todoapp\category;
 
 use ch\comem\todoapp\dbCRUD\DbManagerCRUD_Category;
+use ch\comem\todoapp\task\TaskManager;
 use Exception;
 
 /**
@@ -141,6 +142,13 @@ class CategoryManager
         if ($category->getId() == null) throw new Exception("Category id cannot be null");
 
         $dbManager = DbManagerCRUD_Category::getInstance();
+        $taskManager = TaskManager::getInstance();
+
+        // Remove all tasks from the category
+        foreach ($category->getTasks() as $task) {
+            $taskManager->removeTask($task);
+        }
+
         $res = $dbManager->delete($category->getId());
 
         if ($res) {

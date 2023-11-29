@@ -74,8 +74,15 @@ $("main").addEventListener("click", (e) => {
         return;
     }
 
+    // Handle list update
+    if (e.target.classList.contains("modifyPenList")) {
+        // Get the list id from the get parameter
+        const id = new URLSearchParams(location.search).get("id");
+        if (!id) return;
+        location.href = `/category-update.php?id=${id}`;
+    }
+
     // Redirect to task edit page
-    // TODO: add edit task page
     if (e.target.closest(".task")) {
         const id = e.target.closest(".task").dataset.id;
         location.href = `/task.php?id=${id}`;
