@@ -80,10 +80,12 @@ $("main").addEventListener("click", (e) => {
         const id = new URLSearchParams(location.search).get("id");
         if (!id) return;
         location.href = `/category-update.php?id=${id}`;
+        return;
     }
 
     // Redirect to task edit page
-    if (e.target.closest(".task")) {
+    if (e.target.closest(".task") && e.target.type === "checkbox") {
+        e.stopPropagation();
         const id = e.target.closest(".task").dataset.id;
         location.href = `/task.php?id=${id}`;
     }
