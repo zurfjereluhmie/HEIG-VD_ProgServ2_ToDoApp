@@ -22,11 +22,14 @@ function task(int $id, string $title, DateTime $dueDate, bool $isFav, bool $isDo
         $formatDate .= " " . TEXT['at'] . " " . $hour;
     }
 
+    // handle color
+    $colorClass = "color" . strtolower(substr($color, 1));
+
     $html = <<<HTML
         <div class="d-flex flex-row align-items-center task" data-id="{$id}" >
             <label class="containerCheckBox taskCheckBox">
-                <input type="checkbox" class="BlueCheckBox taskIsDone" data-color="{$color}" data-taskId="{$id}" {$status}>
-                <span class="checkmark BlueCheckBoxSpan"></span>
+                <input type="checkbox" class="{$colorClass}CheckBox taskIsDone" data-color="{$color}" data-taskId="{$id}" {$status}>
+                <span class="checkmark {$colorClass}CheckBoxSpan"></span>
             </label>
             <p class="taskTitle">{$title}</p>
             <div class="d-flex flexEnd">
