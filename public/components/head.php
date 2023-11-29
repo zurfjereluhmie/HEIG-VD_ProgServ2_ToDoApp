@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Load the head section of the HTML page.
+ *
+ * @param string $title The title of the page.
+ * @param array|null $stylesheet An optional array of stylesheet URLs.
+ * @return void
+ */
 function loadHead(string $title, array $stylesheet = null): void
 {
 ?>
@@ -14,7 +21,7 @@ function loadHead(string $title, array $stylesheet = null): void
 
         <!-- CSS Custom -->
         <?php foreach ($stylesheet as $css) : ?>
-            <link href="styles/<?= $css ?>.css" rel="stylesheet">
+            <link href="styles/<?= $css ?>" rel="stylesheet">
         <?php endforeach; ?>
         <!-- <link href="css/modal.css" rel="stylesheet"> -->
 

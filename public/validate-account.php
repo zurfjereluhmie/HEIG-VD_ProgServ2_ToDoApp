@@ -65,7 +65,7 @@ if (isset($_POST["submit"])) {
 
 <?php
 require_once 'components/head.php';
-loadHead(TEXT['validate-account-title'], ["login"]);
+loadHead(TEXT['validate-account-title'], ["login.css"]);
 ?>
 
 

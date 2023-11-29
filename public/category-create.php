@@ -20,7 +20,7 @@ if (isset($_POST['submit-create-category'])) {
 
 <?php
 require_once 'components/head.php';
-loadHead(TEXT['category-title'], ["main", "navBar"]);
+loadHead(TEXT['category-title'], ["main.css", "navBar.css"]);
 ?>
 
 <body>

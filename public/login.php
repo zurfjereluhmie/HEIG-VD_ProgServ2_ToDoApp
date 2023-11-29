@@ -22,7 +22,7 @@ if (isset($_POST["submit"])) require_once "../controllers/validate-login.php";
 
 <?php
 require_once 'components/head.php';
-loadHead(TEXT['login-title'], ["login"]);
+loadHead(TEXT['login-title'], ["login.css"]);
 ?>
 
 

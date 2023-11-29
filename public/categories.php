@@ -18,7 +18,7 @@ $categories = $categoryManager->getCategories();
 
 <?php
 require_once 'components/head.php';
-loadHead(TEXT['categories'], ["main", "navBar", "dashboard", "task", "list", "taskCheckboxColor"]);
+loadHead(TEXT['categories'], ["main.css", "navBar.css", "dashboard.css", "task.css", "list.css", "taskCheckboxColor.php"]);
 ?>
 
 <body>

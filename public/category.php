@@ -33,7 +33,7 @@ require_once 'components/task-long.php';
 
 <?php
 require_once 'components/head.php';
-loadHead(TEXT['category-title'], ["main", "navBar", "viewByDate", "task", "taskCheckboxColor"]);
+loadHead(TEXT['category-title'], ["main.css", "navBar.css", "viewByDate.css", "task.css", "taskCheckboxColor.php"]);
 ?>
 
 <body>

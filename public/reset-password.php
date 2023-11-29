@@ -104,7 +104,7 @@ if (isset($_POST['submit-email'])) {
 
 <?php
 require_once 'components/head.php';
-loadHead(TEXT['reset-password-title'], ["password-reset"]);
+loadHead(TEXT['reset-password-title'], ["password-reset.css"]);
 ?>
 
 <body class="d-flex justify-content-center align-items-center">

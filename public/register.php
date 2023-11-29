@@ -22,7 +22,7 @@ if (isset($_POST["submit"])) require_once "../controllers/validate-register.php"
 
 <?php
 require_once 'components/head.php';
-loadHead(TEXT['register-title'], ["register"]);
+loadHead(TEXT['register-title'], ["register.css"]);
 ?>
 
 
