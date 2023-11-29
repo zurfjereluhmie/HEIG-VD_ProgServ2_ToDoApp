@@ -83,10 +83,10 @@ $("main").addEventListener("click", (e) => {
         return;
     }
 
-    // Redirect to task edit page
-    if (e.target.closest(".task") && e.target.type === "checkbox") {
-        e.stopPropagation();
+    // Redirect to task edit page. If the user click on the checkbox, the star or the trash, don't redirect
+    if (e.target.closest(".task") && !e.target.closest(".taskStar") && !e.target.closest(".taskTrash") && !e.target.closest(".checkmark")) {
         const id = e.target.closest(".task").dataset.id;
+        if (!id) return;
         location.href = `/task.php?id=${id}`;
     }
 
