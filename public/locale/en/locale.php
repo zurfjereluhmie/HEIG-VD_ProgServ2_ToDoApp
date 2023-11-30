@@ -34,9 +34,26 @@ return [
     "category-color-placeholder" => "Color",
     "category-description-placeholder" => "Description",
 
+    "error-category-create" => "Error while creating the category",
     "error-category-update" => "Error while updating the category",
     "error-category-delete" => "Error while deleting the category",
 
+    // Task
+    "task-create-title" => "New task",
+    "task-title-placeholder" => "Title",
+    "task-description-placeholder" => "Description",
+    "task-category-select-placeholder" => "Category",
+    "task-due-date-placeholder" => "Due date",
+    "create-task" => "Create task",
+    "update-task" => "Update task",
+    "delete-task" => "Delete task",
+
+    "error-while-task-create" => "Error while creating the task",
+    "error-while-task-update" => "Error while updating the task",
+    "error-while-task-delete" => "Error while deleting the task",
+
+    // Calendar
+    "calendar-title" => "Calendar",
 
     //Forms
     "lastname-placeholder" => "Lastname",
@@ -98,6 +115,9 @@ return [
     "category-create" => "Category created",
     "category-update" => "Category updated",
     "category-delete" => "Category deleted",
+    "task-create" => "Task created",
+    "task-update" => "Task updated",
+    "task-delete" => "Task deleted",
     "email-sent" => "Email sent, check your inbox",
     "welcome" => "Welcome",
     "welcome-back" => "Welcome back",

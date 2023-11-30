@@ -7,10 +7,14 @@ require_once "locale/locale-conf.php";
 
 use ch\comem\todoapp\flash\Flash;
 use ch\comem\todoapp\category\CategoryManager;
+use ch\comem\todoapp\task\TaskManager;
 
 
 $categoryManager = CategoryManager::getInstance();
 $categories = $categoryManager->getCategories();
+
+$taskManager = TaskManager::getInstance();
+$tasks = $taskManager->getTasks();
 
 ?>
 
@@ -20,6 +24,9 @@ $categories = $categoryManager->getCategories();
 <?php
 require_once 'components/head.php';
 loadHead(TEXT['dashboard'], ["main.css", "navBar.css", "dashboard.css", "task.css", "list.css", "taskCheckboxColor.php"]);
+
+require_once 'components/task-container-long.php';
+require_once 'components/task-long.php';
 ?>
 
 <body>
@@ -63,90 +70,43 @@ loadHead(TEXT['dashboard'], ["main.css", "navBar.css", "dashboard.css", "task.cs
                     <!-- ToDo due today -->
                     <div class="p-3 todoElt">
                         <div class="d-flex">
-                            <h3 class="toDoTitle mr-auto p-2"><?= TEXT['due-today'] ?> :</h3>
+                            <h3 class="toDoTitle mr-auto p-2"><?= TEXT['due-today'] ?></h3>
                             <a class="p-2" href="/calendar.html#today"><?= TEXT['see-all'] ?></a>
                         </div>
                         <div class="taskContainer">
 
-                            <!-- Task#1 -->
-                            <div class="d-flex flex-row align-items-center task">
-                                <label class="containerCheckBox taskCheckBox">
-                                    <input type="checkbox" class="BlueCheckBox taskIsDone" data-color="#497efe" data-taskId="1">
-                                    <span class="checkmark BlueCheckBoxSpan"></span>
-                                </label>
-                                <p class="taskTitle">Acheter de la raclette</p>
-                                <div class="d-flex flexEnd">
-                                    <p class="taskDelai">Today - 10h00</p>
-                                    <a class="taskStar" href="#" data-isFav="false">
-                                        <img src="assets/icons/notFavourite.svg" width="29" height="29" alt="star icon">
-                                    </a>
+                            <!-- Tasks begin -->
+                            <?php if (!empty($tasks)) : ?>
+                                <?php
+                                // Filter task because we only need task due today
+                                $dueTodayTasks = array_filter($tasks, function ($task) {
+                                    return $task->isDueFor() === 0;
+                                });
 
-                                    <a class="taskTrash" href="#">
-                                        <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Task#1 end -->
+                                // Filter task because we only need task not done
+                                $dueTodayTasks = array_filter($dueTodayTasks, function ($task) {
+                                    return !$task->isDone();
+                                });
+                                ?>
+                                <!-- TODO : NB DISPLAY - Stop loop ? -->
+                                <!-- TODO : DATETIME - Display only "Today" date/today/tomorrow and hh:mm ? -->
+                            <?php foreach ($dueTodayTasks as $task) :
 
-                            <!-- Task#2 -->
-                            <div class="d-flex flex-row align-items-center task">
-                                <label class="containerCheckBox taskCheckBox">
-                                    <input type="checkbox" class="BlueCheckBox taskIsDone" data-color="#497efe" data-taskId="2">
-                                    <span class="checkmark BlueCheckBoxSpan"></span>
-                                </label>
-                                <p class="taskTitle">Acheter de la fondue</p>
-                                <div class="d-flex flexEnd">
-                                    <p class="taskDelai">Today - 10h00</p>
-                                    <a class="taskStar" href="#" data-isFav="true">
-                                        <img src="assets/icons/favourite.svg" width="29" height="29" alt="star icon">
-                                    </a>
+                                    $categoryColor = $categoryManager->getCategory($task->getCategoryId())->getColor();
 
-                                    <a class="taskTrash" href="#">
-                                        <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Task#2 end -->
+                                    echo task(
+                                        $task->getId(),
+                                        $task->getTitle(),
+                                        $task->getDueDate(),
+                                        $task->isFav(),
+                                        $task->isDone(),
+                                        $categoryColor
+                                    );
 
-                            <!-- Task#3 -->
-                            <div class="d-flex flex-row align-items-center task">
-                                <label class="containerCheckBox taskCheckBox">
-                                    <input type="checkbox" class="RedCheckBox taskIsDone" data-color="#dc3545" data-taskId="3">
-                                    <span class="checkmark RedCheckBoxSpan"></span>
-                                </label>
-                                <p class="taskTitle">Ex p.134 + p.135</p>
-                                <div class="d-flex flexEnd">
-                                    <p class="taskDelai">Today - 13h00</p>
-                                    <a class="taskStar" href="#" data-isFav="true">
-                                        <img src="assets/icons/favourite.svg" width="29" height="29" alt="star icon">
-                                    </a>
+                                endforeach;
+                            endif; ?>
+                            <!-- Tasks end -->
 
-                                    <a class="taskTrash" href="#">
-                                        <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Task#3 end -->
-
-                            <!-- Task#4 -->
-                            <div class="d-flex flex-row align-items-center task">
-                                <label class="containerCheckBox taskCheckBox">
-                                    <input type="checkbox" class="RedCheckBox taskIsDone" data-color="#dc3545" data-taskId="4">
-                                    <span class="checkmark RedCheckBoxSpan"></span>
-                                </label>
-                                <p class="taskTitle">Rendre MCD</p>
-                                <div class="d-flex flexEnd">
-                                    <p class="taskDelai">Today - 16h40</p>
-                                    <a class="taskStar" href="#" data-isFav="false">
-                                        <img src="assets/icons/notFavourite.svg" width="29" height="29" alt="star icon">
-                                    </a>
-
-                                    <a class="taskTrash" href="#">
-                                        <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Task#4 end -->
 
                         </div>
                     </div>
@@ -155,90 +115,40 @@ loadHead(TEXT['dashboard'], ["main.css", "navBar.css", "dashboard.css", "task.cs
                     <!-- ToDO due tomorrow start -->
                     <div class="p-3 todoElt">
                         <div class="d-flex">
-                            <h3 class="toDoTitle mr-auto p-2"><?= TEXT['due-tomorrow'] ?> :</h3>
+                            <h3 class="toDoTitle mr-auto p-2"><?= TEXT['due-tomorrow'] ?></h3>
                             <a class="p-2" href="/calendar.html#tomorrow"><?= TEXT['see-all'] ?></a>
                         </div>
                         <div class="taskContainer">
 
-                            <!-- Task#1 -->
-                            <div class="d-flex flex-row align-items-center task">
-                                <label class="containerCheckBox taskCheckBox">
-                                    <input type="checkbox" class="RedCheckBox taskIsDone" data-color="#dc3545" data-taskId="5">
-                                    <span class="checkmark RedCheckBoxSpan"></span>
-                                </label>
-                                <p class="taskTitle">Compta - Ex 38.5</p>
-                                <div class="d-flex flexEnd">
-                                    <p class="taskDelai">Tomorrow - 08h50</p>
-                                    <a class="taskStar" href="#" data-isFav="false">
-                                        <img src="assets/icons/notFavourite.svg" width="29" height="29" alt="star icon">
-                                    </a>
+                            <!-- Tasks due later begin -->
+                            <?php if (!empty($tasks)) : ?>
+                                <?php
+                                // Filter task because we only need task due Tomorrow (DateTime + 1 day)
+                                $dueTomorrowTasks = array_filter($tasks, function ($task) {
+                                    return $task->getDueDate()->format('d.m.Y') === date('d.m.Y', strtotime('+1 day'));
+                                });
 
-                                    <a class="taskTrash" href="#">
-                                        <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Task#1 end -->
-
-                            <!-- Task#2 -->
-                            <div class="d-flex flex-row align-items-center task">
-                                <label class="containerCheckBox taskCheckBox">
-                                    <input type="checkbox" class="RedCheckBox taskIsDone" data-color="#dc3545" data-taskId="6">
-                                    <span class="checkmark RedCheckBoxSpan"></span>
-                                </label>
-                                <p class="taskTitle">Test chapitre 23 economie</p>
-                                <div class="d-flex flexEnd">
-                                    <p class="taskDelai">Tomorrow - 11h00</p>
-                                    <a class="taskStar" href="#" data-isFav="true">
-                                        <img src="assets/icons/favourite.svg" width="29" height="29" alt="star icon">
-                                    </a>
-
-                                    <a class="taskTrash" href="#">
-                                        <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Task#2 end -->
-
-                            <!-- Task#3 -->
-                            <div class="d-flex flex-row align-items-center task">
-                                <label class="containerCheckBox taskCheckBox">
-                                    <input type="checkbox" class="RedCheckBox taskIsDone" data-color="#dc3545" data-taskId="7">
-                                    <span class="checkmark RedCheckBoxSpan"></span>
-                                </label>
-                                <p class="taskTitle">Ex p.134 + p.135</p>
-                                <div class="d-flex flexEnd">
-                                    <p class="taskDelai">Tomorrow - 13h00</p>
-                                    <a class="taskStar" href="#" data-isFav="true">
-                                        <img src="assets/icons/favourite.svg" width="29" height="29" alt="star icon">
-                                    </a>
-
-                                    <a class="taskTrash" href="#">
-                                        <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Task#3 end -->
-
-                            <!-- Task#4 -->
-                            <div class="d-flex flex-row align-items-center task">
-                                <label class="containerCheckBox taskCheckBox">
-                                    <input type="checkbox" class="RedCheckBox taskIsDone" data-color="#dc3545" data-taskId="8">
-                                    <span class="checkmark RedCheckBoxSpan"></span>
-                                </label>
-                                <p class="taskTitle">Rendre Sujet TPI</p>
-                                <div class="d-flex flexEnd">
-                                    <p class="taskDelai">Tomorrow - 17h30</p>
-                                    <a class="taskStar" href="#" data-isFav="false">
-                                        <img src="assets/icons/notFavourite.svg" width="29" height="29" alt="star icon">
-                                    </a>
-
-                                    <a class="taskTrash" href="#">
-                                        <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- Task#4 end -->
+                                // Filter task because we only need task not done
+                                $dueTomorrowTasks = array_filter($dueTomorrowTasks, function ($task) {
+                                    return !$task->isDone();
+                                });
+                                ?>
+                                <!-- TODO : NB DISPLAY - Stop loop ? -->
+                                <!-- TODO : DATETIME - Display only "Today" date/today/tomorrow and hh:mm ? -->
+                                <?php foreach ($dueTomorrowTasks as $task) : ?>
+                                    <?php
+                                    echo task(
+                                        $task->getId(),
+                                        $task->getTitle(),
+                                        $task->getDueDate(),
+                                        $task->isFav(),
+                                        $task->isDone(),
+                                        $category->getColor()
+                                    );
+                                    ?>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                            <!-- Tasks due later end -->
 
                         </div>
 
