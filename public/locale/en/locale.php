@@ -51,13 +51,13 @@ return [
     "login-btn" => "Login",
     "forgot-password" => "Forgot password ?",
     "register-cta" => "Don't have an account ?",
-    "register-link" => "register here",
+    "register-link" => "Register here",
 
     //Register
     "register-title" => "Register",
     "register-btn" => "Register",
     "login-cta" => "Already have an account ?",
-    "login-link" => "login here",
+    "login-link" => "Login here",
 
     //Reset Password
     "reset-password-title" => "Reset password",

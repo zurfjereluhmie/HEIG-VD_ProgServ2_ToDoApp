@@ -46,7 +46,7 @@ loadHead(TEXT['register-title'], ["register.css"]);
             <input type="password" id="inputRePassword" class="formInput" placeholder="<?= TEXT['confirm-password-placeholder']; ?>" required name="password2">
 
             <button class="btn-lgb btn-block" type="submit" name="submit"><?= TEXT['register-btn']; ?></button>
-            <p><?= TEXT['register-cta']; ?> <a href="login.php"><?= TEXT['register-link']; ?></a></p>
+            <p><?= TEXT['register-cta']; ?> <a href="login.php"><?= TEXT['login-link']; ?></a></p>
         </div>
     </form>
 
