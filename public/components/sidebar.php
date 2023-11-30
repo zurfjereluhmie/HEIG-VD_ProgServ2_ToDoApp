@@ -14,7 +14,7 @@ $categories = $categoryManager->getCategories();
         <!-- Sidebar menu -->
         <ul class="nav flex-column sidebarUl">
             <li class="nav-item navItemAddTask">
-                <a class="nav-link navLinkAddTask" <?php echo (basename($_SERVER['PHP_SELF']) === 'task-create.php') ? 'navItemActive' : ''; ?>href="/task-create.php">
+                <a class="nav-link navLinkAddTask" href="/task-create.php">
                     <img class="navImg" src="assets/icons/addtask.svg" alt="Add a task icon">
                     <?= TEXT['add-a-task']; ?>
                 </a>
