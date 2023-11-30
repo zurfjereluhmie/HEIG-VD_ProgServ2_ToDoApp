@@ -52,11 +52,11 @@ $categories = $categoryManager->getCategories();
         </h6>
         <ul class="nav flex-column mb-2 navToDoCategory">
             <?php if (!empty($categories)) : ?>
-                <?php foreach ($categories as $category) : ?>
+                <?php foreach ($categories as $cat) : ?>
                     <li class="nav-item">
-                        <a class="nav-link navToDoItem d-flex" href="./category.php?id=<?= $category->getId() ?>">
-                            <div class="colorTag" style="background: <?= $category->getColor() ?>;"></div>
-                            <span><?= $category->getTitle() ?></span>
+                        <a class="nav-link navToDoItem d-flex" href="./category.php?id=<?= $cat->getId() ?>">
+                            <div class="colorTag" style="background: <?= $cat->getColor() ?>;"></div>
+                            <span><?= $cat->getTitle() ?></span>
                         </a>
                     </li>
                 <?php endforeach; ?>
