@@ -70,35 +70,12 @@ require_once 'components/task-long.php';
                     <!-- ToDo due today -->
                     <div class="p-3 todoElt">
                         <div class="d-flex">
-                            <h3 class="toDoTitle mr-auto p-2"><?= TEXT['due-today'] ?> :</h3>
+                            <h3 class="toDoTitle mr-auto p-2"><?= TEXT['due-today'] ?></h3>
                             <a class="p-2" href="/calendar.html#today"><?= TEXT['see-all'] ?></a>
                         </div>
                         <div class="taskContainer">
                             
-                        <!-- TODO : DELETE - Old Task Model -->
-                            <!-- Task#1 -->
-                            <!-- <div class="d-flex flex-row align-items-center task">
-                                <label class="containerCheckBox taskCheckBox">
-                                    <input type="checkbox" class="BlueCheckBox taskIsDone" data-color="#497efe" data-taskId="1">
-                                    <span class="checkmark BlueCheckBoxSpan"></span>
-                                </label>
-                                <p class="taskTitle">Acheter de la raclette</p>
-                                <div class="d-flex flexEnd">
-                                    <p class="taskDelai">Today - 10h00</p>
-                                    <a class="taskStar" href="#" data-isFav="false">
-                                        <img src="assets/icons/notFavourite.svg" width="29" height="29" alt="star icon">
-                                    </a>
-
-                                    <a class="taskTrash" href="#">
-                                        <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
-                                    </a>
-                                </div>
-                            </div> -->
-                            <!-- Task#1 end -->
-                            
                             <!-- Tasks begin -->
-                            <!-- TODO : UPDATE VIEW - Charger les tasks depuis la DB (en cas d'update/delete) -->
-
                             <?php if (!empty($tasks)) : ?>
                                 <?php
                                 // Filter task because we only need task due today
@@ -109,13 +86,6 @@ require_once 'components/task-long.php';
                                 // Filter task because we only need task not done
                                 $dueTodayTasks = array_filter($dueTodayTasks, function ($task) {
                                     return !$task->isDone();
-                                });
-
-                                // TODO : ORDER in SQL ? (SELECT * FROM tasks ORDER BY dueDate ASC)
-                                // TODO : Idem pour les filtres au dessus
-                                // Order tasks by due date : hours, minutes, seconds
-                                usort($dueTodayTasks, function ($task1, $task2) {
-                                    return $task1->getDueDate() <=> $task2->getDueDate();
                                 });
                                 ?>
                                 <!-- TODO : NB DISPLAY - Stop loop ? -->
@@ -143,52 +113,22 @@ require_once 'components/task-long.php';
                     <!-- ToDO due tomorrow start -->
                     <div class="p-3 todoElt">
                         <div class="d-flex">
-                            <h3 class="toDoTitle mr-auto p-2"><?= TEXT['due-tomorrow'] ?> :</h3>
+                            <h3 class="toDoTitle mr-auto p-2"><?= TEXT['due-tomorrow'] ?></h3>
                             <a class="p-2" href="/calendar.html#tomorrow"><?= TEXT['see-all'] ?></a>
                         </div>
                         <div class="taskContainer">
 
-                        <!-- TODO : DELETE - Old Task Model -->
-                            <!-- Task#1 -->
-                            <!-- <div class="d-flex flex-row align-items-center task">
-                                <label class="containerCheckBox taskCheckBox">
-                                    <input type="checkbox" class="RedCheckBox taskIsDone" data-color="#dc3545" data-taskId="5">
-                                    <span class="checkmark RedCheckBoxSpan"></span>
-                                </label>
-                                <p class="taskTitle">Compta - Ex 38.5</p>
-                                <div class="d-flex flexEnd">
-                                    <p class="taskDelai">Tomorrow - 08h50</p>
-                                    <a class="taskStar" href="#" data-isFav="false">
-                                        <img src="assets/icons/notFavourite.svg" width="29" height="29" alt="star icon">
-                                    </a>
-
-                                    <a class="taskTrash" href="#">
-                                        <img src="assets/icons/trash.svg" width="26" height="29" alt="trash icon">
-                                    </a>
-                                </div>
-                            </div> -->
-                            <!-- Task#1 end -->
-
                             <!-- Tasks due later begin -->
-                            <!-- TODO : UPDATE VIEW - Charger les tasks depuis la DB (en cas d'update/delete) -->
-
                             <?php if (!empty($tasks)) : ?>
                                 <?php
-                                // Filter task because we only need task due later
+                                // Filter task because we only need task due Tomorrow (DateTime + 1 day)
                                 $dueTomorrowTasks = array_filter($tasks, function ($task) {
-                                    return $task->isDueFor() === 1;
+                                    return $task->getDueDate()->format('d.m.Y') === date('d.m.Y', strtotime('+1 day'));
                                 });
 
                                 // Filter task because we only need task not done
                                 $dueTomorrowTasks = array_filter($dueTomorrowTasks, function ($task) {
                                     return !$task->isDone();
-                                });
-
-                                // TODO : ORDER in SQL ? (SELECT * FROM tasks ORDER BY dueDate ASC)
-                                // TODO : Idem pour les filtres au dessus
-                                // Order tasks by due date
-                                usort($dueTomorrowTasks, function ($task1, $task2) {
-                                    return $task1->getDueDate() <=> $task2->getDueDate();
                                 });
                                 ?>
                                 <!-- TODO : NB DISPLAY - Stop loop ? -->
