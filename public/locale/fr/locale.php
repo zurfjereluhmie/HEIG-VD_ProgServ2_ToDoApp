@@ -37,6 +37,14 @@ return [
     "error-category-update" => "Erreur lors de la mise à jour de la catégorie",
     "error-category-delete" => "Erreur lors de la suppression de la catégorie",
 
+    // Task
+    "task-title-placeholder" => "Titre",
+    "task-description-placeholder" => "Description",
+    "task-category-select-placeholder" => "Catégorie",
+    "create-task" => "Créer la tâche",
+    "update-task" => "Modifier la tâche",
+    "delete-task" => "Supprimer la tâche",
+
     // Forms
     "lastname-placeholder" => "Nom de famille",
     "firstname-placeholder" => "Prénom",

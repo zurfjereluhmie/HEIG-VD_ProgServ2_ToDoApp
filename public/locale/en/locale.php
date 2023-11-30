@@ -37,6 +37,13 @@ return [
     "error-category-update" => "Error while updating the category",
     "error-category-delete" => "Error while deleting the category",
 
+    // Task
+    "task-title-placeholder" => "Title",
+    "task-description-placeholder" => "Description",
+    "task-category-select-placeholder" => "Category",
+    "create-task" => "Create task",
+    "update-task" => "Update task",
+    "delete-task" => "Delete task",
 
     //Forms
     "lastname-placeholder" => "Lastname",
