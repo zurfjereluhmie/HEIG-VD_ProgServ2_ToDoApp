@@ -41,6 +41,7 @@ return [
     "task-title-placeholder" => "Titre",
     "task-description-placeholder" => "Description",
     "task-category-select-placeholder" => "Catégorie",
+    "task-due-date-placeholder" => "Date d'échéance",
     "create-task" => "Créer la tâche",
     "update-task" => "Modifier la tâche",
     "delete-task" => "Supprimer la tâche",

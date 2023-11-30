@@ -41,6 +41,7 @@ return [
     "task-title-placeholder" => "Title",
     "task-description-placeholder" => "Description",
     "task-category-select-placeholder" => "Category",
+    "task-due-date-placeholder" => "Due date",
     "create-task" => "Create task",
     "update-task" => "Update task",
     "delete-task" => "Delete task",

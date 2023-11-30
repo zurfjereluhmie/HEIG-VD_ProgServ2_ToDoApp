@@ -7,10 +7,14 @@ require_once 'locale/locale-conf.php';
 
 use ch\comem\todoapp\flash\Flash;
 use ch\comem\todoapp\task\TaskManager;
+use ch\comem\todoapp\category\CategoryManager;
 
 if (isset($_POST['submit-create-task'])) {
     require_once "../controllers/task-create.php";
 }
+
+$categoryManager = CategoryManager::getInstance();
+$categories = $categoryManager->getCategories();
 
 
 ?>
@@ -33,19 +37,27 @@ loadHead(TEXT['task-title'], ["main.css", "navBar.css"]);
                 <?= Flash::displayFlashMessage("global") ?>
                 <?= Flash::displayFlashMessage("task-create") ?>
                 <form action="<?= $_SERVER["PHP_SELF"] ?>" method="post">
+                    <div class="form-group">
+                        <label><?= TEXT['task-title-placeholder']; ?>*</label>
+                        <input type="text" class="form-control" name="task-title" placeholder="<?= TEXT['task-title-placeholder']; ?>" value="" required>
+                    </div>
                     <div class="form-row">
-                        <div class="form-group col-md-11">
-                            <label><?= TEXT['task-title-placeholder']; ?>*</label>
-                            <input type="text" class="form-control" name="cat-title" placeholder="<?= TEXT['task-title-placeholder']; ?>" value="" required>
+                        <div class="form-group col-md-6">
+                            <label><?= TEXT['task-due-date-placeholder']; ?>*</label>
+                            <input type="date" class="form-control" name="due-date" required>
                         </div>
-                        <div class="form-group col-md-1">
-                            <label><?= TEXT['task-color-placeholder']; ?>*</label>
-                            <input type="color" class="form-control" name="cat-color" placeholder="<?= TEXT['task-color-placeholder']; ?>" value="" required>
+                        <div class="form-group col-md-6">
+                            <label><?= TEXT['task-category-select-placeholder']; ?>*</label>
+                            <select class="form-control form-select">
+                                <?php foreach ($categories as $category) : ?>
+                                    <option value="<?= $category->getId() ?>"><?= $category->getTitle() ?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label><?= TEXT['task-description-placeholder']; ?></label>
-                        <textarea class="form-control" rows="3" name="cat-description" placeholder="<?= TEXT['task-description-placeholder']; ?>"></textarea>
+                        <textarea class="form-control" rows="3" name="task-description" placeholder="<?= TEXT['task-description-placeholder']; ?>"></textarea>
                     </div>
 
                     <button type="submit" name="submit-create-task" class="btn btn-primary"><?= TEXT['create-task']; ?></button>
