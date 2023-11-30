@@ -76,8 +76,7 @@ require_once 'components/task-long.php';
                         <div class="taskContainer">
 
                             <!-- Tasks begin -->
-                            <?php if (!empty($tasks)) : ?>
-                                <?php
+                            <?php if (!empty($tasks)) :
                                 // Filter task because we only need task due today
                                 $dueTodayTasks = array_filter($tasks, function ($task) {
                                     return $task->isDueFor() === 0;
@@ -87,11 +86,8 @@ require_once 'components/task-long.php';
                                 $dueTodayTasks = array_filter($dueTodayTasks, function ($task) {
                                     return !$task->isDone();
                                 });
-                                ?>
-                                <!-- TODO : NB DISPLAY - Stop loop ? -->
-                                <!-- TODO : DATETIME - Display only "Today" date/today/tomorrow and hh:mm ? -->
-                            <?php foreach ($dueTodayTasks as $task) :
 
+                                foreach ($dueTodayTasks as $task) :
                                     $categoryColor = $categoryManager->getCategory($task->getCategoryId())->getColor();
 
                                     echo task(
@@ -121,8 +117,7 @@ require_once 'components/task-long.php';
                         <div class="taskContainer">
 
                             <!-- Tasks due later begin -->
-                            <?php if (!empty($tasks)) : ?>
-                                <?php
+                            <?php if (!empty($tasks)) :
                                 // Filter task because we only need task due Tomorrow (DateTime + 1 day)
                                 $dueTomorrowTasks = array_filter($tasks, function ($task) {
                                     return $task->getDueDate()->format('d.m.Y') === date('d.m.Y', strtotime('+1 day'));
@@ -132,22 +127,18 @@ require_once 'components/task-long.php';
                                 $dueTomorrowTasks = array_filter($dueTomorrowTasks, function ($task) {
                                     return !$task->isDone();
                                 });
-                                ?>
-                                <!-- TODO : NB DISPLAY - Stop loop ? -->
-                                <!-- TODO : DATETIME - Display only "Today" date/today/tomorrow and hh:mm ? -->
-                                <?php foreach ($dueTomorrowTasks as $task) : ?>
-                                    <?php
+                                foreach ($dueTomorrowTasks as $task) :
+                                    $categoryColor = $categoryManager->getCategory($task->getCategoryId())->getColor();
                                     echo task(
                                         $task->getId(),
                                         $task->getTitle(),
                                         $task->getDueDate(),
                                         $task->isFav(),
                                         $task->isDone(),
-                                        $category->getColor()
+                                        $categoryColor
                                     );
-                                    ?>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
+                                endforeach;
+                            endif; ?>
                             <!-- Tasks due later end -->
 
                         </div>
