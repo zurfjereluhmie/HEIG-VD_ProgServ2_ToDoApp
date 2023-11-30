@@ -74,7 +74,7 @@ require_once 'components/task-long.php';
                             <a class="p-2" href="/calendar.html#today"><?= TEXT['see-all'] ?></a>
                         </div>
                         <div class="taskContainer">
-                            
+
                             <!-- Tasks begin -->
                             <?php if (!empty($tasks)) : ?>
                                 <?php
@@ -90,19 +90,21 @@ require_once 'components/task-long.php';
                                 ?>
                                 <!-- TODO : NB DISPLAY - Stop loop ? -->
                                 <!-- TODO : DATETIME - Display only "Today" date/today/tomorrow and hh:mm ? -->
-                                <?php foreach ($dueTodayTasks as $task) : ?>
-                                    <?php 
+                            <?php foreach ($dueTodayTasks as $task) :
+
+                                    $categoryColor = $categoryManager->getCategory($task->getCategoryId())->getColor();
+
                                     echo task(
                                         $task->getId(),
                                         $task->getTitle(),
                                         $task->getDueDate(),
                                         $task->isFav(),
                                         $task->isDone(),
-                                        $category->getColor()
+                                        $categoryColor
                                     );
-                                    ?>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
+
+                                endforeach;
+                            endif; ?>
                             <!-- Tasks end -->
 
 
@@ -134,7 +136,7 @@ require_once 'components/task-long.php';
                                 <!-- TODO : NB DISPLAY - Stop loop ? -->
                                 <!-- TODO : DATETIME - Display only "Today" date/today/tomorrow and hh:mm ? -->
                                 <?php foreach ($dueTomorrowTasks as $task) : ?>
-                                    <?php 
+                                    <?php
                                     echo task(
                                         $task->getId(),
                                         $task->getTitle(),
