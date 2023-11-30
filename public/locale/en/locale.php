@@ -4,6 +4,13 @@ return [
     // Global
     "danger-zone" => "Danger zone",
 
+    // User
+    "user-update-title" => "Update your profile",
+    "user-update-btn" => "Update profile",
+    "user-delete-btn" => "Delete profile",
+
+    "error-user-not-found" => "User not found",
+
     // Dashboard
     "add-a-task" => "Add a task",
     "dashboard" => "Dashboard",
@@ -108,8 +115,12 @@ return [
     "error-while-reseting-password" => "An error occured while resetting your password",
     "error-while-sending-email" => "An error occured while sending the email",
     "wrong-email-or-password" => "Wrong email or password",
+    "error-while-updating-user" => "Error while updating the user",
+    "error-while-deleting-user" => "Error while deleting the user",
 
     "account-created" => "Thanks for creating an account",
+    "user-update" => "User updated",
+    "user-delete" => "User deleted",
     "password-updated" => "Password updated",
     "account-validated" => "Your account has been validated",
     "category-create" => "Category created",

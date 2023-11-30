@@ -4,6 +4,13 @@ return [
     // Global
     "danger-zone" => "Zone de danger",
 
+    // User
+    "user-update-title" => "Modifier votre profil",
+    "user-update-btn" => "Modifier le profil",
+    "user-delete-btn" => "Supprimer le profil",
+
+    "error-user-not-found" => "Utilisateur non trouvé",
+
     // Dashboard
     "add-a-task" => "Ajouter une tâche",
     "dashboard" => "Tableau de bord",
@@ -108,8 +115,12 @@ return [
     "error-while-reseting-password" => "Une erreur s'est produite lors de la réinitialisation de votre mot de passe",
     "error-while-sending-email" => "Une erreur s'est produite lors de l'envoi de l'e-mail",
     "wrong-email-or-password" => "Mauvais e-mail ou mot de passe",
+    "error-while-updating-user" => "Erreur lors de la mise à jour de l'utilisateur",
+    "error-while-deleting-user" => "Erreur lors de la suppression de l'utilisateur",
 
-    "account-created" => "Merci de créer un compte",
+    "account-created" => "Merci d'avoir créé un compte",
+    "user-update" => "Utilisateur mis à jour",
+    "user-delete" => "Utilisateur supprimé",
     "password-updated" => "Mot de passe mis à jour",
     "account-validated" => "Votre compte a été validé",
     "category-create" => "Categorie créée",
