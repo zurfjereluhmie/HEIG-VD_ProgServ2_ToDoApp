@@ -18,7 +18,6 @@ $categories = $categoryManager->getCategories();
 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +35,9 @@ loadHead(TEXT['task-title'], ["main.css", "navBar.css"]);
             <main class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 bg-light mainFullHeight">
                 <?= Flash::displayFlashMessage("global") ?>
                 <?= Flash::displayFlashMessage("task-create") ?>
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
+                    <h1 class="h2" id="taskCreateTitle"><?= TEXT['task-create-title'] ?></h1>
+                </div>
                 <form action="<?= $_SERVER["PHP_SELF"] ?>" method="post">
                     <div class="form-group">
                         <label><?= TEXT['task-title-placeholder']; ?>*</label>
@@ -44,11 +46,11 @@ loadHead(TEXT['task-title'], ["main.css", "navBar.css"]);
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label><?= TEXT['task-due-date-placeholder']; ?>*</label>
-                            <input type="date" class="form-control" name="due-date" required>
+                            <input type="date" class="form-control" name="task-due-date" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label><?= TEXT['task-category-select-placeholder']; ?>*</label>
-                            <select class="form-control form-select">
+                            <select class="form-control form-select" name="task-category-select">
                                 <?php foreach ($categories as $category) : ?>
                                     <option value="<?= $category->getId() ?>"><?= $category->getTitle() ?></option>
                                 <?php endforeach; ?>
