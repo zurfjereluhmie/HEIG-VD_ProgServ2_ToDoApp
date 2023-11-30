@@ -177,10 +177,8 @@ class Task
      */
     public function isDueFor(): int
     {
-        $today = new DateTime();
-        $today->setTime(0, 0, 0);
-        $dueDate = $this->getDueDate();
-        $dueDate->setTime(0, 0, 0);
+        $today = (new DateTime())->format("d.m.Y");
+        $dueDate = $this->getDueDate()->format("d.m.Y");
 
         if ($dueDate < $today) return -1;
         if ($dueDate == $today) return 0;
