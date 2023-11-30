@@ -3,6 +3,7 @@
 namespace ch\comem\todoapp\task;
 
 use ch\comem\todoapp\dbCRUD\DbManagerCRUD_Task;
+use ch\comem\todoapp\category\CategoryManager;
 use Exception;
 
 /**
@@ -107,6 +108,9 @@ class TaskManager
      */
     public function addTask(Task $task): bool
     {
+        $categoryManager = CategoryManager::getInstance();
+        if (!$categoryManager->getCategory($task->getCategoryId())) throw new Exception("Category does not exist");
+
         $dbManager = DbManagerCRUD_Task::getInstance();
         $id = $dbManager->create($task);
         if (!$id) throw new Exception("Error while creating task");
