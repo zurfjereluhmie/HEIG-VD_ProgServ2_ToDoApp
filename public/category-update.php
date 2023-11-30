@@ -57,7 +57,7 @@ loadHead(TEXT['category-title'], ["main.css", "navBar.css"]);
                         </div>
                         <div class="form-group col-md-1">
                             <label><?= TEXT['category-color-placeholder']; ?>*</label>
-                            <input type="color" class="form-control" name="cat-color" placeholder="<?= TEXT['category-color-placeholder']; ?>" value="<?= $category->getColor() ?>" required>
+                            <input type="color" class="form-control form-control-color" name="cat-color" placeholder="<?= TEXT['category-color-placeholder']; ?>" value="<?= $category->getColor() ?>" required>
                         </div>
                     </div>
                     <div class="form-group">

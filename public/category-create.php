@@ -36,11 +36,11 @@ loadHead(TEXT['category-title'], ["main.css", "navBar.css"]);
                     <div class="form-row">
                         <div class="form-group col-md-11">
                             <label><?= TEXT['category-title-placeholder']; ?>*</label>
-                            <input type="text" class="form-control" name="cat-title" placeholder="<?= TEXT['category-title-placeholder']; ?>" value="" required>
+                            <input type="text" class="form-control" name="cat-title" placeholder="<?= TEXT['category-title-placeholder']; ?>" required>
                         </div>
                         <div class="form-group col-md-1">
                             <label><?= TEXT['category-color-placeholder']; ?>*</label>
-                            <input type="color" class="form-control" name="cat-color" placeholder="<?= TEXT['category-color-placeholder']; ?>" value="" required>
+                            <input type="color" class="form-control form-control-color" name="cat-color" placeholder="<?= TEXT['category-color-placeholder']; ?>" required>
                         </div>
                     </div>
                     <div class="form-group">
