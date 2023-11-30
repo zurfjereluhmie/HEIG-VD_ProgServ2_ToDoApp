@@ -60,6 +60,7 @@ loadHead(TEXT['category-title'], ["main.css", "navBar.css", "viewByDate.css", "t
                 <!-- Liste ToDo -->
                 <div class="d-flex flex-column justify-content-center align-items-start flex-wrap">
                     <!-- Late task -->
+                    <!-- TODO: Check with hour task if it still work -->
                     <div class="p-3 todoElt lateTaskContainer">
                         <div class="d-flex">
                             <h3 class="toDoTitle mr-auto p-2"><?= TEXT['task-late'] ?> :</h3>
@@ -69,7 +70,7 @@ loadHead(TEXT['category-title'], ["main.css", "navBar.css", "viewByDate.css", "t
                                 <p class="text-center"><?= TEXT['no-task'] ?></p>
                             <?php else : ?>
                                 <?php foreach ($category->getTasks() as $task) : ?>
-                                    <?= ($task->getDueDate() < new DateTime() && !$task->isDone()) ? task($task->getId(), $task->getTitle(), $task->getDueDate(), $task->isFav(), $task->isDone(), $category->getColor()) : "" ?>
+                                    <?= (strtotime($task->getDueDate()->format("d.m.Y H:m")) < strtotime(date("d.m.Y", time())) && !$task->isDone()) ? task($task->getId(), $task->getTitle(), $task->getDueDate(), $task->isFav(), $task->isDone(), $category->getColor()) : "" ?>
                                 <?php endforeach; ?>
                             <?php endif; ?>
 
@@ -107,7 +108,7 @@ loadHead(TEXT['category-title'], ["main.css", "navBar.css", "viewByDate.css", "t
                         if ($task->isDone()) continue;
 
                         // If task is late -> we don't want to display late task
-                        if ($task->getDueDate() < new DateTime()) continue;
+                        if (strtotime($task->getDueDate()->format("d.m.Y H:m")) < strtotime(date("d.m.Y", time()))) continue;
 
                         // Open container if needed
                         if ($prevDate === null || $prevDate !== $task->getDueDate()->format("d.m.Y")) echo openContainer($task->getDueDate());
