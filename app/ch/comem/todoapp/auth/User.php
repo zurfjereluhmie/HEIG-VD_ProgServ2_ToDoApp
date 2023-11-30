@@ -142,6 +142,30 @@ class User
     }
 
     /**
+     * Set the last name of the user.
+     *
+     * @param string $lastName The last name of the user.
+     * @return void
+     */
+    public function setLastName(string $lastName): void
+    {
+        if (!$lastName || !is_string($lastName)) throw new Exception('Last name must be defined and of type string');
+        $this->lastName = $lastName;
+    }
+
+    /**
+     * Set the first name of the user.
+     *
+     * @param string $firstName The first name of the user.
+     * @return void
+     */
+    public function setFirstName(string $firstName): void
+    {
+        if (!$firstName || !is_string($firstName)) throw new Exception('First name must be defined and of type string');
+        $this->firstName = $firstName;
+    }
+
+    /**
      * Sets the password for the user.
      *
      * @param string $password The password to set.

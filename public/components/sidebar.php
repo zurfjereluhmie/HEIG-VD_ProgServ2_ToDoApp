@@ -73,7 +73,7 @@ $categories = $categoryManager->getCategories();
         <!-- Settings -->
         <ul class="nav flex-column mb-2 sidebarUl bottomUl">
             <li class="nav-item">
-                <a class="nav-link navItem" href="#" id="settings">
+                <a class="nav-link navItem" href="/user-update.php" id="settings">
                     <img class="navImg" src="assets/icons/settings.svg" alt="">
                     <?= TEXT['settings']; ?>
                 </a>

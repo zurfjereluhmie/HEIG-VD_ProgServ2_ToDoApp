@@ -28,7 +28,7 @@ foreach ($langs as $lang) {
 
 define("AVAILABLE_LANGS", $langs);
 
-$lang = $_COOKIE["locale"];
+$lang = $_COOKIE["locale"] ?? "en";
 
 if (!in_array($lang, AVAILABLE_LANGS)) $lang = "en";
 
