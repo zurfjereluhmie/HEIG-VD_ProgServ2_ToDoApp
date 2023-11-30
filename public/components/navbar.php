@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark sticky-top bg-white flex-md-nowrap p-0">
+<nav class="navbar navbar-light sticky-top bg-white flex-md-nowrap p-0">
     <a class="col-md-3 col-lg-2 mr-0 px-3" href="/">
         <img class="" src="assets/icons/logo.svg" alt="Logo">
     </a>
