@@ -78,9 +78,9 @@ require_once 'components/task-long.php';
                             <!-- Tasks begin -->
                             <?php if (!empty($tasks)) :
 
-                                $todayTasks = array_filter($tasks, function ($task) {
+                                $todayTasks = array_values(array_filter($tasks, function ($task) {
                                     return $task->getDueDate()->format('d.m.Y') === date('d.m.Y');
-                                });
+                                }));
 
                                 foreach ($todayTasks as $task) :
                                     $categoryColor = $categoryManager->getCategory($task->getCategoryId())->getColor();
@@ -114,9 +114,9 @@ require_once 'components/task-long.php';
                             <!-- Tasks due later begin -->
                             <?php if (!empty($tasks)) :
                                 // Filter task because we only need task due Tomorrow (DateTime + 1 day)
-                                $dueTomorrowTasks = array_filter($tasks, function ($task) {
+                                $dueTomorrowTasks = array_values(array_filter($tasks, function ($task) {
                                     return $task->getDueDate()->format('d.m.Y') === date('d.m.Y', strtotime('+1 day'));
-                                });
+                                }));
 
                                 foreach ($dueTomorrowTasks as $task) :
                                     $categoryColor = $categoryManager->getCategory($task->getCategoryId())->getColor();
