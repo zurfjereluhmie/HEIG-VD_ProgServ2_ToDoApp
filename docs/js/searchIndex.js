@@ -46,6 +46,16 @@ Search.appendIndex(
             "summary": "Sets\u0020the\u0020ID\u0020of\u0020the\u0020user.\u0020Should\u0020only\u0020be\u0020used\u0020when\u0020retrieving\u0020the\u0020user\u0020from\u0020the\u0020database.",
             "url": "classes/ch-comem-todoapp-auth-User.html#method_setId"
         },                {
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AsetLastName\u0028\u0029",
+            "name": "setLastName",
+            "summary": "Set\u0020the\u0020last\u0020name\u0020of\u0020the\u0020user.",
+            "url": "classes/ch-comem-todoapp-auth-User.html#method_setLastName"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AsetFirstName\u0028\u0029",
+            "name": "setFirstName",
+            "summary": "Set\u0020the\u0020first\u0020name\u0020of\u0020the\u0020user.",
+            "url": "classes/ch-comem-todoapp-auth-User.html#method_setFirstName"
+        },                {
             "fqsen": "\\ch\\comem\\todoapp\\auth\\User\u003A\u003AsetPassword\u0028\u0029",
             "name": "setPassword",
             "summary": "Sets\u0020the\u0020password\u0020for\u0020the\u0020user.",
@@ -140,6 +150,21 @@ Search.appendIndex(
             "name": "getTasks",
             "summary": "Returns\u0020an\u0020array\u0020of\u0020tasks\u0020associated\u0020with\u0020this\u0020category.",
             "url": "classes/ch-comem-todoapp-category-Category.html#method_getTasks"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003AgetLateTasks\u0028\u0029",
+            "name": "getLateTasks",
+            "summary": "Returns\u0020an\u0020array\u0020of\u0020late\u0020tasks.",
+            "url": "classes/ch-comem-todoapp-category-Category.html#method_getLateTasks"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003AgetDoneTasks\u0028\u0029",
+            "name": "getDoneTasks",
+            "summary": "Returns\u0020an\u0020array\u0020of\u0020done\u0020tasks.",
+            "url": "classes/ch-comem-todoapp-category-Category.html#method_getDoneTasks"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003AgetActualTasks\u0028\u0029",
+            "name": "getActualTasks",
+            "summary": "Retrieves\u0020the\u0020actual\u0020tasks.",
+            "url": "classes/ch-comem-todoapp-category-Category.html#method_getActualTasks"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\category\\Category\u003A\u003AsetId\u0028\u0029",
             "name": "setId",
@@ -701,6 +726,11 @@ Search.appendIndex(
             "summary": "Set\u0020the\u0020category\u0020of\u0020the\u0020task.",
             "url": "classes/ch-comem-todoapp-task-Task.html#method_setCategory"
         },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003AisDueFor\u0028\u0029",
+            "name": "isDueFor",
+            "summary": "Determines\u0020whether\u0020the\u0020task\u0020late,\u0020due\u0020today\u0020or\u0020due\u0020later.",
+            "url": "classes/ch-comem-todoapp-task-Task.html#method_isDueFor"
+        },                {
             "fqsen": "\\ch\\comem\\todoapp\\task\\Task\u003A\u003A\u0024id",
             "name": "id",
             "summary": "",
@@ -860,6 +890,21 @@ Search.appendIndex(
             "name": "getTasksByTitle",
             "summary": "Retrieves\u0020an\u0020array\u0020of\u0020tasks\u0020with\u0020the\u0020given\u0020title.",
             "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_getTasksByTitle"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003AgetLateTasks\u0028\u0029",
+            "name": "getLateTasks",
+            "summary": "Returns\u0020an\u0020array\u0020of\u0020late\u0020tasks.",
+            "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_getLateTasks"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003AgetDoneTasks\u0028\u0029",
+            "name": "getDoneTasks",
+            "summary": "Returns\u0020an\u0020array\u0020of\u0020done\u0020tasks.",
+            "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_getDoneTasks"
+        },                {
+            "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003AgetActualTasks\u0028\u0029",
+            "name": "getActualTasks",
+            "summary": "Retrieves\u0020the\u0020actual\u0020tasks.",
+            "url": "classes/ch-comem-todoapp-task-TaskManager.html#method_getActualTasks"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\task\\TaskManager\u003A\u003AaddTask\u0028\u0029",
             "name": "addTask",
