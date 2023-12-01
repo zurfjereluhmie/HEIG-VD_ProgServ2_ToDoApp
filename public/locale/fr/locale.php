@@ -48,6 +48,8 @@ return [
     "update-task" => "Modifier la tâche",
     "delete-task" => "Supprimer la tâche",
 
+    "task-update-title" => "Modification de la tâche",
+
     "error-while-task-create" => "Erreur lors de la création de la tâche",
     "error-while-task-update" => "Erreur lors de la mise à jour de la tâche",
     "error-while-task-delete" => "Erreur lors de la suppression de la tâche",

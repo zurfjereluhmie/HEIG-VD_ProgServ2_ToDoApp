@@ -48,6 +48,8 @@ return [
     "update-task" => "Update task",
     "delete-task" => "Delete task",
 
+    "task-update-title" => "Task update",
+
     "error-while-task-create" => "Error while creating the task",
     "error-while-task-update" => "Error while updating the task",
     "error-while-task-delete" => "Error while deleting the task",
