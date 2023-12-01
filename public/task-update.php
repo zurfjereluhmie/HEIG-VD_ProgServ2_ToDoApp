@@ -18,7 +18,7 @@ if (isset($_POST['submit-update-task'])) {
     if (!$taskId) {
         new Flash("task-update", TEXT['error-task-not-found'], "danger");
         header("Location: /categories.php");
-        die();
+        exit();
     }
 
     $taskManager = TaskManager::getInstance();
@@ -27,7 +27,7 @@ if (isset($_POST['submit-update-task'])) {
     if (!$task) {
         new Flash("task-update", TEXT['error-task-not-found'], "danger");
         header("Location: /categories.php");
-        die();
+        exit();
     }
 }
 ?>

@@ -16,7 +16,7 @@ $taskDescription = htmlspecialchars($_POST['task-description']) ?? "";
 if (!$taskTitle || !$taskDueDate || !$taskCategoryId) {
     new Flash("task-create", TEXT['must-fill-all-fields'], "danger");
     header("Location: /task-create.php");
-    die();
+    exit();
 }
 
 $taskDueDate = new DateTime($taskDueDate);

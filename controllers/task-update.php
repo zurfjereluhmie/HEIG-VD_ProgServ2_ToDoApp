@@ -12,7 +12,7 @@ $taskDescription = htmlspecialchars($_POST['task-description']) ?? "";
 if (!$taskId || !$taskTitle || !$taskDueDate || !$taskCategoryId) {
     new Flash("task-update", TEXT['must-fill-all-fields'], "danger");
     header("Location: /task-update.php?id=$taskId");
-    die();
+    exit();
 }
 
 $TaskManager = TaskManager::getInstance();
@@ -21,7 +21,7 @@ $task = $TaskManager->getTask($taskId);
 if (!$task) {
     new Flash("task-update", TEXT['error-task-not-found'], "danger");
     header("Location: /task-update.php?id=$taskId");
-    die();
+    exit();
 }
 
 $taskDueDate = new DateTime($taskDueDate);
@@ -35,9 +35,9 @@ if ($TaskManager->updateTask($task)) {
     $catId = $task->getCategoryId();
     new Flash("global", TEXT['task-update'], "success");
     header("Location: /category.php?id=$catId");
-    die();
+    exit();
 } else {
     new Flash("task-update", TEXT['error-task-update'], "danger");
     header("Location: /task-update.php?id=$taskId");
-    die();
+    exit();
 }

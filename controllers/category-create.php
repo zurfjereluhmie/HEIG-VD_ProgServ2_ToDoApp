@@ -11,7 +11,7 @@ $catDescription = htmlspecialchars($_POST['cat-description']) ?? "";
 if (!$catTitle || !$catColor) {
     new Flash("category-update", TEXT['must-fill-all-fields'], "danger");
     header("Location: /category-update.php?id=$catId");
-    die();
+    exit();
 }
 
 $categoryManager = CategoryManager::getInstance();

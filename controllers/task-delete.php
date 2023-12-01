@@ -8,7 +8,7 @@ $taskId = filter_input(INPUT_POST, 'taskId', FILTER_SANITIZE_NUMBER_INT);
 if (!$taskId) {
     new Flash("task-update", TEXT['error-task-delete'], "danger");
     header("Location: /task-update.php?id=$catId");
-    die();
+    exit();
 }
 
 $taskManager = TaskManager::getInstance();
@@ -17,15 +17,15 @@ $task = $taskManager->getTask($taskId);
 if (!$task) {
     new Flash("task-update", TEXT['error-task-not-found'], "danger");
     header("Location: /task-update.php?id=$catId");
-    die();
+    exit();
 }
 
 if ($taskManager->removeTask($task)) {
     new Flash("global", TEXT['task-delete'], "success");
     header("Location: /categories.php");
-    die();
+    exit();
 } else {
     new Flash("task-update", TEXT['error-task-delete'], "danger");
     header("Location: /task-update.php?id=$catId");
-    die();
+    exit();
 }
