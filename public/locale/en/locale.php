@@ -41,6 +41,8 @@ return [
     "category-color-placeholder" => "Color",
     "category-description-placeholder" => "Description",
 
+    "category-update-title" => "Category update",
+
     "error-category-create" => "Error while creating the category",
     "error-category-update" => "Error while updating the category",
     "error-category-delete" => "Error while deleting the category",
@@ -54,6 +56,8 @@ return [
     "create-task" => "Create task",
     "update-task" => "Update task",
     "delete-task" => "Delete task",
+
+    "task-update-title" => "Task update",
 
     "error-while-task-create" => "Error while creating the task",
     "error-while-task-update" => "Error while updating the task",

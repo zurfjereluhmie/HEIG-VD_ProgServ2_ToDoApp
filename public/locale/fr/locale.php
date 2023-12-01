@@ -41,6 +41,8 @@ return [
     "category-color-placeholder" => "Couleur",
     "category-description-placeholder" => "Description",
 
+    "category-update-title" => "Modification de la catégorie",
+
     "error-category-create" => "Erreur lors de la création de la catégorie",
     "error-category-update" => "Erreur lors de la mise à jour de la catégorie",
     "error-category-delete" => "Erreur lors de la suppression de la catégorie",
@@ -54,6 +56,8 @@ return [
     "create-task" => "Créer la tâche",
     "update-task" => "Modifier la tâche",
     "delete-task" => "Supprimer la tâche",
+
+    "task-update-title" => "Modification de la tâche",
 
     "error-while-task-create" => "Erreur lors de la création de la tâche",
     "error-while-task-update" => "Erreur lors de la mise à jour de la tâche",

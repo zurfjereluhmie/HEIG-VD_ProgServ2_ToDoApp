@@ -7,7 +7,7 @@ use ch\comem\todoapp\task\TaskManager;
 $taskTitle = htmlspecialchars($_POST['task-title']);
 $taskDueDate = filter_input(INPUT_POST, 'task-due-date', FILTER_VALIDATE_REGEXP, [
     "options" => [
-        "regexp" => "/^\d{4}-\d{2}-\d{2}$/"
+        "regexp" => "/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/"
     ]
 ]);
 $taskCategoryId = filter_input(INPUT_POST, 'task-category-select', FILTER_VALIDATE_INT);
