@@ -1,8 +1,7 @@
 "use strict";
 
+import { $, $$ } from "./modules/selectors.js";
 import { setCookie, getCookie, checkCookie } from "./modules/cookies.js";
-
-const $ = (selector) => document.querySelector(selector);
 
 $("#languageSelect")?.addEventListener("change", (e) => {
     let lang = e.currentTarget.value;

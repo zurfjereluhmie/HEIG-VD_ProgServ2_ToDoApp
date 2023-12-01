@@ -142,7 +142,7 @@ require_once 'components/task-long.php';
 
     <?php
     include_once './components/script.php';
-    loadScript(["categories", "searchBar"], ["locale"]);
+    loadScript(["categories", "searchBar"], ["locale", "dashboard"]);
     ?>
 </body>
 
