@@ -6,7 +6,6 @@ require_once '../controllers/protect.php';
 require_once 'locale/locale-conf.php';
 
 use ch\comem\todoapp\flash\Flash;
-use ch\comem\todoapp\task\TaskManager;
 use ch\comem\todoapp\category\CategoryManager;
 
 if (isset($_POST['submit-create-task'])) {
@@ -46,7 +45,7 @@ loadHead(TEXT['task-title'], ["main.css", "navBar.css"]);
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label><?= TEXT['task-due-date-placeholder']; ?>*</label>
-                            <input type="date" class="form-control" name="task-due-date" required>
+                            <input type="datetime-local" class="form-control" name="task-due-date" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label><?= TEXT['task-category-select-placeholder']; ?>*</label>
