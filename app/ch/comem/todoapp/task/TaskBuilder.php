@@ -2,8 +2,6 @@
 
 namespace ch\comem\todoapp\task;
 
-use ch\comem\todoapp\category\Category;
-use ch\comem\todoapp\category\CategoryManager;
 use DateTime;
 use Exception;
 

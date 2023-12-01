@@ -15,7 +15,6 @@ use ch\comem\todoapp\task\TaskManager;
 $categoryManager = CategoryManager::getInstance();
 $taskManager = TaskManager::getInstance();
 
-$categories = $categoryManager->getCategories();
 $tasks = $taskManager->getActualTasks();
 
 ?>

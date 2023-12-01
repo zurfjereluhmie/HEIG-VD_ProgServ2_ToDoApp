@@ -5,7 +5,6 @@ namespace ch\comem\todoapp\task;
 use Exception;
 use DateTime;
 use ch\comem\todoapp\task\TaskBuilder;
-use ch\comem\todoapp\category\Category;
 
 /**
  * Represents a task in the Todo app.

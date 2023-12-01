@@ -6,7 +6,6 @@ require_once '../controllers/protect.php';
 require_once 'locale/locale-conf.php';
 
 use ch\comem\todoapp\flash\Flash;
-use ch\comem\todoapp\category\CategoryManager;
 
 if (isset($_POST['submit-create-category'])) {
     require_once "../controllers/category-create.php";
