@@ -47,6 +47,9 @@ loadHead(TEXT['category-title'], ["main.css", "navBar.css"]);
         <div class="row">
             <?php include_once './components/sidebar.php'; ?>
             <main class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 bg-light mainFullHeight">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
+                    <h1 class="h2" id="categoryUpdateTitle"><?= TEXT['category-update-title'] ?></h1>
+                </div>
                 <?= Flash::displayFlashMessage("global") ?>
                 <?= Flash::displayFlashMessage("category-update") ?>
                 <form action="<?= $_SERVER["PHP_SELF"] ?>" method="post">
