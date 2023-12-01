@@ -32,8 +32,9 @@ $task->setCategory($taskCategoryId);
 $task->setDescription($taskDescription);
 
 if ($TaskManager->updateTask($task)) {
+    $catId = $task->getCategoryId();
     new Flash("global", TEXT['task-update'], "success");
-    header("Location: /dashboard.php");
+    header("Location: /category.php?id=$catId");
     die();
 } else {
     new Flash("task-update", TEXT['error-task-update'], "danger");
