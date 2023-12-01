@@ -66,6 +66,10 @@ return [
     // Calendar
     "calendar-title" => "Calendar",
 
+    // Favoutites
+    "favourites-title" => "Favourites",
+    "no-favourites" => "No favourites yet",
+
     //Forms
     "lastname-placeholder" => "Lastname",
     "firstname-placeholder" => "Firstname",
