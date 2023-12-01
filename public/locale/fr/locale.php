@@ -34,6 +34,8 @@ return [
     "category-color-placeholder" => "Couleur",
     "category-description-placeholder" => "Description",
 
+    "category-update-title" => "Modification de la catégorie",
+
     "error-category-create" => "Erreur lors de la création de la catégorie",
     "error-category-update" => "Erreur lors de la mise à jour de la catégorie",
     "error-category-delete" => "Erreur lors de la suppression de la catégorie",

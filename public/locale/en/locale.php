@@ -34,6 +34,8 @@ return [
     "category-color-placeholder" => "Color",
     "category-description-placeholder" => "Description",
 
+    "category-update-title" => "Category update",
+
     "error-category-create" => "Error while creating the category",
     "error-category-update" => "Error while updating the category",
     "error-category-delete" => "Error while deleting the category",
