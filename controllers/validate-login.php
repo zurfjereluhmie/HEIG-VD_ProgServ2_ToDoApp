@@ -29,7 +29,7 @@ if (!password_verify($password, $user->getPassword())) {
     exit();
 }
 
-// TODO: Re-hash password if needed
+
 if (password_needs_rehash($user->getPassword(), PASSWORD_DEFAULT)) {
     $user->setPassword(password_hash($password, PASSWORD_DEFAULT));
     DbManagerCRUD_User::getInstance()->update($user->getId(), $user);

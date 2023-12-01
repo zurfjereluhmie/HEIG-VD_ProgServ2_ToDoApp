@@ -60,7 +60,6 @@ loadHead(TEXT['category-title'], ["main.css", "navBar.css", "viewByDate.css", "t
                 <!-- Liste ToDo -->
                 <div class="d-flex flex-column justify-content-center align-items-start flex-wrap">
                     <!-- Late task -->
-                    <!-- TODO: Check with hour task if it still work -->
                     <div class="p-3 todoElt lateTaskContainer">
                         <div class="d-flex">
                             <h3 class="toDoTitle mr-auto p-2"><?= TEXT['task-late'] ?> :</h3>
