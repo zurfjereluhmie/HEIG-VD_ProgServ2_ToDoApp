@@ -66,11 +66,11 @@ loadHead(TEXT['category-title'], ["main.css", "navBar.css", "viewByDate.css", "t
                             <h3 class="toDoTitle mr-auto p-2"><?= TEXT['task-late'] ?> :</h3>
                         </div>
                         <div class="taskContainer">
-                            <?php if (count($category->getTasks()) === 0) : ?>
+                            <?php if (count($category->getLateTasks()) === 0) : ?>
                                 <p class="text-center"><?= TEXT['no-task'] ?></p>
                             <?php else : ?>
-                                <?php foreach ($category->getTasks() as $task) : ?>
-                                    <?= (strtotime($task->getDueDate()->format("d.m.Y H:m")) < strtotime(date("d.m.Y", time())) && !$task->isDone()) ? task($task->getId(), $task->getTitle(), $task->getDueDate(), $task->isFav(), $task->isDone(), $category->getColor()) : "" ?>
+                                <?php foreach ($category->getLateTasks() as $task) : ?>
+                                    <?= task($task->getId(), $task->getTitle(), $task->getDueDate(), $task->isFav(), $task->isDone(), $category->getColor()) ?>
                                 <?php endforeach; ?>
                             <?php endif; ?>
 
@@ -84,11 +84,11 @@ loadHead(TEXT['category-title'], ["main.css", "navBar.css", "viewByDate.css", "t
                             <h3 class="toDoTitle mr-auto p-2"><?= TEXT['task-done'] ?> :</h3>
                         </div>
                         <div class="taskContainer">
-                            <?php if (count($category->getTasks()) === 0) : ?>
+                            <?php if (count($category->getDoneTasks()) === 0) : ?>
                                 <p class="text-center"><?= TEXT['no-task'] ?></p>
                             <?php else : ?>
-                                <?php foreach ($category->getTasks() as $task) : ?>
-                                    <?= ($task->isDone()) ? task($task->getId(), $task->getTitle(), $task->getDueDate(), $task->isFav(), $task->isDone(), $category->getColor()) : "" ?>
+                                <?php foreach ($category->getDoneTasks() as $task) : ?>
+                                    <?= task($task->getId(), $task->getTitle(), $task->getDueDate(), $task->isFav(), $task->isDone(), $category->getColor()) ?>
                                 <?php endforeach; ?>
                             <?php endif; ?>
 
@@ -99,16 +99,10 @@ loadHead(TEXT['category-title'], ["main.css", "navBar.css", "viewByDate.css", "t
                     <?php
                     $prevDate = null;
                     ?>
-                    <?php for ($i = 0; $i < count($category->getTasks()); $i++) : ?>
+                    <?php for ($i = 0; $i < count($category->getActualTasks()); $i++) : ?>
                         <?php
-                        $task = $category->getTasks()[$i];
-                        $nextTask = $category->getTasks()[$i + 1] ?? null;
-
-                        // If task is done -> we don't want to display done task
-                        if ($task->isDone()) continue;
-
-                        // If task is late -> we don't want to display late task
-                        if (strtotime($task->getDueDate()->format("d.m.Y H:m")) < strtotime(date("d.m.Y", time()))) continue;
+                        $task = $category->getActualTasks()[$i];
+                        $nextTask = $category->getActualTasks()[$i + 1] ?? null;
 
                         // Open container if needed
                         if ($prevDate === null || $prevDate !== $task->getDueDate()->format("d.m.Y")) echo openContainer($task->getDueDate());

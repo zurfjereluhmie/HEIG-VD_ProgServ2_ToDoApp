@@ -14,7 +14,7 @@ $categoryManager = CategoryManager::getInstance();
 $categories = $categoryManager->getCategories();
 
 $taskManager = TaskManager::getInstance();
-$tasks = $taskManager->getTasks();
+$tasks = $taskManager->getActualTasks();
 
 ?>
 
@@ -77,17 +77,12 @@ require_once 'components/task-long.php';
 
                             <!-- Tasks begin -->
                             <?php if (!empty($tasks)) :
-                                // Filter task because we only need task due today
-                                $dueTodayTasks = array_filter($tasks, function ($task) {
-                                    return $task->isDueFor() === 0;
+
+                                $todayTasks = array_filter($tasks, function ($task) {
+                                    return $task->getDueDate()->format('d.m.Y') === date('d.m.Y');
                                 });
 
-                                // Filter task because we only need task not done
-                                $dueTodayTasks = array_filter($dueTodayTasks, function ($task) {
-                                    return !$task->isDone();
-                                });
-
-                                foreach ($dueTodayTasks as $task) :
+                                foreach ($todayTasks as $task) :
                                     $categoryColor = $categoryManager->getCategory($task->getCategoryId())->getColor();
 
                                     echo task(
@@ -123,10 +118,6 @@ require_once 'components/task-long.php';
                                     return $task->getDueDate()->format('d.m.Y') === date('d.m.Y', strtotime('+1 day'));
                                 });
 
-                                // Filter task because we only need task not done
-                                $dueTomorrowTasks = array_filter($dueTomorrowTasks, function ($task) {
-                                    return !$task->isDone();
-                                });
                                 foreach ($dueTomorrowTasks as $task) :
                                     $categoryColor = $categoryManager->getCategory($task->getCategoryId())->getColor();
                                     echo task(
