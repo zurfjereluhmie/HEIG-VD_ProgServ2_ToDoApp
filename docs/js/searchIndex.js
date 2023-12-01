@@ -468,7 +468,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Task",
             "name": "DbManagerCRUD_Task",
-            "summary": "This\u0020abstract\u0020class\u0020represents\u0020a\u0020CRUD\u0020manager\u0020for\u0020a\u0020database.",
+            "summary": "This\u0020class\u0020extends\u0020the\u0020DbManagerCRUD\u0020class\u0020and\u0020is\u0020responsible\u0020for\u0020handling\u0020CRUD\u0020operations\u0020for\u0020tasks\u0020in\u0020the\u0020database.",
             "url": "classes/ch-comem-todoapp-dbCRUD-DbManagerCRUD-Task.html"
         },                {
             "fqsen": "\\ch\\comem\\todoapp\\dbCRUD\\DbManagerCRUD_Task\u003A\u003A__construct\u0028\u0029",

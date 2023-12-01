@@ -7,6 +7,11 @@ use ch\comem\todoapp\task\TaskBuilder;
 use DateTime;
 use Exception;
 
+/**
+ * This class extends the DbManagerCRUD class and is responsible for handling CRUD operations for tasks in the database.
+ * 
+ * @package ch\comem\todoapp\dbCRUD
+ */
 class DbManagerCRUD_Task extends DbManagerCRUD
 {
     private static ?DbManagerCRUD_Task $instance = null;
