@@ -101,6 +101,51 @@ class TaskManager
     }
 
     /**
+     * Returns an array of late tasks.
+     *
+     * @return array The array of late tasks.
+     */
+    public function getLateTasks(): array
+    {
+        $tasks = [];
+        foreach ($this->tasks as $task) {
+            if ($task->isDone()) continue;
+            if (strtotime($task->getDueDate()->format("Y-m-d")) < strtotime(date("Y-m-d"))) $tasks[] = $task;
+            else if (strtotime($task->getDueDate()->format("Y-m-d")) == strtotime(date("Y-m-d")) && strtotime($task->getDueDate()->format("H:i:s")) < strtotime(date("H:i:s"))) $tasks[] = $task;
+        }
+        return $tasks;
+    }
+
+    /**
+     * Returns an array of done tasks.
+     *
+     * @return array The array of done tasks.
+     */
+    public function getDoneTasks(): array
+    {
+        $tasks = [];
+        foreach ($this->tasks as $task) {
+            if ($task->isDone()) $tasks[] = $task;
+        }
+        return $tasks;
+    }
+
+    /**
+     * Retrieves the actual tasks.
+     *
+     * @return array The array of actual tasks.
+     */
+    public function getActualTasks(): array
+    {
+        $tasks = [];
+        $taskToExclude = array_merge($this->getLateTasks(), $this->getDoneTasks());
+        foreach ($this->tasks as $task) {
+            if (!in_array($task, $taskToExclude)) $tasks[] = $task;
+        }
+        return $tasks;
+    }
+
+    /**
      * Adds a task to the task manager.
      *
      * @param Task $task The task to be added.
