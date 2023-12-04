@@ -7,6 +7,7 @@ return [
     // User
     "user-update-title" => "Update your profile",
     "user-update-btn" => "Update profile",
+    "user-update-password-btn" => "Update password",
     "user-delete-btn" => "Delete profile",
 
     "error-user-not-found" => "User not found",

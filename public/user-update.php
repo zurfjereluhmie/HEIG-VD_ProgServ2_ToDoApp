@@ -54,6 +54,12 @@ loadHead(TEXT['user-update-title'], ["main.css", "navBar.css"]);
                 </form>
 
                 <hr class="mt-2">
+                <form action="reset-password.php" method="post" id="form-delete-user">
+                    <input type="hidden" name="email" value="<?= $_SESSION['user']['email'] ?>">
+                    <button type="submit" name="submit-email" class="btn btn-primary"><?= TEXT['user-update-password-btn']; ?></button>
+                </form>
+
+                <hr class="mt-2">
                 <h3><?= TEXT['danger-zone']; ?></h3>
                 <form action="<?= $_SERVER["PHP_SELF"] ?>" method="post" id="form-delete-user">
                     <button type="submit" name="submit-delete-user" class="btn btn-danger"><?= TEXT['user-delete-btn']; ?></button>
