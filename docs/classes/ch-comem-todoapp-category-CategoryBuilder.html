@@ -133,14 +133,12 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Class CategoryBuilder</p>
+            <p class="phpdocumentor-summary">This class is responsible for building Category objects.</p>
 
-    <section class="phpdocumentor-description"><p>This class is responsible for building Category objects.</p>
-</section>
 
 
 
@@ -193,7 +191,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ch-comem-todoapp-category-CategoryBuilder.html#property_tasks">$tasks</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;string|int, <a href="classes/ch-comem-todoapp-task-Task.html"><abbr title="\ch\comem\todoapp\task\Task">Task</abbr></a>&gt;            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
@@ -215,48 +213,56 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
+<dd>CategoryBuilder constructor.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-category-CategoryBuilder.html#method_build">build()</a>
     <span>
                                 &nbsp;: <a href="classes/ch-comem-todoapp-category-Category.html"><abbr title="\ch\comem\todoapp\category\Category">Category</abbr></a>    </span>
 </dt>
+<dd>Builds a Category object.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-category-CategoryBuilder.html#method_getColor">getColor()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
+<dd>Return the color of the category.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-category-CategoryBuilder.html#method_getCreatedAt">getCreatedAt()</a>
     <span>
                                 &nbsp;: <abbr title="\DateTime">DateTime</abbr>    </span>
 </dt>
+<dd>Returns the creation date and time of the category.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-category-CategoryBuilder.html#method_getDescription">getDescription()</a>
     <span>
                                 &nbsp;: string|null    </span>
 </dt>
+<dd>Returns the description of the category.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-category-CategoryBuilder.html#method_getId">getId()</a>
     <span>
                                 &nbsp;: int|null    </span>
 </dt>
+<dd>Returns the ID of the category.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-category-CategoryBuilder.html#method_getTasks">getTasks()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
+<dd>Returns an array of tasks associated with this category.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-category-CategoryBuilder.html#method_getTitle">getTitle()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
+<dd>Returns the title of the category.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-category-CategoryBuilder.html#method_setCreatedAt">setCreatedAt()</a>
@@ -275,18 +281,21 @@
     <span>
                                 &nbsp;: <a href="classes/ch-comem-todoapp-category-CategoryBuilder.html"><abbr title="\ch\comem\todoapp\category\CategoryBuilder">CategoryBuilder</abbr></a>    </span>
 </dt>
+<dd>Sets the ID of the category.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-category-CategoryBuilder.html#method_setTasks">setTasks()</a>
     <span>
                                 &nbsp;: <a href="classes/ch-comem-todoapp-category-CategoryBuilder.html"><abbr title="\ch\comem\todoapp\category\CategoryBuilder">CategoryBuilder</abbr></a>    </span>
 </dt>
+<dd>Set the tasks for the category.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-category-CategoryBuilder.html#method_setTitle">setTitle()</a>
     <span>
                                 &nbsp;: <a href="classes/ch-comem-todoapp-category-CategoryBuilder.html"><abbr title="\ch\comem\todoapp\category\CategoryBuilder">CategoryBuilder</abbr></a>    </span>
 </dt>
+<dd>Sets the title of the category.</dd>
 
     </dl>
 
@@ -319,7 +328,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -331,7 +340,9 @@
     </code>
 
     
-    
+        <section class="phpdocumentor-description"><p>The color of the category.</p>
+</section>
+
     
 
 </article>
@@ -352,7 +363,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 
     </aside>
 
@@ -364,7 +375,9 @@
     </code>
 
     
-    
+        <section class="phpdocumentor-description"><p>The date and time when the category was created.</p>
+</section>
+
     
 
 </article>
@@ -385,7 +398,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
@@ -397,7 +410,9 @@
     </code>
 
     
-    
+        <section class="phpdocumentor-description"><p>The description of the category.</p>
+</section>
+
     
 
 </article>
@@ -418,7 +433,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -430,7 +445,9 @@
     </code>
 
     
-    
+        <section class="phpdocumentor-description"><p>The ID of the category. Can be null if the category has not been assigned an ID yet.</p>
+</section>
+
     
 
 </article>
@@ -451,19 +468,21 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, <a href="classes/ch-comem-todoapp-task-Task.html"><abbr title="\ch\comem\todoapp\task\Task">Task</abbr></a>&gt;</span>
     <span class="phpdocumentor-signature__name">$tasks</span>
     </code>
 
     
-    
+        <section class="phpdocumentor-description"><p>The tasks associated with the category.</p>
+</section>
+
     
 
 </article>
@@ -484,7 +503,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
@@ -496,7 +515,9 @@
     </code>
 
     
-    
+        <section class="phpdocumentor-description"><p>The title of the category.</p>
+</section>
+
     
 
 </article>
@@ -522,11 +543,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">CategoryBuilder constructor.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$title</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$hexColor</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
@@ -541,14 +563,18 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The title of the category.</p>
+</section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$hexColor</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The hexadecimal color code of the category.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -570,11 +596,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">104</span>
+    <span class="phpdocumentor-element-found-in__line">179</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Builds a Category object.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">build</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-category-Category.html"><abbr title="\ch\comem\todoapp\category\Category">Category</abbr></a></span></code>
@@ -588,6 +615,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-category-Category.html"><abbr title="\ch\comem\todoapp\category\Category">Category</abbr></a></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The built Category object.</p>
+</section>
+
             </section>
 
 </article>
@@ -605,11 +636,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Return the color of the category.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getColor</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
@@ -623,6 +655,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">string</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The color of the category.</p>
+</section>
+
             </section>
 
 </article>
@@ -640,11 +676,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">159</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns the creation date and time of the category.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getCreatedAt</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\DateTime">DateTime</abbr></span></code>
@@ -658,6 +695,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><abbr title="\DateTime">DateTime</abbr></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The creation date and time.</p>
+</section>
+
             </section>
 
 </article>
@@ -675,11 +716,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns the description of the category.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getDescription</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
@@ -693,6 +735,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">string|null</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The description of the category, or null if no description is set.</p>
+</section>
+
             </section>
 
 </article>
@@ -710,11 +756,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns the ID of the category.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|null</span></code>
@@ -728,6 +775,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">int|null</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The ID of the category, or null if it doesn't have an ID.</p>
+</section>
+
             </section>
 
 </article>
@@ -745,11 +796,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">99</span>
+    <span class="phpdocumentor-element-found-in__line">169</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns an array of tasks associated with this category.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getTasks</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
@@ -763,6 +815,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The array of tasks.</p>
+</section>
+
             </section>
 
 </article>
@@ -780,11 +836,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns the title of the category.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getTitle</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
@@ -798,6 +855,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">string</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The title of the category.</p>
+</section>
+
             </section>
 
 </article>
@@ -815,7 +876,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">92</span>
 
     </aside>
 
@@ -860,7 +921,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 
     </aside>
 
@@ -905,11 +966,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Sets the ID of the category.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setId</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-category-CategoryBuilder.html"><abbr title="\ch\comem\todoapp\category\CategoryBuilder">CategoryBuilder</abbr></a></span></code>
@@ -924,7 +986,9 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The ID of the category.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -933,6 +997,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-category-CategoryBuilder.html"><abbr title="\ch\comem\todoapp\category\CategoryBuilder">CategoryBuilder</abbr></a></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The CategoryBuilder instance.</p>
+</section>
+
             </section>
 
 </article>
@@ -950,11 +1018,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Set the tasks for the category.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setTasks</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tasks</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-category-CategoryBuilder.html"><abbr title="\ch\comem\todoapp\category\CategoryBuilder">CategoryBuilder</abbr></a></span></code>
@@ -969,7 +1038,9 @@
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The tasks to set for the category.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -978,6 +1049,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-category-CategoryBuilder.html"><abbr title="\ch\comem\todoapp\category\CategoryBuilder">CategoryBuilder</abbr></a></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The updated CategoryBuilder instance.</p>
+</section>
+
             </section>
 
 </article>
@@ -995,11 +1070,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryBuilder.php"><a href="files/app-ch-comem-todoapp-category-categorybuilder.html"><abbr title="app/ch/comem/todoapp/category/CategoryBuilder.php">CategoryBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">80</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Sets the title of the category.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setTitle</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$title</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-category-CategoryBuilder.html"><abbr title="\ch\comem\todoapp\category\CategoryBuilder">CategoryBuilder</abbr></a></span></code>
@@ -1014,7 +1090,9 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The title of the category.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -1023,6 +1101,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-category-CategoryBuilder.html"><abbr title="\ch\comem\todoapp\category\CategoryBuilder">CategoryBuilder</abbr></a></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The CategoryBuilder instance.</p>
+</section>
+
             </section>
 
 </article>

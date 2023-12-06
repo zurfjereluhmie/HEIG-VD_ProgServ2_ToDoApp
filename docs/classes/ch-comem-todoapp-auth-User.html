@@ -269,34 +269,35 @@
     <span>
                                 &nbsp;: bool    </span>
 </dt>
+<dd>Sends a validation email to the user.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-auth-User.html#method_setFirstName">setFirstName()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Set the first name of the user.</dd>
+<dd>Sets the first name of the user.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-auth-User.html#method_setId">setId()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Sets the ID of the user. Should only be used when retrieving the user from the database.</dd>
+<dd>Sets the ID of the user.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-auth-User.html#method_setIsValid">setIsValid()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Set the validity of the user. Should only be used when validating the user&#039;s account trough token.</dd>
+<dd>Sets the validity of the user. Should only be used when validating the user&#039;s account trough token.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-auth-User.html#method_setLastName">setLastName()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Set the last name of the user.</dd>
+<dd>Sets the last name of the user.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-auth-User.html#method_setPassword">setPassword()</a>
@@ -310,6 +311,7 @@
     <span>
                                 &nbsp;: string    </span>
 </dt>
+<dd>Generates a token for the user.</dd>
 
     </dl>
 
@@ -882,7 +884,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/auth/User.php"><a href="files/app-ch-comem-todoapp-auth-user.html"><abbr title="app/ch/comem/todoapp/auth/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">199</span>
+    <span class="phpdocumentor-element-found-in__line">201</span>
 
     </aside>
 
@@ -922,11 +924,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/auth/User.php"><a href="files/app-ch-comem-todoapp-auth-user.html"><abbr title="app/ch/comem/todoapp/auth/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">236</span>
+    <span class="phpdocumentor-element-found-in__line">243</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Sends a validation email to the user.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">sendValidationEmail</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
@@ -940,6 +943,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>True if the email was sent successfully, false otherwise.</p>
+</section>
+
             </section>
 
 </article>
@@ -957,11 +964,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/auth/User.php"><a href="files/app-ch-comem-todoapp-auth-user.html"><abbr title="app/ch/comem/todoapp/auth/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">163</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Set the first name of the user.</p>
+        <p class="phpdocumentor-summary">Sets the first name of the user.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1001,11 +1008,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/auth/User.php"><a href="files/app-ch-comem-todoapp-auth-user.html"><abbr title="app/ch/comem/todoapp/auth/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">138</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Sets the ID of the user. Should only be used when retrieving the user from the database.</p>
+        <p class="phpdocumentor-summary">Sets the ID of the user.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1013,7 +1020,9 @@
 
     <div class="phpdocumentor-label-line">
         </div>
-    
+        <section class="phpdocumentor-description"><p>Should only be used when retrieving the user from the database.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1045,11 +1054,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/auth/User.php"><a href="files/app-ch-comem-todoapp-auth-user.html"><abbr title="app/ch/comem/todoapp/auth/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">188</span>
+    <span class="phpdocumentor-element-found-in__line">190</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Set the validity of the user. Should only be used when validating the user&#039;s account trough token.</p>
+        <p class="phpdocumentor-summary">Sets the validity of the user. Should only be used when validating the user&#039;s account trough token.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1089,11 +1098,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/auth/User.php"><a href="files/app-ch-comem-todoapp-auth-user.html"><abbr title="app/ch/comem/todoapp/auth/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">150</span>
+    <span class="phpdocumentor-element-found-in__line">151</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Set the last name of the user.</p>
+        <p class="phpdocumentor-summary">Sets the last name of the user.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1133,7 +1142,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/auth/User.php"><a href="files/app-ch-comem-todoapp-auth-user.html"><abbr title="app/ch/comem/todoapp/auth/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">174</span>
+    <span class="phpdocumentor-element-found-in__line">176</span>
 
     </aside>
 
@@ -1145,7 +1154,9 @@
 
     <div class="phpdocumentor-label-line">
         </div>
-    
+        <section class="phpdocumentor-description"><p>Only accepts hashed passwords.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1153,7 +1164,7 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The password to set.</p>
+                    <section class="phpdocumentor-description"><p>The hash of the password to set.</p>
 </section>
 
             </dd>
@@ -1177,11 +1188,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/auth/User.php"><a href="files/app-ch-comem-todoapp-auth-user.html"><abbr title="app/ch/comem/todoapp/auth/User.php">User.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">269</span>
+    <span class="phpdocumentor-element-found-in__line">281</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Generates a token for the user.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">generateToken</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
@@ -1195,6 +1207,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">string</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The generated token.</p>
+</section>
+
             </section>
 
 </article>

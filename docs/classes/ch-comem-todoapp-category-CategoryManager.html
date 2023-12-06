@@ -139,7 +139,7 @@
 
             <p class="phpdocumentor-summary">This class manages categories for the Todo app.</p>
 
-    <section class="phpdocumentor-description"><p>It is a singleton class, meaning that only one instance of this class can exist.</p>
+    <section class="phpdocumentor-description"><p>It is a singleton class</p>
 </section>
 
 
@@ -169,7 +169,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ch-comem-todoapp-category-CategoryManager.html#property_categories">$categories</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;string|int, <a href="classes/ch-comem-todoapp-category-Category.html"><abbr title="\ch\comem\todoapp\category\Category">Category</abbr></a>&gt;            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
@@ -196,7 +196,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-category-CategoryManager.html#method_getCategories">getCategories()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;string|int, <a href="classes/ch-comem-todoapp-category-Category.html"><abbr title="\ch\comem\todoapp\category\Category">Category</abbr></a>&gt;    </span>
 </dt>
 <dd>Returns an array of all categories.</dd>
 
@@ -219,6 +219,7 @@
     <span>
                                 &nbsp;: <a href="classes/ch-comem-todoapp-category-CategoryManager.html"><abbr title="\ch\comem\todoapp\category\CategoryManager">CategoryManager</abbr></a>    </span>
 </dt>
+<dd>Returns an instance of the CategoryManager class.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ch-comem-todoapp-category-CategoryManager.html#method_removeCategory">removeCategory()</a>
@@ -239,6 +240,7 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
+<dd>Private constructor for the CategoryManager class.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/ch-comem-todoapp-category-CategoryManager.html#method_loadCategories">loadCategories()</a>
@@ -278,19 +280,21 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryManager.php"><a href="files/app-ch-comem-todoapp-category-categorymanager.html"><abbr title="app/ch/comem/todoapp/category/CategoryManager.php">CategoryManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, <a href="classes/ch-comem-todoapp-category-Category.html"><abbr title="\ch\comem\todoapp\category\Category">Category</abbr></a>&gt;</span>
     <span class="phpdocumentor-signature__name">$categories</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
-    
+        <section class="phpdocumentor-description"><p>An array to store the categories.</p>
+</section>
+
     
 
 </article>
@@ -311,7 +315,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryManager.php"><a href="files/app-ch-comem-todoapp-category-categorymanager.html"><abbr title="app/ch/comem/todoapp/category/CategoryManager.php">CategoryManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -323,7 +327,9 @@
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
     
-    
+        <section class="phpdocumentor-description"><p>The singleton instance of the CategoryManager.</p>
+</section>
+
     
 
 </article>
@@ -349,7 +355,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryManager.php"><a href="files/app-ch-comem-todoapp-category-categorymanager.html"><abbr title="app/ch/comem/todoapp/category/CategoryManager.php">CategoryManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">96</span>
+    <span class="phpdocumentor-element-found-in__line">110</span>
 
     </aside>
 
@@ -401,7 +407,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryManager.php"><a href="files/app-ch-comem-todoapp-category-categorymanager.html"><abbr title="app/ch/comem/todoapp/category/CategoryManager.php">CategoryManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 
     </aside>
 
@@ -409,7 +415,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getCategories</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">getCategories</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/ch-comem-todoapp-category-Category.html"><abbr title="\ch\comem\todoapp\category\Category">Category</abbr></a>&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -419,7 +425,7 @@
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/ch-comem-todoapp-category-Category.html"><abbr title="\ch\comem\todoapp\category\Category">Category</abbr></a>&gt;</span>
                     &mdash;
                 <section class="phpdocumentor-description"><p>An array of Category objects.</p>
 </section>
@@ -441,7 +447,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryManager.php"><a href="files/app-ch-comem-todoapp-category-categorymanager.html"><abbr title="app/ch/comem/todoapp/category/CategoryManager.php">CategoryManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">89</span>
 
     </aside>
 
@@ -502,7 +508,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryManager.php"><a href="files/app-ch-comem-todoapp-category-categorymanager.html"><abbr title="app/ch/comem/todoapp/category/CategoryManager.php">CategoryManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">74</span>
 
     </aside>
 
@@ -554,11 +560,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryManager.php"><a href="files/app-ch-comem-todoapp-category-categorymanager.html"><abbr title="app/ch/comem/todoapp/category/CategoryManager.php">CategoryManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns an instance of the CategoryManager class.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getInstance</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-category-CategoryManager.html"><abbr title="\ch\comem\todoapp\category\CategoryManager">CategoryManager</abbr></a></span></code>
@@ -572,6 +579,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/ch-comem-todoapp-category-CategoryManager.html"><abbr title="\ch\comem\todoapp\category\CategoryManager">CategoryManager</abbr></a></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>An instance of the CategoryManager class.</p>
+</section>
+
             </section>
 
 </article>
@@ -589,7 +600,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryManager.php"><a href="files/app-ch-comem-todoapp-category-categorymanager.html"><abbr title="app/ch/comem/todoapp/category/CategoryManager.php">CategoryManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">140</span>
+    <span class="phpdocumentor-element-found-in__line">154</span>
 
     </aside>
 
@@ -641,7 +652,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryManager.php"><a href="files/app-ch-comem-todoapp-category-categorymanager.html"><abbr title="app/ch/comem/todoapp/category/CategoryManager.php">CategoryManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">119</span>
+    <span class="phpdocumentor-element-found-in__line">133</span>
 
     </aside>
 
@@ -693,11 +704,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryManager.php"><a href="files/app-ch-comem-todoapp-category-categorymanager.html"><abbr title="app/ch/comem/todoapp/category/CategoryManager.php">CategoryManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Private constructor for the CategoryManager class.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
@@ -724,7 +736,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="app/ch/comem/todoapp/category/CategoryManager.php"><a href="files/app-ch-comem-todoapp-category-categorymanager.html"><abbr title="app/ch/comem/todoapp/category/CategoryManager.php">CategoryManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
