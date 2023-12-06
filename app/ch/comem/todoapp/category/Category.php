@@ -5,6 +5,7 @@ namespace ch\comem\todoapp\category;
 use Exception;
 use DateTime;
 use ch\comem\todoapp\category\CategoryBuilder;
+use ch\comem\todoapp\task\Task;
 
 /**
  * Represents a category in the Todo app.
@@ -33,7 +34,7 @@ class Category
     private DateTime $createdAt;
 
     /**
-     * @var array $tasks An array of tasks associated with this category.
+     * @var array<Task> $tasks An array of tasks associated with this category.
      */
     private array $tasks;
 
@@ -100,7 +101,7 @@ class Category
     /**
      * Returns an array of tasks associated with this category.
      *
-     * @return array An array of Task objects.
+     * @return array<Task> An array of Task objects.
      */
     public function getTasks(): array
     {
@@ -110,7 +111,7 @@ class Category
     /**
      * Returns an array of late tasks.
      *
-     * @return array The array of late tasks.
+     * @return array<Task> The array of late tasks.
      */
     public function getLateTasks(): array
     {
@@ -126,7 +127,7 @@ class Category
     /**
      * Returns an array of done tasks.
      *
-     * @return array The array of done tasks.
+     * @return array<Task> The array of done tasks.
      */
     public function getDoneTasks(): array
     {
@@ -138,9 +139,10 @@ class Category
     }
 
     /**
-     * Retrieves the actual tasks.
+     * Return an array of actual tasks.
+     * Actual tasks are tasks that are not late and not done.
      *
-     * @return array The array of actual tasks.
+     * @return array<Task> The array of actual tasks.
      */
     public function getActualTasks(): array
     {
@@ -188,6 +190,7 @@ class Category
 
     /**
      * Sets the color of the category. The color must be a valid hex color.
+     * Exemple: #ff0000 or #FF0000
      * 
      * @param string $color The color to set for the category.
      * @return void

@@ -6,20 +6,39 @@ use DateTime;
 use Exception;
 
 /**
- * Class TaskBuilder
- * 
  * This class is responsible for building Task objects.
  * 
  * @package ch\comem\todoapp\task
  */
 class TaskBuilder
 {
+    /**
+     * @var int|null $id The ID of the task.
+     */
     private ?int $id;
+    /**
+     * @var string $title The title of the task.
+     */
     private string $title;
+    /**
+     * @var string|null $description The description of the task.
+     */
     private ?string $description;
+    /**
+     * @var bool $isDone Indicates whether the task is done or not.
+     */
     private bool $isDone;
+    /**
+     * @var bool $isFav Indicates whether the task is marked as favorite or not.
+     */
     private bool $isFav;
+    /**
+     * @var DateTime $dueDate The due date of the task.
+     */
     private DateTime $dueDate;
+    /**
+     * @var int $categoryId The ID of the category associated with the task.
+     */
     private int $categoryId;
 
     /**
@@ -45,7 +64,7 @@ class TaskBuilder
     }
 
     /**
-     * Get the ID of the task.
+     * Returns the ID of the task.
      *
      * @return int|null The ID of the task, or null if it doesn't have an ID.
      */
@@ -55,7 +74,7 @@ class TaskBuilder
     }
 
     /**
-     * Get the title of the task.
+     * Returns the title of the task.
      *
      * @return string The title of the task.
      */
@@ -65,7 +84,7 @@ class TaskBuilder
     }
 
     /**
-     * Get the description of the task.
+     * Returns the description of the task.
      *
      * @return string|null The description of the task, or null if no description is set.
      */
@@ -75,7 +94,7 @@ class TaskBuilder
     }
 
     /**
-     * Check if the task is done.
+     * Returns if the task is done or not.
      *
      * @return bool Returns true if the task is done, false otherwise.
      */
@@ -85,7 +104,7 @@ class TaskBuilder
     }
 
     /**
-     * Check if the task is marked as favorite.
+     * Returns if the task is marked as favorite or not.
      *
      * @return bool Returns true if the task is marked as favorite, false otherwise.
      */
@@ -95,7 +114,7 @@ class TaskBuilder
     }
 
     /**
-     * Get the due date of the task.
+     * Returns the due date of the task.
      *
      * @return DateTime The due date of the task.
      */
@@ -125,7 +144,7 @@ class TaskBuilder
     }
 
     /**
-     * Set the ID of the task.
+     * Sets the ID of the task.
      *
      * @param int $id The ID of the task.
      * @return TaskBuilder The updated TaskBuilder instance.
@@ -137,7 +156,7 @@ class TaskBuilder
     }
 
     /**
-     * Set the description of the task.
+     * Sets the description of the task.
      *
      * @param string|null $description The description of the task.
      * @return TaskBuilder The TaskBuilder instance.
@@ -149,7 +168,7 @@ class TaskBuilder
     }
 
     /**
-     * Set the value of isDone.
+     * Sets the value of isDone.
      *
      * @param bool $isDone The new value of isDone.
      * @return TaskBuilder The current instance of TaskBuilder.
@@ -161,7 +180,7 @@ class TaskBuilder
     }
 
     /**
-     * Set the favorite status of the task.
+     * Sets the favorite status of the task.
      *
      * @param bool $isFav The favorite status of the task.
      * @return TaskBuilder The TaskBuilder instance.

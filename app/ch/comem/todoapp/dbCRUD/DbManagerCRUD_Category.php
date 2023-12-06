@@ -10,6 +10,7 @@ use Exception;
 
 /**
  * This class extends the DbManagerCRUD class and is responsible for CRUD operations on the Category table in the database.
+ * It is a singleton class.
  * 
  * @package ch\comem\todoapp\dbCRUD
  */

@@ -8,6 +8,7 @@ use Exception;
 
 /**
  * This class extends the DbManagerCRUD class and is used for CRUD operations on the User table in the database.
+ * It is a singleton class.
  * 
  * @package ch\comem\todoapp\dbCRUD
  */

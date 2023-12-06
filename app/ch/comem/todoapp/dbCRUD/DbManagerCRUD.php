@@ -9,6 +9,7 @@ use Exception;
 /**
  * This abstract class represents a CRUD manager for a database.
  * It implements the I_APICRUD interface.
+ * It is an abstract class.
  * 
  * @package ch\comem\todoapp\dbCRUD
  */

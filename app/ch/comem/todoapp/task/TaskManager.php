@@ -8,15 +8,24 @@ use Exception;
 
 /**
  * This class manages tasks for the Todo app.
- * It is a singleton class, meaning that only one instance of this class can exist.
+ * It is a singleton class
  * 
  * @package ch\comem\todoapp\task
  */
 class TaskManager
 {
+    /**
+     * @var TaskManager|null $instance The singleton instance of the TaskManager.
+     */
     private static ?TaskManager $instance = null;
+    /**
+     * @var array<Task> $tasks An array to store tasks.
+     */
     private array $tasks = [];
 
+    /**
+     * Private constructor for the TaskManager class.
+     */
     private function __construct()
     {
         $this->loadTasks();
@@ -45,7 +54,7 @@ class TaskManager
     }
 
     /**
-     * Retrieves an array of tasks.
+     * Returns an array of tasks.
      *
      * @return array The array of tasks.
      */
@@ -56,7 +65,7 @@ class TaskManager
     }
 
     /**
-     * Retrieves a task by its ID.
+     * Returns a task by its ID.
      *
      * @param int $id The ID of the task to retrieve.
      * @return Task|null The task object if found, null otherwise.
@@ -70,10 +79,10 @@ class TaskManager
     }
 
     /**
-     * Retrieves tasks by category ID.
+     * Returns tasks by category ID.
      *
      * @param int $categoryId The ID of the category.
-     * @return array An array of tasks.
+     * @return array<Task> An array of tasks.
      */
     public function getTasksByCategory(int $categoryId): array
     {
@@ -86,10 +95,10 @@ class TaskManager
     }
 
     /**
-     * Retrieves an array of tasks with the given title.
+     * Returns an array of tasks with the given title.
      *
      * @param string $title The title of the tasks to retrieve.
-     * @return array An array of tasks with the given title.
+     * @return array<Task> An array of tasks with the given title.
      */
     public function getTasksByTitle(string $title): array
     {
@@ -103,7 +112,7 @@ class TaskManager
     /**
      * Returns an array of late tasks.
      *
-     * @return array The array of late tasks.
+     * @return array<Task> The array of late tasks.
      */
     public function getLateTasks(): array
     {
@@ -119,7 +128,7 @@ class TaskManager
     /**
      * Returns an array of done tasks.
      *
-     * @return array The array of done tasks.
+     * @return array<Task> The array of done tasks.
      */
     public function getDoneTasks(): array
     {
@@ -131,9 +140,10 @@ class TaskManager
     }
 
     /**
-     * Retrieves the actual tasks.
+     * Returns the actual tasks.
+     * Actual tasks are tasks that are not late and not done.
      *
-     * @return array The array of actual tasks.
+     * @return array<Task> The array of actual tasks.
      */
     public function getActualTasks(): array
     {
@@ -190,7 +200,7 @@ class TaskManager
     }
 
     /**
-     * Removes a task from the task manager.
+     * Removes a task from the task manager and the database.
      *
      * @param Task $task The task to be removed.
      * @return bool Returns true if the task was successfully removed, false otherwise.

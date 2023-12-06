@@ -130,7 +130,8 @@ class User
     }
 
     /**
-     * Sets the ID of the user. Should only be used when retrieving the user from the database.
+     * Sets the ID of the user.
+     * Should only be used when retrieving the user from the database.
      *
      * @param int $id The ID of the user.
      * @return void
@@ -142,7 +143,7 @@ class User
     }
 
     /**
-     * Set the last name of the user.
+     * Sets the last name of the user.
      *
      * @param string $lastName The last name of the user.
      * @return void
@@ -154,7 +155,7 @@ class User
     }
 
     /**
-     * Set the first name of the user.
+     * Sets the first name of the user.
      *
      * @param string $firstName The first name of the user.
      * @return void
@@ -167,20 +168,21 @@ class User
 
     /**
      * Sets the password for the user.
+     * Only accepts hashed passwords.
      *
-     * @param string $password The password to set.
+     * @param string $password The hash of the password to set.
      * @return void
      */
     public function setPassword(string $password): void
     {
         if (!$password || !is_string($password)) throw new Exception('Password must be defined and of type string');
-        if (password_get_info($password)['algo'] === 0) throw new Exception('Password must be hashed');
+        if (!password_get_info($password)['algo']) throw new Exception('Password must be hashed');
 
         $this->password = $password;
     }
 
     /**
-     * Set the validity of the user. Should only be used when validating the user's account trough token.
+     * Sets the validity of the user. Should only be used when validating the user's account trough token.
      *
      * @param bool $isValid The validity of the user.
      * @return void
@@ -198,7 +200,7 @@ class User
      */
     public function resetPassword(): bool
     {
-        if ($this->getId() === null) throw new Exception('User must be saved in the database before resetting password');
+        if (!$this->getId()) throw new Exception('User must be saved in the database before resetting password');
 
         $tokenExpire = time() + 3600; // 1 hour
         $timestamp = date('Y-m-d H:i:s', $tokenExpire);
@@ -233,9 +235,14 @@ class User
         return $result;
     }
 
+    /**
+     * Sends a validation email to the user.
+     *
+     * @return bool True if the email was sent successfully, false otherwise.
+     */
     public function sendValidationEmail(): bool
     {
-        if ($this->getId() === null) throw new Exception('User must be saved in the database before resetting password');
+        if (!$this->getId()) throw new Exception('User must be saved in the database before resetting password');
 
         $validateToken = $this->generateToken();
 
@@ -266,6 +273,11 @@ class User
         return $result;
     }
 
+    /**
+     * Generates a token for the user.
+     *
+     * @return string The generated token.
+     */
     private function generateToken(): string
     {
         $tokenLength = 32;

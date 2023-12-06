@@ -9,6 +9,7 @@ use Exception;
 
 /**
  * This class extends the DbManagerCRUD class and is responsible for handling CRUD operations for tasks in the database.
+ * It is a singleton class.
  * 
  * @package ch\comem\todoapp\dbCRUD
  */

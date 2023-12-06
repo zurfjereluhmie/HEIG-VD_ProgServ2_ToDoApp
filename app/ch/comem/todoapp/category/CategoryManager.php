@@ -8,20 +8,34 @@ use Exception;
 
 /**
  * This class manages categories for the Todo app.
- * It is a singleton class, meaning that only one instance of this class can exist.
+ * It is a singleton class
  * 
  * @package ch\comem\todoapp\category
  */
 class CategoryManager
 {
+    /**
+     * @var CategoryManager|null $instance The singleton instance of the CategoryManager.
+     */
     private static ?CategoryManager $instance = null;
+    /**
+     * @var array<Category> $categories An array to store the categories.
+     */
     private array $categories = [];
 
+    /**
+     * Private constructor for the CategoryManager class.
+     */
     private function __construct()
     {
         $this->loadCategories();
     }
 
+    /**
+     * Returns an instance of the CategoryManager class.
+     *
+     * @return CategoryManager An instance of the CategoryManager class.
+     */
     public static function getInstance(): CategoryManager
     {
         if (!isset(self::$instance)) {
@@ -44,7 +58,7 @@ class CategoryManager
     /**
      * Returns an array of all categories.
      *
-     * @return array An array of Category objects.
+     * @return array<Category> An array of Category objects.
      */
     public function getCategories(): array
     {
@@ -60,7 +74,7 @@ class CategoryManager
     public function getCategory(int $id): ?Category
     {
         foreach ($this->categories as $category) {
-            if ($category->getId() == $id) return $category;
+            if ($category->getId() === $id) return $category;
         }
         return null;
     }

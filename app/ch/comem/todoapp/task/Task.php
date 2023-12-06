@@ -13,12 +13,37 @@ use ch\comem\todoapp\task\TaskBuilder;
  */
 class Task
 {
+    /**
+     * @var int|null $id The ID of the task.
+     */
     private ?int $id;
+    /**
+     * @var string $title The title of the task.
+     */
     private string $title;
+    /**
+     * @var string|null $description The description of the task.
+     */
     private ?string $description;
+    /**
+     * @var bool $isDone Indicates whether the task is done or not.
+     */
     private bool $isDone;
+    /**
+     * @var bool $isFav Indicates whether the task is marked as favorite or not.
+     */
     private bool $isFav;
+    /**
+     * Represents a task with a due date.
+     *
+     * @var DateTime $dueDate The due date of the task.
+     */
     private DateTime $dueDate;
+    /**
+     * The ID of the category associated with the task.
+     *
+     * @var int
+     */
     private int $categoryId;
 
     /**
@@ -38,7 +63,7 @@ class Task
     }
 
     /**
-     * Get the ID of the task.
+     * Returns the ID of the task.
      *
      * @return int The ID of the task.
      */
@@ -68,7 +93,7 @@ class Task
     }
 
     /**
-     * Determines whether the task is done or not.
+     * Returns whether the task is done or not.
      *
      * @return bool True if the task is done, false otherwise.
      */
@@ -78,7 +103,7 @@ class Task
     }
 
     /**
-     * Determines whether the task is a favorite or not.
+     * Returns whether the task is a favorite or not.
      *
      * @return bool True if the task is a favorite, false otherwise.
      */
@@ -98,7 +123,7 @@ class Task
     }
 
     /**
-     * Get the category ID of the task.
+     * Returns the category ID of the task.
      *
      * @return int The category ID.
      */
@@ -149,6 +174,7 @@ class Task
 
     /**
      * Sets the due date of the task.
+     * The due date cannot be in the past.
      *
      * @param DateTime $dueDate The due date of the task.
      */
