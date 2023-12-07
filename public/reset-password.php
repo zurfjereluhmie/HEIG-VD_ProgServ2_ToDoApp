@@ -94,8 +94,9 @@ if (isset($_POST['submit-email'])) {
         exit();
     }
 
+    require_once 'logout.php';
     new Flash("global", TEXT['email-sent'], 'success');
-    header('Location: login.php');
+    exit();
 }
 
 ?>
