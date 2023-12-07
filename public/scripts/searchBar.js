@@ -5,6 +5,8 @@ const searchInput = document.querySelector(".searchBar");
 const liveSearch = document.querySelector("#livesearch");
 const liveSearchUl = liveSearch.querySelector("ul");
 
+liveSearchUl.innerHTML = `<span class='noResult'>${searchInput.placeholder}...</span>`;
+
 searchInput.addEventListener("focusin", () => {
     liveSearch.style.display = "block";
     liveSearchUl.style.display = "block";
@@ -64,7 +66,7 @@ searchInput.addEventListener("keyup", () => {
                         console.error("Network error");
                         break;
                     case "No result":
-                        liveSearchUl.innerHTML = `<span class='noResult'>No results for your search</span>`;
+                        liveSearchUl.innerHTML = `<span class='noResult'>...</span>`;
                         break;
                     default:
                         console.error(error);
@@ -72,7 +74,7 @@ searchInput.addEventListener("keyup", () => {
                 }
             });
     } else {
-        liveSearchUl.innerHTML = "<span class='noResult'>Search for a todo</span>";
+        liveSearchUl.innerHTML = `<span class='noResult'>${searchInput.placeholder}</span>`;
     }
 });
 searchInput.addEventListener("focusout", () => {
