@@ -23,6 +23,7 @@
 - [Commandes Docker](#commandes-docker)
 - [Utilisation](#utilisation)
 - [Arborescence du Projet](#arborescence-du-projet)
+- [Documentation](#documentation)
 - [Auteurs](#auteurs)
 
 ## Version
@@ -75,6 +76,12 @@ Version : 1.0
   - Package `ch/comem/todoapp` : gestion orientée objet
 - Documentation (automatique) : `docs/` _Générée avec phpDocumentor (`sh generate_docs.sh` ou `bash generate_docs.sh`)_
 - Autres : Librairies, etc.
+
+## Documentation
+
+La documentation est disponible dans le dossier `docs/` et peut être générée avec la commande `sh generate_docs.sh` ou `bash generate_docs.sh`.
+
+Pour lire la documentation, ouvrez le fichier `docs/index.html` dans votre navigateur.
 
 ## Auteurs
 
