@@ -26,6 +26,12 @@ if (!$task) {
 
 $taskDueDate = new DateTime($taskDueDate);
 
+if ($taskDueDate < new DateTime()) {
+    new Flash("task-update", TEXT['error-task-due-date'], "danger");
+    header("Location: /task-update.php?id=$taskId");
+    exit();
+}
+
 $task->setTitle($taskTitle);
 $task->setDueDate($taskDueDate);
 $task->setCategory($taskCategoryId);

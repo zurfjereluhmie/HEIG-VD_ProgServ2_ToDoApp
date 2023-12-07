@@ -54,6 +54,8 @@ return [
     "task-description-placeholder" => "Description",
     "task-category-select-placeholder" => "Category",
     "task-due-date-placeholder" => "Due date",
+    "error-task-due-date" => "The due date must be in the future",
+    "error-task-not-found" => "Task not found",
     "create-task" => "Create task",
     "update-task" => "Update task",
     "delete-task" => "Delete task",

@@ -21,6 +21,12 @@ if (!$taskTitle || !$taskDueDate || !$taskCategoryId) {
 
 $taskDueDate = new DateTime($taskDueDate);
 
+if ($taskDueDate < new DateTime()) {
+    new Flash("task-create", TEXT['error-task-due-date'], "danger");
+    header("Location: /task-create.php");
+    exit();
+}
+
 $task = (new TaskBuilder($taskTitle, $taskDueDate, $taskCategoryId))
     ->setDescription($taskDescription)
     ->build();

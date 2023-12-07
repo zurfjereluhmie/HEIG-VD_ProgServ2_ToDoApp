@@ -54,6 +54,8 @@ return [
     "task-description-placeholder" => "Description",
     "task-category-select-placeholder" => "Catégorie",
     "task-due-date-placeholder" => "Date d'échéance",
+    "error-task-due-date" => "La date d'échéance doit être dans le futur",
+    "error-task-not-found" => "Tâche non trouvée",
     "create-task" => "Créer la tâche",
     "update-task" => "Modifier la tâche",
     "delete-task" => "Supprimer la tâche",

@@ -5,6 +5,7 @@ namespace ch\comem\todoapp\task;
 use ch\comem\todoapp\dbCRUD\DbManagerCRUD_Task;
 use ch\comem\todoapp\category\CategoryManager;
 use Exception;
+use DateTime;
 
 /**
  * This class manages tasks for the Todo app.
@@ -187,6 +188,7 @@ class TaskManager
     public function updateTask(Task $task): bool
     {
         if ($task->getId() == null) throw new Exception("Cannot update task without ID");
+        if ($task->getDueDate() < new DateTime()) throw new Exception("Cannot update task with due date in the past");
 
         $dbManager = DbManagerCRUD_Task::getInstance();
         $res = $dbManager->update($task->getId(), $task);
