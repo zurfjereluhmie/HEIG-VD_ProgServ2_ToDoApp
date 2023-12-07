@@ -35,6 +35,8 @@ if (password_needs_rehash($user->getPassword(), PASSWORD_DEFAULT)) {
     DbManagerCRUD_User::getInstance()->update($user->getId(), $user);
 }
 
+unset($password);
+
 $_SESSION["user"] = [
     "id" => $user->getId(),
     "email" => $user->getEmail(),

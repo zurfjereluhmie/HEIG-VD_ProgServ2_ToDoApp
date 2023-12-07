@@ -49,6 +49,9 @@ if ($dbManagerUser->readUsingEmail($email)) {
 $user = new User($email, password_hash($password, PASSWORD_DEFAULT), $firstName, $lastName, false);
 $dbManagerUser->create($user);
 
+unset($password);
+unset($password2);
+
 $user = $dbManagerUser->readUsingEmail($email);
 if (!$user) {
     new Flash(constant("FLASH_NAME"), TEXT['error-while-creating-account'], "danger");

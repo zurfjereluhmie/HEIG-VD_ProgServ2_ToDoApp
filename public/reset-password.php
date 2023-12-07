@@ -53,6 +53,7 @@ if (isset($_POST['submit-PW'])) {
     unset($password2);
 
     $user->setPassword($hashedPassword);
+    unset($hashedPassword);
 
     $newUser = $dbManagerUser->update($user->getId(), $user);
 
