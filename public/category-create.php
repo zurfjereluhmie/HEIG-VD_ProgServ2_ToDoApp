@@ -31,6 +31,9 @@ loadHead(TEXT['category-title'], ["main.css", "navBar.css"]);
             <main class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 bg-light mainFullHeight">
                 <?= Flash::displayFlashMessage("global") ?>
                 <?= Flash::displayFlashMessage("category-create") ?>
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
+                    <h1 class="h2" id="categoryCreateTitle"><?= TEXT['category-create-title'] ?></h1>
+                </div>
                 <form action="<?= $_SERVER["PHP_SELF"] ?>" method="post">
                     <div class="form-row">
                         <div class="form-group col-md-11">

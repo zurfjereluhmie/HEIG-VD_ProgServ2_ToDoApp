@@ -45,7 +45,7 @@ loadHead(TEXT['category-title'], ["main.css", "navBar.css", "viewByDate.css", "t
 
             <main class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 bg-light mainFullHeight">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
-                    <h1 class="h2"><i class="fas fa-pen fa-sm modifyPenList"></i><?= $category->getTitle() ?> :</h1>
+                    <h1 class="h2"><i class="fas fa-pen fa-sm modifyPenList"></i><?= $category->getTitle() ?></h1>
                     <div class="filtre">
                         <input type="checkbox" name="showLateTask" data-checkbox="lateTask">
                         <label for="showLateTask"><?= TEXT['filter-show-late-tasks'] ?></label>

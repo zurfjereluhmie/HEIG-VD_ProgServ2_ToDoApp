@@ -30,6 +30,7 @@ return [
 
     // Category
     "category-title" => "Catégorie",
+    "category-create-title" => "Nouvelle catégorie",
     "filter-show-late-tasks" => "Montrer les retards",
     "filter-show-done-tasks" => "Montrer les tâches terminées",
     "task-late" => "En retard",
@@ -49,8 +50,8 @@ return [
     "error-category-delete" => "Erreur lors de la suppression de la catégorie",
 
     // Task
-    "task-create-title" => "Nouvelle tâche",
     "task-title-placeholder" => "Titre",
+    "task-create-title" => "Nouvelle tâche",
     "task-description-placeholder" => "Description",
     "task-category-select-placeholder" => "Catégorie",
     "task-due-date-placeholder" => "Date d'échéance",
@@ -134,7 +135,7 @@ return [
     "user-delete" => "Utilisateur supprimé",
     "password-updated" => "Mot de passe mis à jour",
     "account-validated" => "Votre compte a été validé",
-    "category-create" => "Categorie créée",
+    "category-create" => "Catégorie créée",
     "category-update" => "Catégorie mise à jour",
     "category-delete" => "Catégorie supprimée",
     "task-create" => "Tâche créée",

@@ -30,11 +30,10 @@
 
 Version : 1.0
 
-## Installation
+## Installations Requises
 
 - Installer Docker pour votre OS en suivant ce [lien](https://docs.docker.com/get-docker/).
-- Commande pour installer les dépendances Composer :
-  - `composer install`
+- Commande pour installer les dépendances Composer : `composer install`
 
 ## Configuration
 
@@ -65,10 +64,14 @@ Version : 1.0
 - Accès à l'application : [http://localhost:80](http://localhost:80)
 - Accès à MailHog : [http://localhost:8025](http://localhost:8025)
 
+- Compte utilisateur d'exemple déjà créé :
+  - Email : `jphess@gmail.com`
+  - Mot de passe : `1234`
+
 ## Arborescence du Projet
 
 - Pages du site : `public/`
-- Fichiers de cofiguration (DB et PHP) : `config/`
+- Dossier de configuration (DB et PHP) : `config/`
 - Dossier `public/local/` : pour les traductions
 - Dossier `public/component/` : composants du site
 - Dossier `controllers/` : gestion des opérations

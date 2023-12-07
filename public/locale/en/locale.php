@@ -30,6 +30,7 @@ return [
 
     // Category
     "category-title" => "Category",
+    "category-create-title" => "New category",
     "filter-show-late-tasks" => "Show late tasks",
     "filter-show-done-tasks" => "Show done tasks",
     "task-late" => "Late",
@@ -49,8 +50,8 @@ return [
     "error-category-delete" => "Error while deleting the category",
 
     // Task
-    "task-create-title" => "New task",
     "task-title-placeholder" => "Title",
+    "task-create-title" => "New task",
     "task-description-placeholder" => "Description",
     "task-category-select-placeholder" => "Category",
     "task-due-date-placeholder" => "Due date",
