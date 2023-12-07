@@ -74,7 +74,7 @@ Version : 1.0
 - Dossier `controllers/` : gestion des opérations
 - Dossier `app/` :
   - Package `ch/comem/todoapp` : gestion orientée objet
-- Documentation (automatique) : `docs/` _Générée avec phpDocumentor (`sh generate_docs.sh` ou `bash generate_docs.sh`)_
+- Documentation (automatique) : `docs/` _Générée avec phpDocumentor_
 - Autres : Librairies, etc.
 
 ## Documentation
