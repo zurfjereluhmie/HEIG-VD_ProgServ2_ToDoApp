@@ -51,8 +51,12 @@ loadHead(TEXT['calendar-title'], ["main.css", "navBar.css", "viewByDate.css", "t
                         $task = $tasks[$i];
                         $nextTask = $tasks[$i + 1] ?? null;
 
+                        $isToday = $task->getDueDate()->format('d.m.Y') === date('d.m.Y');
+                        $isTomorrow = $task->getDueDate()->format('d.m.Y') === date('d.m.Y', strtotime('+1 day'));
+                        $specialId = $isToday ? "today" : ($isTomorrow ? "tomorrow" : "");
+
                         // Open container if needed
-                        if ($prevDate === null || $prevDate !== $task->getDueDate()->format("d.m.Y")) echo openContainer($task->getDueDate());
+                        if ($prevDate === null || $prevDate !== $task->getDueDate()->format("d.m.Y")) echo openContainer($task->getDueDate(), "", $specialId);
 
                         $color = $categoryManager->getCategory($task->getCategoryId())->getColor();
                         // Display task

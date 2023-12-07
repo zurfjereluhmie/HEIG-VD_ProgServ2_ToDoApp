@@ -71,7 +71,7 @@ require_once 'components/task-long.php';
                     <div class="p-3 todoElt">
                         <div class="d-flex">
                             <h3 class="toDoTitle mr-auto p-2"><?= TEXT['due-today'] ?></h3>
-                            <a class="p-2" href="/calendar.html#today"><?= TEXT['see-all'] ?></a>
+                            <a class="p-2" href="/calendar.php#today"><?= TEXT['see-all'] ?></a>
                         </div>
                         <div class="taskContainer">
 
@@ -107,7 +107,7 @@ require_once 'components/task-long.php';
                     <div class="p-3 todoElt">
                         <div class="d-flex">
                             <h3 class="toDoTitle mr-auto p-2"><?= TEXT['due-tomorrow'] ?></h3>
-                            <a class="p-2" href="/calendar.html#tomorrow"><?= TEXT['see-all'] ?></a>
+                            <a class="p-2" href="/calendar.php#tomorrow"><?= TEXT['see-all'] ?></a>
                         </div>
                         <div class="taskContainer">
 
