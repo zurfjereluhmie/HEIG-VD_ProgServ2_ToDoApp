@@ -144,7 +144,7 @@ loadHead(TEXT['reset-password-title'], ["password-reset.css"]);
     </form>
 
     <?php
-    include_once './components/script.php';
+    require_once './components/script.php';
     loadScript();
     ?>
 </body>

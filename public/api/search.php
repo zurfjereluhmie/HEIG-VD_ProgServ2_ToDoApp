@@ -13,7 +13,7 @@ if (empty($search)) {
     exit();
 }
 
-include_once "../../app/autoload.php";
+require_once "../../app/autoload.php";
 
 use ch\comem\todoapp\category\CategoryManager;
 use ch\comem\todoapp\task\TaskManager;

@@ -51,7 +51,7 @@ loadHead(TEXT['register-title'], ["register.css"]);
     </form>
 
     <?php
-    include_once './components/script.php';
+    require_once './components/script.php';
     loadScript();
     ?>
 </body>

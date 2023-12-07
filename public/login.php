@@ -47,7 +47,7 @@ loadHead(TEXT['login-title'], ["login.css"]);
     </form>
 
     <?php
-    include_once './components/script.php';
+    require_once './components/script.php';
     loadScript();
     ?>
 </body>

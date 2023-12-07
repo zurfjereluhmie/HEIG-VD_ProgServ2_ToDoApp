@@ -28,11 +28,11 @@ loadHead(TEXT['calendar-title'], ["main.css", "navBar.css", "viewByDate.css", "t
 ?>
 
 <body>
-    <?php include_once './components/navbar.php'; ?>
+    <?php require_once './components/navbar.php'; ?>
 
     <div class="container-fluid">
         <div class="row">
-            <?php include_once './components/sidebar.php'; ?>
+            <?php require_once './components/sidebar.php'; ?>
 
             <main class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 bg-light mainFullHeight">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
@@ -82,7 +82,7 @@ loadHead(TEXT['calendar-title'], ["main.css", "navBar.css", "viewByDate.css", "t
     </div>
 
     <?php
-    include_once './components/script.php';
+    require_once './components/script.php';
     loadScript(["searchBar"], ["locale", "calendar"]);
     ?>
 </body>

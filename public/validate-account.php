@@ -27,7 +27,7 @@ if (isset($_GET["token"])) {
 
     new Flash("global", TEXT['account-validated'], "success");
 
-    include_once 'logout.php';
+    require_once 'logout.php';
 
     header("Location: login.php");
     exit();
@@ -89,7 +89,7 @@ loadHead(TEXT['validate-account-title'], ["login.css"]);
     </form>
 
     <?php
-    include_once './components/script.php';
+    require_once './components/script.php';
     loadScript();
     ?>
 </body>
