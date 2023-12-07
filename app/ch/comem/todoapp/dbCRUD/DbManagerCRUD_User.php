@@ -91,6 +91,11 @@ class DbManagerCRUD_User extends DbManagerCRUD
         $user = $stmt->fetch();
         if (!$user) return null;
 
+        // Reset the password token and its expiration date once it has been used
+        $sql = "UPDATE user SET password_token = NULL, password_token_expire = NULL WHERE id = :id;";
+        $stmt = $this->getDb()->prepare($sql);
+        $stmt->execute([':id' => $user['id']]);
+
         return $this->createUser($user);
     }
 
