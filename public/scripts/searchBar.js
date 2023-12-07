@@ -55,7 +55,7 @@ searchInput.addEventListener("keyup", () => {
 
                     data.tasks.forEach(todo => {
                         const li = document.createElement("li");
-                        li.innerHTML = `<a href="/todo.php?id=${todo.id}">${todo.title}</a>`;
+                        li.innerHTML = `<a href="/task-update.php?id=${todo.id}">${todo.title}</a>`;
                         liveSearchUl.appendChild(li);
                     });
                 }
@@ -77,7 +77,10 @@ searchInput.addEventListener("keyup", () => {
         liveSearchUl.innerHTML = `<span class='noResult'>${searchInput.placeholder}</span>`;
     }
 });
-searchInput.addEventListener("focusout", () => {
+searchInput.addEventListener("focusout", (e) => {
+    if (e.relatedTarget) {
+        if ([...e.relatedTarget.attributes].find(attr => attr.name === "href")) return;
+    }
     liveSearch.style.display = "none";
     liveSearchUl.style.display = "none";
 });
