@@ -30,6 +30,9 @@ _Note: You need to have [Docker](https://www.docker.com/) installed and running 
 
 ```bash
 sh run_app.sh
+
+# or for Windows users
+bash run_app.sh
 ```
 
 ### Generate the documentation
@@ -40,4 +43,7 @@ _Note: You will need to have [PHP](https://www.php.net/) installed on your machi
 
 ```bash
 sh generate_doc.sh
+
+# or for Windows users
+bash generate_doc.sh
 ```

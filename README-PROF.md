@@ -12,6 +12,7 @@
     </div>
   </div>
 </header>
+
 # TodoList Web App
 
 ## Table des matières
@@ -32,12 +33,18 @@ Version : 1.0
 
 - Installer Docker pour votre OS en suivant ce [lien](https://docs.docker.com/get-docker/).
 - Commande pour installer les dépendances Composer :
-  - Pour installer Composer : `php composer.phar install`
-  - Pour mettre à jour les dépendances : `php composer.phar update`
+  - `composer install`
 
 ## Configuration
 
-- Configuration requise :
+- Configuration **nécessaire** sur le poste de travail :
+
+  - Docker
+  - PHP CLI
+  - Composer CLI
+
+- Configuration de l'application :
+
   - Docker
   - Apache
   - PHP
@@ -46,7 +53,10 @@ Version : 1.0
 
 ## Commandes Docker
 
-- Démarrer l'application : `sh run_app.sh`
+- Démarrer l'application :
+  - `sh run_app.sh` ou `bash run_app.sh` pour Windows
+  - ou
+  - `docker-compose up -d`
 - Arrêter l'application : `docker-compose down`
 
 ## Utilisation
@@ -56,11 +66,14 @@ Version : 1.0
 
 ## Arborescence du Projet
 
-- Pages du site : racine
-- Dossier localisation : pour les traductions
-- Dossier component : composants du site
-- Dossier controllers : gestion des opérations
-- Package ch/comem/todoapp : gestion orientée objet
+- Pages du site : `public/`
+- Fichiers de cofiguration (DB et PHP) : `config/`
+- Dossier `public/local/` : pour les traductions
+- Dossier `public/component/` : composants du site
+- Dossier `controllers/` : gestion des opérations
+- Dossier `app/` :
+  - Package `ch/comem/todoapp` : gestion orientée objet
+- Documentation (automatique) : `docs/` _Générée avec phpDocumentor (`sh generate_docs.sh` ou `bash generate_docs.sh`)_
 - Autres : Librairies, etc.
 
 ## Auteurs
